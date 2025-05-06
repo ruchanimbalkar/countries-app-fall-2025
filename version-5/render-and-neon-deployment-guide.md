@@ -5,26 +5,20 @@
 
 Deploying your database and web server remotely makes your app accessible from anywhere, not just your computer. It ensures better reliability, security, and performance, plus it's easier to scale and collaborate with others. Remote deployment is also the standard for professional, always-online services.
 
-Using a cloud hosting platform means that we, as developers, don’t have to worry about things like maintaining physical servers, configuring them, making sure they don’t overheat, etc. so we can focus on the fun stuff — coding! 
+Technically we could host our websites ourselves on our own computers, but that takes a lot of work. Using a cloud hosting platform means that we, as developers, don’t have to worry about things like maintaining physical servers, configuring them, making sure they don’t overheat, etc. so we can focus on the fun stuff — coding! 
 
-We will deploy our web server remotely to [Render](https://render.com/) and our database to [Neon](https://neon.tech). 
-
----
-
-### Why are we using Render and Neon? What are the other options?
-
-There are many options for deploying your application to a remote database/server! 
-
-Beginner-friendly options like Render, Railway.app, Heroku, and Neon.tech make it easy to get started but provide less options for customization. 
-Advanced options like DigitalOcean, Fly.io, Google Cloud Run and AWS provide much more control but can be challenging for beginners. 
-
-The main reason we are going to use Render for our web server and Neon for our database is because they are free to use, don't require a credit card to get started, and relatively easy to set up!
+We will deploy our web server remotely to [Render](https://render.com/) and our database to [Neon](https://neon.tech). There are many other options out there (like Heroku, DigitalOcean, and AWS) but we are using these two because they are free to use, don't require a credit card to get started, and relatively easy to set up!
 
 ---
 
-## Architecture
+## Remote Architecture
 
 ![image](https://github.com/user-attachments/assets/7b88eead-992c-4f87-a9b8-db16780b0223)
+
+| **Element**    | UI    | Web Server | Database |
+|----------------|-----------|----------------|--------------|
+| **Deployment**     | Netlify   | Render         | Neon         |
+| **Description** | Deploy frontend through Github. Creates an accessible URL in the browser. | Deploy backend web server through Github. Can respond to HTTP requests from our deployed frontend. | Deploy PostgreSQL database to Neon. Connects to Render web server to respond to SQL queries. | 
 
 
 ---
@@ -49,10 +43,6 @@ We will use Render to deploy our web server remotely to the web.
 - Go to [https://dashboard.render.com/billing#plan](https://dashboard.render.com/billing#plan) to sign up using your Github credentials. 
 - Enter information about your profile, and then select Hobbyist as the plan.
 
-
-> 🎯 
-> Step 1 complete: Now you should have a Render account! 
-
 ---
 
 ## Step 2: Create a Web Server on Render
@@ -70,9 +60,6 @@ We will create a remote web server on Render that will run our Node.js code.
 
 - Select the Free option and start the deployment
 
-> 🎯
-> Step 2 complete: Now your server should be fully deployed on Render! 
-
 ---
 
 ## Step 3: Create a Neon account
@@ -80,9 +67,6 @@ We will create a remote web server on Render that will run our Node.js code.
 We will use Neon to deploy our database remotely to the web. 
 
 - Go to [neon.tech]([neon.tech](https://neon.tech)) to create your new account using your Github credentials.
-
-> 🎯
-> Step 3 complete: Now you should have a Neon account! 
 
 ## Step 4: Create a Database on Neon
 
@@ -95,9 +79,31 @@ We will use Neon to deploy our database remotely to the web.
   
 - <img width="999" alt="image" src="https://github.com/user-attachments/assets/b03ff07b-cbe0-49d9-b4cb-8a193c1702d5" />
 
+---
+ 
+## Step 5: Configure your Web Server's Environment Variables in Render
 
-> 🎯 Step 4 complete: Now you have an empty remote database that is deployed on Neon! 
+To connect your Render web server to your Neon database, you will need to update the Render web server's environment variables to match the Neon database's connection values. 
 
+  - First, pull up your Neon database's connection values by opening up your Neon project's dashboard. You should see a 'Connect to your database' section where you can click on the Connect button.
+    
+    <img width="300" alt="image" src="https://github.com/user-attachments/assets/8c637f2a-d672-4e05-8604-b0cbd393066e" />
+    
+  - Where it says `Connection string`, click on it and change it to Parameters only
+
+![image](https://github.com/user-attachments/assets/1f2ec15b-8b7f-4ade-95e7-71841e6eb9f5)
+
+  - You should see your Neon credentials like below. You will use these values as the environment variables for your Render web server.
+
+![image](https://github.com/user-attachments/assets/5e99a24a-fe0c-4336-841a-fb21436a3c57)
+
+  - In your Render Console for your remote server, go to the Environment section and add the values to the 5 environment variables. It should look something like this:
+    ![image](https://github.com/user-attachments/assets/5071b35e-c2ae-4189-b593-ff45f4377ace)
+
+- Click Save, Rebuild, and Deploy
+- Commit your code so that it pushes to Github (and redeploys to the server instance).
+- Now that your web server is running, if you have any console.log() calls in your index.js file, those will show up in the Logs section because this is deployed remotely. It’s not going to show up in the terminal anymore, because we’re no longer running our server on our local machine.
+- Now your web server on Render can talk to your database on Neon! Hooray! 
 ---
 
 ## Step 5: Configuring our Web Server Code in VS Code 
@@ -128,40 +134,6 @@ We will use Neon to deploy our database remotely to the web.
     - However, in Version 5, you no longer need `config.js` because your code is no longer connecting to the *local* database. Instead, you will connect to your *remote* database deployed on Render using the `config` object you just created in the `index.js` file.
 - **Add, Commit, and Push to your updated code to Github**
     - Pushing to Github should trigger a re-deployment of our updated server code, which is super neat!
- 
-## Step 6: Configure your Web Server's Environment Variables in Render **
-    - In your Render Console for your remote server, go to the Environment section and add the values to the 5 environment variables. It should look something like this:
-    
-    ![image.png](Deploying%20to%20a%20Remote%20Database%20Server%20on%20Render%201d5bb7044bb18058b787fc258f37e764/image%205.png)
-
-  ### Where it says Connection string, click on it and change it to Parameters only 
-
-![image](https://github.com/user-attachments/assets/1f2ec15b-8b7f-4ade-95e7-71841e6eb9f5)
-
-### You should be seeing something like this: 
-![image](https://github.com/user-attachments/assets/5e99a24a-fe0c-4336-841a-fb21436a3c57)
-
-
-
-### Under the Connections tab 
-
-![image](https://github.com/user-attachments/assets/c5923111-53c2-49a1-a079-ab580df076c8)
-
-Fill out the following values such that the "Connect to your database" values match the Neon.tech values: 
-
-PGHOST ----- Host name/address
-PGUSER ----- Username
-PGPASSWORD ----- Password
-
-Enable Save password? 
-Use 5432 as the port number 
-    
-- Click Save, Rebuild, and Deploy
-- Commit your code so that it pushes to Github (and redeploys to the server instance).
-- Now that your web server is running, if you have any console.log() calls in your index.js file, those will show up in the Logs section because this is deployed remotely. It’s not going to show up in the terminal anymore, because we’re no longer running our server on our local machine.
-
-
-> 🎯 Step 5 complete: Now your web server can talk to your database server, both of which you deployed remotely to Render! 
 
 ---
 
