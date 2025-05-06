@@ -13,13 +13,11 @@ We will deploy our web server remotely to [Render](https://render.com/) and our 
 
 ## Remote Architecture
 
-![image](https://github.com/user-attachments/assets/7b88eead-992c-4f87-a9b8-db16780b0223)
-
-| **Element**    | UI    | Web Server | Database |
-|----------------|-----------|----------------|--------------|
-| **Deployment**     | Netlify   | Render         | Neon         |
-| **Description** | Deploy frontend through Github. Creates an accessible URL in the browser. | Deploy backend web server through Github. Can respond to HTTP requests from our deployed frontend. | Deploy PostgreSQL database to Neon. Connects to Render web server to respond to SQL queries. | 
-
+| **Element**    | **Deployment**  | **Description** |
+| -------- | --------- | --- |
+| UI | Netlify | Deploy frontend through Github. Creates an accessible URL in the browser. 
+| Web server | Render | Deploy backend web server through Github. Can respond to HTTP requests from our deployed frontend.
+| Database | Neon | Deploy PostgreSQL database to Neon. Connects to Render web server to respond to SQL queries.
 
 ---
 
@@ -79,6 +77,14 @@ We will use Neon to deploy our database remotely to the web.
   
 - <img width="999" alt="image" src="https://github.com/user-attachments/assets/b03ff07b-cbe0-49d9-b4cb-8a193c1702d5" />
 
+Now that you have your database, you can create your SQL tables! 
+
+- In the left sidebar on Neon, select the SQL Editor.
+- <img width="200" alt="SQL Editor on Neon" src="https://github.com/user-attachments/assets/74924f5c-715e-491d-b42c-2181286e9550" />
+- In the SQL Editor, run your `CREATE TABLE` and `INSERT INTO` SQL commands from your `database-schema.sql` file to create your users, saved_countries, and country_counts tables. Make sure to insert at least 3 rows of data for each table. 
+- To confirm your SQL tables were created, run `SELECT` commands to see if your new tables exist. For example, `SELECT * FROM users` should give you all 3 users as 3 rows of data in your users table. 
+
+
 ---
  
 ## Step 5: Configure your Web Server's Environment Variables in Render
@@ -91,13 +97,22 @@ To connect your Render web server to your Neon database, you will need to update
     
   - Where it says `Connection string`, click on it and change it to Parameters only
 
-![image](https://github.com/user-attachments/assets/1f2ec15b-8b7f-4ade-95e7-71841e6eb9f5)
+<img width="202" alt="Change Connection String option to Parameters Only" src="https://github.com/user-attachments/assets/54dcb699-99b4-440a-860c-2e813ebe5590" />
 
-  - You should see your Neon credentials like below. You will use these values as the environment variables for your Render web server.
 
-![image](https://github.com/user-attachments/assets/5e99a24a-fe0c-4336-841a-fb21436a3c57)
+  - You should see your Neon database credentials like below. You will use these values as the environment variables for your Render web server. You will need to choose "Show password" to reveal your password. 
 
-  - In your Render Console for your remote server, go to the Environment section and add the values to the 5 environment variables. It should look something like this:
+<img width="764" alt="Neon database credentials in the Neon dashboard" src="https://github.com/user-attachments/assets/5a80b6bc-ddd0-425d-9fcd-93198a096904" />
+
+
+  - In your Render Console for your remote server, go to the Environment section.  
+  - Add the values for 5 environment variables:
+      - `DATABASE` which should match the `PGDATABASE` value in your Neon database credentials. 
+      - `DATABASE_PORT`, which should be `5432`. 
+      - `HOST` which should match the `PGHOST` value in your Neon database credentials. 
+      - `PASSWORD` which should match the `PGPASSWORD` value in your Neon database credentials. 
+      - `USER` which should match the `PGUSER` value in your Neon database credentials. 
+  - It should look something like this:
     ![image](https://github.com/user-attachments/assets/5071b35e-c2ae-4189-b593-ff45f4377ace)
 
 - Click Save, Rebuild, and Deploy
@@ -106,7 +121,7 @@ To connect your Render web server to your Neon database, you will need to update
 - Now your web server on Render can talk to your database on Neon! Hooray! 
 ---
 
-## Step 5: Configuring our Web Server Code in VS Code 
+## Step 6: Configuring our Web Server Code in VS Code 
 
 - **Copy the contents of your server-local folder into your server-deployed folder**
     - This server-deployed folder will hold the code for the server that you run remotely with your version-5.
@@ -137,7 +152,7 @@ To connect your Render web server to your Neon database, you will need to update
 
 ---
 
-## Step 6: Updating our Frontend Code
+## Step 7: Updating our Frontend Code
 
 - **Copy the contents of your version-4 folder into your version-5 folder**
 - **Find your API’s URL in Render**
@@ -187,21 +202,21 @@ We also need to make sure our CORs is set up properly. In your `vite.config.js` 
         
 
 
-> 🎯 Step 6 complete: Now your `version-5` folder, which contains all of the frontend code, should be able to connect to your remote web server that you deployed on Render! 
+Now your `version-5` folder, which contains all of the frontend code, should be able to connect to your remote web server that you deployed on Render! 
 
 ---
 
-## Step 7: Deploy Frontend to Netlify
+## Step 8: Deploy Frontend to Netlify
 
 - In your Netlify account, deploy your `version-5` folder. [Refer to this guide if you need help with this.](https://docs.google.com/document/d/18jxCUA0bebCyYaIHy8aaKMgOQH4w5-b-iCGDWpV4K4M/edit?tab=t.jnwta4jrhylr#heading=h.scmsi7a6s9yz)
 - Open the Netlify deployment link in the browser.
 - Test your application by going to its Netlify deployment link. If it’s all working, then as you interact with your `version-5` site, you should see data show up in your tables on pgAdmin.
 
-> 🎯 Step 7 complete: YAY! You’ve deployed your frontend! 
+YAY! You’ve deployed your frontend! 
 
 ---
 
-## Step 8: Test your full-stack application
+## Step 9: Test your full-stack application
 
 - So at this point you’ve…
     - deployed your frontend `version-5` folder to Netlify
@@ -217,7 +232,7 @@ We also need to make sure our CORs is set up properly. In your `vite.config.js` 
         - Each time you open a country’s CountryDetail page, do you see its view count go up by 1?
     - If you answered yes to all the above questions, you’re done!
 
-> 🎯 Step 8 complete: YOU’RE DONE WITH VERSION 5! You’ve now built a full-stack application from start to finish, and deployed it remotely! Pat yourself on the back for all your hard work! 🎉
+YOU’RE DONE WITH VERSION 5! You’ve now built a full-stack application from start to finish, and deployed it remotely! Pat yourself on the back for all your hard work! 🎉
 
 ---
 
