@@ -25,7 +25,7 @@ You'll end the course having built Version 5, which is a full-stack web applicat
 | 0 | Frontend UI - Home page | No data stored. |
 | 1 | Frontend UI - Home page, SavedCountries page, CountryDetail page| No data stored. |
 | 2 | Local Storage | Data is stored locally in the browser with Local Storage. |
-| 3 | Fetch API | Data is stored remotely in a backend provided by the instructor. I have no control over the backend, but I can store and retrieve data by sending HTTP requests through the frontend. |
+| 3 | HTTP Requests with Fetch API | Data is stored remotely in a backend provided by the instructor. I have no control over the backend, but I can store and retrieve data by sending HTTP requests through the frontend. |
 | 4 | Local Postgres Database with API layer + Node.js | Data is stored in a local database, and I am responsible for how it is called and received (or placed) in the database. I control and have built all aspects of the data communication and the data storage in the database. |
 | 5 | Remote Postgres Database with API layer + Node.js | I have deployed my database and web server remotely! |
 
