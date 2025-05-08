@@ -104,6 +104,8 @@ Refer to this [react-router guide](https://docs.google.com/document/d/18jxCUA0be
 ### Stretch Goals (optional — only do these if you have completed _all_ of the above steps)
 
 Finished all the steps above? Amazing!   
-Keep leveling up by tackling this next challenge:
-- 🧾 Creating the form on the SavedCountries page  
+Keep leveling up by tackling these next challenges:
+1. 🧾 Creating the form on the SavedCountries page  
   [Figma Design for the Form](https://www.figma.com/design/YuEMNteoQic0h6RRiYprpV/Countries-API-Project?node-id=1-329&t=eKfO5eJcdQC03CrI-4)
+2. Deploying your `version-0` folder to Netlify by [following this Netlify guide](https://docs.google.com/document/d/18jxCUA0bebCyYaIHy8aaKMgOQH4w5-b-iCGDWpV4K4M/edit?tab=t.jnwta4jrhylr#heading=h.scmsi7a6s9yz)
+3. Sorting the countries on the Home page in alphabetical order 
