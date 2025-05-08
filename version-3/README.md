@@ -2,9 +2,9 @@
 
 ## 👋 Welcome!
 
-In Version 3, you’ll upgrade your project to connect with a real backend!
+In Version 3, you’ll upgrade your project to connect with a real API!
 
-Instead of storing data in local storage, you'll now store and retrieve data from a backend that’s provided for you. This version introduces how a frontend communicates with a backend using HTTP requests.
+Instead of storing data in local storage, you'll now store and retrieve data from an API that’s provided for you. This version introduces how a frontend communicates with a backend using HTTP requests.
 
 You’ll use the Fetch API to send and receive data — a critical skill for building real-world apps.
 
@@ -12,7 +12,7 @@ Coming up in Version 4, you'll go even further and build your own backend from s
 
 ## 🎯 Requirements for Version 3
 
-Include functionality in your Countries API project to store and retrieve these 3 types of data using the backend: 
+Include functionality in your Countries API project to store and retrieve these 3 types of data using the backend provided to you: 
 
 1. **Form data**
     - As a user, when I submit the form, my data should be stored in the backend
@@ -22,13 +22,15 @@ Include functionality in your Countries API project to store and retrieve these 
     - As a user, when I click the Save button in an individual country's page, I should be able to see that country's card in my Saved Countries page
 3. **View Count data** 
     - As a user, when I open a country's page, I should be able to see how many times the user has viewed this country.
-    - Every time I view a country's page, its view count should go up by 1. 
+    - Every time I view a country's page, its view count should go up by 1.
+  
+To use the API provided to you, check out the `api-documentation.md` file. 
 
 ## 🔗 Resources
 
 - **API:** You will use the [REST Countries API](https://restcountries.com) to get the country data and flag images
-- **Fetch API Guide** MDN Web Docs has a great [Fetch API guide](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) that teaches you how to make requests for data from the backend.
-- **API documentation** Check out the `api-documentation.md` file for all the API endpoints you can use to send and receive data. 
+- **Fetch API Guide:** MDN Web Docs has a great [Fetch API guide](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) that teaches you how to make requests for data from the backend.
+- **API documentation:** Check out the `api-documentation.md` file for all the API endpoints you can use to send and receive data. 
 
 ## 📝 Tips for building your project
 
