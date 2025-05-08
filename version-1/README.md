@@ -24,7 +24,7 @@ Stretch goals for the project (not required)
 - As a user, I can toggle the color scheme between light and dark mode
 - As a user, I can click through to the bordering countries on the detail page
 
-![Example of Version 1 of Countries API Project](https://github.com/user-attachments/assets/79094b58-6856-4491-8fa5-0a394f85f0b9)
+![Example of what Version 1 of Countries API Project should look like](https://github.com/user-attachments/assets/79094b58-6856-4491-8fa5-0a394f85f0b9)
 
 
 ## 🔗 Resources
