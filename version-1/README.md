@@ -75,8 +75,10 @@ Make sure you've finished Version 0 before moving on with the following steps.
 Finished all the above steps? Fantastic! 
 
 Here are a few next-level challenges to tackle:
-1. Create the search bar on the Home page
-2. Filter countries by region on the Home page
-3. Bordering countries on Country Detail page
-4. Light & Dark Mode
+1. 🏆 Sort the countries on the Home page in alphabetical order
+2. 🏆 Create the search bar on the Home page
+3. 🏆 Filter countries by region on the Home page
+4. 🏆 Show Bordering countries on Country Detail page
+5. 🏆 Light & Dark Mode on all pages
+
 You can find the [designs for all of these Stretch Goals in the Figma file.](https://www.figma.com/design/YuEMNteoQic0h6RRiYprpV/Countries-API-Project?node-id=1032-2&p=f&t=63CpCVNtkWIFmrAK-0) 
