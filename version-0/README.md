@@ -95,7 +95,10 @@ Refer to this [react-router guide](https://docs.google.com/document/d/18jxCUA0be
 ### Clean and Comment your code
 1. Clean up your code by renaming confusing variables, removing unused code, and organizing your logic. Your code should read like a newspaper: clear, easy to follow, and understandable at a glance.
 2. Comment your code generously — Future You will thank you. You’ll be building on top of this project over the next 3 months, so help yourself out by writing clear, helpful comments that explain what your code is doing. Trust us, it will save you time and confusion later.
-3. Don't forget to push your code to Github! 
+3. Don't forget to push your code to Github!
+
+### Deploy to Netlify
+1. Deploy your `version-0` folder to Netlify by [following this Netlify guide](https://docs.google.com/document/d/18jxCUA0bebCyYaIHy8aaKMgOQH4w5-b-iCGDWpV4K4M/edit?tab=t.jnwta4jrhylr#heading=h.scmsi7a6s9yz)
 
 ### Submit to Canvas, and prepare for your demo 
 1. Submit the Github repo link to Canvas.
@@ -106,5 +109,4 @@ Refer to this [react-router guide](https://docs.google.com/document/d/18jxCUA0be
 Finished all the steps above? Amazing!   
 Keep leveling up by tackling these next challenges:
 1. 🏆 Create the form on the SavedCountries page based on this [Figma Design for the Form](https://www.figma.com/design/YuEMNteoQic0h6RRiYprpV/Countries-API-Project?node-id=1-329&t=eKfO5eJcdQC03CrI-4)
-2. 🏆 Deploy your `version-0` folder to Netlify by [following this Netlify guide](https://docs.google.com/document/d/18jxCUA0bebCyYaIHy8aaKMgOQH4w5-b-iCGDWpV4K4M/edit?tab=t.jnwta4jrhylr#heading=h.scmsi7a6s9yz)
-3. 🏆 Sort the countries on the Home page in alphabetical order 
+2. 🏆 Sort the countries on the Home page in alphabetical order 
