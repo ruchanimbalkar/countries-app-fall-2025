@@ -21,10 +21,11 @@ Add functionality to store the following data in Local Storage:
     - As a user, when I click the Save button in an individual country's page, I should be able to see that country's card in my Saved Countries page
 3. **View Count data** 
     - As a user, when I open a country's page, I should be able to see how many times the user has viewed this country.
-    - Every time I view a country's page, its view count should go up by 1. 
+    - Every time I view a country's page, its view count should go up by 1.
 
 ## 🔗 Resources
 
+- **Figma Designs:** Check out the [Figma designs](https://www.figma.com/design/YuEMNteoQic0h6RRiYprpV/Countries-API-Project?node-id=1404-2&p=f&t=ebcCUsOp0YVNRmYK-0) to see how data should be rendered to the page. 
 - **Local Storage guide on freeCodeCamp:** Learn how to use Local Storage via [this tutorial on freeCodeCamp](https://www.freecodecamp.org/news/use-local-storage-in-modern-applications/)
 - **Local Storage demo on Youtube:** [This video](https://www.youtube.com/watch?v=AUOzvFzdIk4) gives a quick example of using Local Storage in Javascript
 - **API:** You will use the [REST Countries API](https://restcountries.com) to get the country data and flag images
