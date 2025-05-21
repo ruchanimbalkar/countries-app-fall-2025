@@ -110,3 +110,4 @@ Finished all the steps above? Amazing!
 Keep leveling up by tackling these next challenges:
 1. 🏆 Create the form on the SavedCountries page based on this [Figma Design for the Form](https://www.figma.com/design/YuEMNteoQic0h6RRiYprpV/Countries-API-Project?node-id=1-329&t=eKfO5eJcdQC03CrI-4)
 2. 🏆 Sort the countries on the Home page in alphabetical order
+3. 🏆 Deploy your version-0 folder to Netlify via your Github repo. In your Netlify Deploy settings, you will need to specify the folder that you want to deploy. Check out [this guide to help you](https://docs.google.com/document/d/18jxCUA0bebCyYaIHy8aaKMgOQH4w5-b-iCGDWpV4K4M/edit?tab=t.jnwta4jrhylr#heading=h.scmsi7a6s9yz).
