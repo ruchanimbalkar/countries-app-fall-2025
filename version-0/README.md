@@ -2,7 +2,7 @@
 
 ## 👋 Welcome!
 
-Your challenge is to build a website with React.js that pulls country data from the `localData.js` file and displays it like the designs.
+Your challenge is to build a website with React.js that pulls country data from the `localData.js` file and displays it like the [Figma designs](https://www.figma.com/design/YuEMNteoQic0h6RRiYprpV/Countries-API-Project?node-id=1045-2&p=f&t=T2oSD2lU7TuxaG13-0).
 
 ## 🎯 Requirements for Version 0
 
@@ -10,7 +10,7 @@ In Version 0, you'll build a mobile-responsive React app that:
 
 - Shows all countries on the Home page using a reusable CountryCard component
 - Displays country data from the `localData.js` file 
-- Is styled according to provided Figma designs
+- Is styled according to provided [Figma designs](https://www.figma.com/design/YuEMNteoQic0h6RRiYprpV/Countries-API-Project?node-id=1045-2&p=f&t=T2oSD2lU7TuxaG13-0)
 
 ![Example of Version 0 project](https://github.com/user-attachments/assets/79094b58-6856-4491-8fa5-0a394f85f0b9)
 
@@ -109,4 +109,4 @@ Refer to this [react-router guide](https://docs.google.com/document/d/18jxCUA0be
 Finished all the steps above? Amazing!   
 Keep leveling up by tackling these next challenges:
 1. 🏆 Create the form on the SavedCountries page based on this [Figma Design for the Form](https://www.figma.com/design/YuEMNteoQic0h6RRiYprpV/Countries-API-Project?node-id=1-329&t=eKfO5eJcdQC03CrI-4)
-2. 🏆 Sort the countries on the Home page in alphabetical order 
+2. 🏆 Sort the countries on the Home page in alphabetical order
