@@ -2,34 +2,33 @@
 
 ## 👋 Welcome!
 
-Your challenge is to build a website with React.js that pulls country data from the [REST Countries API](https://restcountries.com) and displays it like the designs.
+Your challenge is to build a website with React.js that pulls country data from the [REST Countries API](https://restcountries.com) and displays it like the [Figma designs](https://www.figma.com/design/YuEMNteoQic0h6RRiYprpV/Countries-API-Project?node-id=0-1).
 
 ## 🎯 Requirements for Version 1
 
 In Version 1, you'll build a mobile-responsive React app that:
 
 - Displays country data from the [REST Countries API](https://restcountries.com), or from `localData.js` file as a backup when the API is down
-- Is styled according to provided Figma designs
-- Uses `react-router` to navigate between pages
-- Includes: Home, SavedCountries, and CountryDetail pages
+- Is styled according to provided [Figma designs](https://www.figma.com/design/YuEMNteoQic0h6RRiYprpV/Countries-API-Project?node-id=0-1)
+- Uses `react-router` to navigate between Home, SavedCountries, and CountryDetail pages
 - Deployed to a Netlify URL
-- As a user, I can see all countries on the Home page, with data displayed about each country
-- As a user, I can submit a form with my profile information on the Saved Countries page 
-- As a user, I can click on a country to see more detailed information on a separate page 
+- As a user, when I view the Home page, I can see all countries with API data displayed about each country
+- As a user, when I view the Saved Countries page, I can submit a form with my profile information
+- As a user, when I click on a CountryCard from the Home page, I will see information about that specific country
 
 Stretch goals for the project (not required)
 
-- As a user, I can search for a country using an `input` field
-- As a user, I can filter countries by region
+- As a user, I can search for a country using an `input` field on the Home page
+- As a user, I can filter countries by region on the Home page
 - As a user, I can toggle the color scheme between light and dark mode
-- As a user, I can click through to the bordering countries on the detail page
+- As a user, I can click through to the bordering countries on the CountryDetail page
 
 ![Example of what Version 1 of Countries API Project should look like](https://github.com/user-attachments/assets/79094b58-6856-4491-8fa5-0a394f85f0b9)
 
 
 ## 🔗 Resources
 
-- **Designs:** You will need to use this [Figma file](https://www.figma.com/design/YuEMNteoQic0h6RRiYprpV/Countries-API-Project?node-id=1045-2&p=f&t=T2oSD2lU7TuxaG13-0) for the designs
+- **Designs:** You will need to use this [Figma file](https://www.figma.com/design/YuEMNteoQic0h6RRiYprpV/Countries-API-Project?node-id=0-1) for the designs
 - **Style Guide:** Refer to the `style-guide.md` file for info about the color palette, fonts, and design.
 - **API:** You will use the [REST Countries API](https://restcountries.com) to get the country data and flag images
 
@@ -59,8 +58,9 @@ Make sure you've finished Version 0 before moving on with the following steps.
 3. Push your code to Github!
 
 ### Create the CountryDetail page
-1. Create the CountryDetail page and and style it according to the designs.
-2. Push your code to Github!
+1. Create the CountryDetail page and and style it according to the Figma designs.
+2. Implement [dynamic routing with React Router by following this guide](https://docs.google.com/document/d/18jxCUA0bebCyYaIHy8aaKMgOQH4w5-b-iCGDWpV4K4M/edit?tab=t.f13uxxkk1u49#heading=h.k4m41u3ojj4d). This allows you to show details about a specific country based on which country you clicked on. 
+3. Push your code to Github!
 
 ### Clean and Comment your code 
 1. Clean up your code by renaming confusing variables, removing unused code, and organizing your logic. Your code should read like a newspaper: clear, easy to follow, and understandable at a glance.
