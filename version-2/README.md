@@ -3,9 +3,9 @@
 ## 👋 Welcome!
 
 Version 2 builds on the Version 1 of the Countries API app by saving data in the browser using Local Storage. Your application will now remember:
-- the Form data
-- Saved Countries data
-- How many times each country has been viewed
+- Form data: a user's profile information when they submit the form 
+- Saved Countries data: which countries the user has saved
+- Country Count data: How many times each country has been viewed
 
 By storing persistent data, your app will become more personal, dynamic, and interactive!
 
@@ -15,7 +15,7 @@ Add functionality to store the following data in Local Storage:
 
 1. **Form data**
     - As a user, when I submit the form, my data should be stored in Local Storage.
-    - As a user, if I have already submitted the form, I should see "Welcome, [my name]!" instead of the form. 
+    - As a user, if I have already submitted the form, I should see "Welcome, [user name]!" above the Form on the Saved Countries page. 
 2. **Saved Countries data**
     - As a user, on my Saved Countries page, I should be able to see all of the Saved Countries.
     - As a user, when I click the Save button in an individual country's page, I should be able to see that country's card in my Saved Countries page
@@ -25,7 +25,7 @@ Add functionality to store the following data in Local Storage:
 
 ## 🔗 Resources
 
-- **Figma Designs:** Check out the [Figma designs](https://www.figma.com/design/YuEMNteoQic0h6RRiYprpV/Countries-API-Project?node-id=1404-2&p=f&t=ebcCUsOp0YVNRmYK-0) to see how data should be rendered to the page. 
+- **Figma Designs:** Check out the [Figma designs](https://www.figma.com/design/YuEMNteoQic0h6RRiYprpV/Countries-API-Project?node-id=1404-20) to see how data should be rendered to the page. 
 - **Local Storage guide on freeCodeCamp:** Learn how to use Local Storage via [this tutorial on freeCodeCamp](https://www.freecodecamp.org/news/use-local-storage-in-modern-applications/)
 - **Local Storage demo on Youtube:** [This video](https://www.youtube.com/watch?v=AUOzvFzdIk4) gives a quick example of using Local Storage in Javascript
 - **API:** You will use the [REST Countries API](https://restcountries.com) to get the country data and flag images
