@@ -48,7 +48,32 @@ Make sure you've finished Version 2 before starting.
 
 ### Review and Plan
 1. Take time to understand your current code: App.jsx, App.css, pages, and components.
-2. Think through where you will be storing and retrieving the 3 pieces of data (form, saved countries, and view count). 
+2. Think through where you will be storing and retrieving the 3 pieces of data (form, saved countries, and view count).
+
+### Replace the contents of your `vite.config.js` file
+1. Delete all of the code that's currently inside of your `vite.config.js` file
+2. In its place, copy and paste this code into your `vite.config.js` file:
+   ```
+    // vite.config.js
+    import { defineConfig } from "vite";
+    import react from "@vitejs/plugin-react";
+    
+    // https://vite.dev/config/
+    export default defineConfig({
+      server: {
+        proxy: {
+          "/api": {
+            target: "https://backend-answer-keys.onrender.com/",
+            changeOrigin: true,
+            secure: false,
+            rewrite: (path) => path.replace(/^\/api/, ""),
+          },
+        },
+      },
+      plugins: [react()],
+    });
+
+   ```
 
 ### Implement Form data
 1. Pseudo-code your plan to store and retrieve Form data. 
