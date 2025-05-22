@@ -64,9 +64,10 @@ Make sure you've finished Version 1 before moving on with the following steps.
 
 ### Storing View Count data 
 1. Pseudo-code what you will need to do to store and retrieve the View Count data. 
-2. When the user views a country's CountryDetail page, that country's view count should go up by 1. Also, the user should see how many times the country has been viewed. 
-3. Don’t forget to comment your logic as you go!
-4. Push your code to Github!
+2. When the user views a country's CountryDetail page, that country's view count should go up by 1. Also, the user should see how many times the country has been viewed.
+3. Update your main.jsx file by removing the StrictMode component that's wrapping your app. It was included by default in Vite’s setup to help catch bugs, but it causes React to render components twice in development. This makes your view count go up by 2 instead of 1. To fix this, simply remove StrictMode from `main.jsx` so your view count behaves correctly.
+4. Don’t forget to comment your logic as you go!
+5. Push your code to Github!
 
 ### Clean and Comment your code 
 1. Clean up your code by renaming confusing variables, removing unused code, and organizing your logic. Your code should read like a newspaper: clear, easy to follow, and understandable at a glance.
