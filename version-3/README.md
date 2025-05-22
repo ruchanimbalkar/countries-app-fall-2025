@@ -74,6 +74,8 @@ Make sure you've finished Version 2 before starting.
     });
 
    ```
+### Review the API documentation
+1. Check out the `api-documentation.md` file to learn about all of the API endpoints you can use to store & retrieve the Form data, Saved Countries data, and Country Count data. 
 
 ### Implement Form data
 1. Pseudo-code your plan to store and retrieve Form data. 
