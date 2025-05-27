@@ -75,5 +75,6 @@ Make sure you've finished Version 1 before moving on with the following steps.
 Finished all the above steps? Fantastic! 🎉
 
 Here are a few next-level challenges to tackle:
-1. On the Saved Countries page, add an “Unsave” button so the user can remove a country from their saved list.
-2. Add a “Submit again” button to the Form so the user can re-submit if they’d like to.
+1. 🏆 On the Saved Countries page, add an “Unsave” button so the user can remove a country from their saved list.
+2. 🏆 Turn the Save button into a red heart ❤️ when the country has been saved, or a grey heart 🩶 when the country has not been saved. 
+3. 🏆 Add a “Submit again” button to the Form so the user can re-submit if they’d like to.
