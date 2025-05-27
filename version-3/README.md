@@ -74,6 +74,17 @@ Make sure you've finished Version 2 before starting.
     });
 
    ```
+
+### Add a `_redirects` file to your `public` folder
+1. Locate the `public` folder inside of your `src` folder in your `version-3` folder.
+2. Inside of the `public` folder, create a new file called `_redirects`. Make sure the spelling is exactly `_redirects`!
+3. Inside of this file, copy and paste this code:
+   ```
+    /api/* https://backend-answer-keys.onrender.com/:splat 200
+    /\* /index.html 404
+    /* /index.html 200
+   ```
+
 ### Review the API documentation
 1. Check out the `api-documentation.md` file to learn about all of the API endpoints you can use to store & retrieve the Form data, Saved Countries data, and Country Count data. 
 
