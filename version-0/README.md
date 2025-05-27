@@ -55,14 +55,6 @@ This component maps over the array of data from the `localData.js` file and rend
 ![CountryCardList component which displays a list of CountryCard components](https://github.com/user-attachments/assets/b69c6d6b-e06c-440f-8b1a-a342fc16f245)
 
 
-## 📝 Tips for building your project
-
-1. **Pseudo-code before you write any code!** Look through the designs to plan out how you'll tackle the project. Write down your plan somewhere in this README or in your code.
-2. **Work on one feature at a time.** Finish one feature first before you move onto the next thing. Test as you go, routinely checking your site in the browser and making sure there are no errors before moving on. 
-3. **Comment your code generously — Future You will thank you.** You’ll be building on top of this project over the next 3 months, so help yourself out by writing clear, helpful comments that explain what your code is doing. Trust us, it will save you time and confusion later.
-4. **Clean up your code as you go**. Rename confusing variables, remove unused code, and organize your logic. Your code should read like a newspaper: clear, easy to follow, and understandable at a glance.
-
-
 ## 🚀 Roadmap: Step-by-step guide to building your project
 
 ### Fork & Clone the Github repo 
