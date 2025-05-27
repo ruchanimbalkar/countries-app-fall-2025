@@ -155,3 +155,24 @@ Success! User has been added.
 ```
 Success! The country is saved.
 ```
+
+---
+
+### 🔹 POST `/unsave-one-country`
+
+**Description:** Unsaves a country name if it has been saved. 
+
+**Request Body:**
+
+```
+{
+  "country_name": "Brazil"
+}
+```
+
+**Response:**
+
+```
+Success! The country is unsaved.
+```
+
