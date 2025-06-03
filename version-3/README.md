@@ -42,9 +42,9 @@ To use the API provided to you, check out the `api-documentation.md` file.
 ## 🚀 Roadmap: Step-by-step guide to building Version 3
 Make sure you've finished Version 2 before starting. 
 
-### Project Setup: Copy your files over 
+###  Project Setup: Copy your files over 
 1. Copy all of the files from your `version-2` folder and paste them into your `version-3` folder
-2. Push your code to Github! Your `version-2` code will serve as the starting point for `version-3`. 
+2. Push your code to Github! Your `version-2` code will serve as the starting point for `version-3`.
 
 ### Review and Plan
 1. Take time to understand your current code: App.jsx, App.css, pages, and components.
@@ -90,22 +90,21 @@ Make sure you've finished Version 2 before starting.
 
 ### Implement Form data
 1. Pseudo-code your plan to store and retrieve Form data. 
-2. When the user submits the form, send the form data to the backend.
-3. If the user has already submitted the form, display “Welcome, [name]!” instead.
+2. Store the data with a POST request: When the user submits the form, send the form data to the backend.
+3. Retrieve the data with a GET request: If the user has already submitted the form, display “Welcome, [name]!” instead.
 4. Add comments explaining your logic so that Future You can understand it later.
 5. Push your code to Github! 
 
 ### Implement Saved Countries data
 1. Pseudo-code your plan to store and retrieve Saved Countries data.
-2. When the user saves a country, send that country's data to the backend.
-3. Retrieve and display saved countries on the Saved Countries page.
+2. Store the data with a POST request: When the user saves a country, send that country's data to the backend.
+3. Retrieve the data with a GET request: Retrieve and display saved countries on the Saved Countries page.
 4. Add comments explaining your logic so that Future You can understand it later.
 5. Push your code to Github!
 
 ### Implement View Count data 
 1. Pseudo-code your plan for tracking the View Count data. 
-2. Each time the user views a country's CountryDetail page, increase its view count by 1.
-3. Display the updated view count on the country's CountryDetail page. 
+2. Store the data with a POST request: Each time the user views a country's CountryDetail page, update its view count by sending a POST request to the API. In the response, you will get back the new count within an object: display the new count on the country's CountryDetail page. 
 4. Add comments explaining your logic so that Future You can understand it later.
 5. Push your code to Github!
 
