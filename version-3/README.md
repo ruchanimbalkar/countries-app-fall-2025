@@ -42,15 +42,19 @@ To use the API provided to you, check out the `api-documentation.md` file.
 ## 🚀 Roadmap: Step-by-step guide to building Version 3
 Make sure you've finished Version 2 before starting. 
 
+### Review the API documentation
+1. Check out the `api-documentation.md` file to learn about all of the API endpoints you can use to store & retrieve the Form data, Saved Countries data, and Country Count data.
+
+### Plan and Pseudo-code
+1. Take time to understand your current code: App.jsx, App.css, pages, and components.
+2. Think through where you will be storing and retrieving the 3 pieces of data (form, saved countries, and view count).
+3. Pseudo-code the data flow for the 3 pieces of data. 
+
 ###  Project Setup: Copy your files over 
 1. Copy all of the files from your `version-2` folder and paste them into your `version-3` folder
 2. Push your code to Github! Your `version-2` code will serve as the starting point for `version-3`.
 
-### Review and Plan
-1. Take time to understand your current code: App.jsx, App.css, pages, and components.
-2. Think through where you will be storing and retrieving the 3 pieces of data (form, saved countries, and view count).
-
-### Replace the contents of your `vite.config.js` file
+### Project Setup: Replace the contents of your `vite.config.js` file
 1. Delete all of the code that's currently inside of your `vite.config.js` file
 2. In its place, copy and paste this code into your `vite.config.js` file:
    ```
@@ -75,7 +79,7 @@ Make sure you've finished Version 2 before starting.
 
    ```
 
-### Add a `_redirects` file to your `public` folder
+### Project Setup: Add a `_redirects` file to your `public` folder
 1. Locate the `public` folder inside of your `src` folder in your `version-3` folder.
 2. Inside of the `public` folder, create a new file called `_redirects`. Make sure the spelling is exactly `_redirects`!
 3. Inside of this file, copy and paste this code:
@@ -84,9 +88,6 @@ Make sure you've finished Version 2 before starting.
     /\* /index.html 404
     /* /index.html 200
    ```
-
-### Review the API documentation
-1. Check out the `api-documentation.md` file to learn about all of the API endpoints you can use to store & retrieve the Form data, Saved Countries data, and Country Count data. 
 
 ### 🎯 Milestone: Form data
 1. Pseudo-code your plan to store and retrieve Form data. 
