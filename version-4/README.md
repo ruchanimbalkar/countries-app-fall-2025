@@ -21,7 +21,7 @@ Build a working backend that allows your frontend to store and retrieve the foll
 
 1. **Form data**
     - As a user, when I submit the form, my data should be stored in a PostgreSQL database
-    - If I’ve already submitted the form, I should see “Welcome, [my name]!” instead of the form
+    - If I’ve already submitted the form, I should see “Welcome, [my name]!” above the form on the Saved Countries page
 
 2. **Saved Countries**
     - When I click the Save button on a country’s page, that country should be saved in the database
