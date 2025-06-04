@@ -41,21 +41,21 @@ Make sure you've finished Version 1 before moving on with the following steps.
 ### Review your code 
 1. Before you jump into writing and re-factoring code for your Version 2, first you should review what you've got so far. Review the code in the App.jsx file, the App.css file, each page, and each component. Consider where you will be storing and retrieving with the 3 pieces of data (form, saved countries, and view count). 
 
-### Storing Form data
+### 🎯 Milestone: Form data
 1. Pseudo-code what you will need to do to store and retrieve the Form data. 
 2. Work on storing Form data in Local Storage. When the user submits the form, the form data should be stored in Local Storage.
 3. Work on retrieving Form data from Local Storage. If the user has already submitted the Form, display "Welcome, {user}!" instead of the Form.
 4. Comment the code you wrote so that Future You can understand it later.
 5. Push your code to Github! 
 
-### Storing Saved Countries data
+### 🎯 Milestone: Saved Countries data
 1. Pseudo-code what you will need to do to store and retrieve the Saved Countries data.
 2. Work on saving a country in Local Storage. When the user saves a country, store the country's data in Local Storage.
 3. Work on retrieving the saved countries data from Local Storage, so that they show on the Saved Countries page. 
 4. Don’t forget to comment your logic as you go!
 5. Push your code to Github!
 
-### Storing View Count data 
+### 🎯 Milestone: View Count data 
 1. Pseudo-code what you will need to do to store and retrieve the View Count data. 
 2. When the user views a country's CountryDetail page, that country's view count should go up by 1. Also, the user should see how many times the country has been viewed.
 3. Update your main.jsx file by removing the StrictMode component that's wrapping your app. It was included by default in Vite’s setup to help catch bugs, but it causes React to render components twice in development. This makes your view count go up by 2 instead of 1. To fix this, simply remove StrictMode from `main.jsx` so your view count behaves correctly.
