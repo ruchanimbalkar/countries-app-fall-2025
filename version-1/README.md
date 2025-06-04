@@ -35,8 +35,9 @@ Make sure you've finished Version 0 before moving on with the following steps.
 
 ### Create API Call to REST Countries API
 1. In App.jsx, create API call that pulls countries data from the [REST Countries API](https://restcountries.com) using the `useEffect` hook
-2. Display countries data from API call on the Home page, instead of displaying data from `data.json`
-3. Push your code to Github!
+2. Pass the countries API data down as a prop from the App component as a prop into the 3 pages: Home page, Saved Countries page, and CountryDetail page
+3. Display countries data from API call on the Home page, instead of displaying data from `data.json`
+4. Push your code to Github!
 
 ### Build the SavedCountries Page
 1. In SavedCountries.jsx, create the Form so that the user can submit their profile information
