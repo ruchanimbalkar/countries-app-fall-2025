@@ -62,35 +62,31 @@ Build a working backend that allows your frontend to store and retrieve the foll
 
 ## 🚀 Roadmap: Step-by-step guide to building Version 4
 
+### Set up your PostgreSQL database on Neon
+1. Use Neon.tech to:
+  - Create a new database
+  - Create tables in your database for form data, saved countries, and view counts
+
 ### Set up your server
 1. Create a `src` folder for `server-local`
 2. Run `npm init` to create your `package.json` file
 3. Install the following `npm` packages: `express`, `pg`
-4. Create your base server file (e.g. `index.js`) and test a simple `GET /` route
-
-### Set up your PostgreSQL database
-1. Use pgAdmin to:
-  - Create a new database
-  - Create tables for form data, saved countries, and view counts
-2. Write out your table schemas before creating them!
+4. Create your base server file (e.g. `index.js`) and make a simple `GET /` API endpoint to check that your server's boilerplate is all correct
 
 ### Connect your backend to the database
 1. Use the `pg` library to set up a pool or client to query the database
 2. Test your connection and queries using a simple route
 
-### Build API endpoints
+#### 🎯 Milestone: Build API Endpoints for Form data
+- `POST /add-one-user`: Save submitted form data
+- `GET /newest-user`: Return the form data if it exists
 
-#### Form data
-- `POST /form`: Save submitted form data
-- `GET /form`: Return the form data if it exists
+### 🎯 Milestone: Build API Endpoints for Saved Countries
+- `POST /save-one-country`: Save a country
+- `GET /get-all-saved-countries`: Return all saved countries
 
-#### Saved Countries
-- `POST /saved-countries`: Save a country
-- `GET /saved-countries`: Return all saved countries
-
-#### View Count
-- `POST /view-count/:countryCode`: Increment the view count
-- `GET /view-count/:countryCode`: Return the current count
+### 🎯 Milestone: Build API Endpoints for Country Count
+- `POST /update-one-country-count`: Increment the view count
 
 ### Connect your frontend to your backend
 1. Update your `vite.config.js` file so that it fetches data from `http://localhost:3000` as the base URL
@@ -113,5 +109,5 @@ Build a working backend that allows your frontend to store and retrieve the foll
 
 Finished the main requirements? Here are some bonus challenges:
 
-- Add a “Delete” route to unsave a country
-- Add a “Reset Form” feature that lets the user re-submit the form
+- 🏆 Add a “Delete” route to unsave a country
+- 🏆 Add a “Reset Form” feature that lets the user re-submit the form
