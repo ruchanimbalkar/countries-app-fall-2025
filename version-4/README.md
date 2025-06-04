@@ -2,12 +2,12 @@
 
 ## 👋 Welcome!
 
-Now it’s time to build your own backend from scratch!  
-In this version, you'll:
+Now it’s time to build your own backend from scratch! 
 
-- Set up a PostgreSQL database using **pgAdmin**
+In this version, you'll:
+- Set up a PostgreSQL database using **Neon.tech**
 - Build a server using **Node.js** and **Express**
-- Handle HTTP requests to store and retrieve data
+- Create API endpoints that handle HTTP requests to store and retrieve data
 
 This version gives you real-world, hands-on experience designing and connecting your own backend services — a major milestone in full-stack development!
 
@@ -63,22 +63,26 @@ Build a working backend that allows your frontend to store and retrieve the foll
 ## 🚀 Roadmap: Step-by-step guide to building Version 4
 
 ### 🎯 Milestone: Create your database schema
-1. Write PostgreSQL code that will do the following:
-   a. Create the 3 tables: users, saved countries, and country counts
-   b. Insert at least 3 rows of data into each of the 3 tables.
-   c. Create the SQL queries that your project will need in order to store and retrieve the Form data, Saved Countries data, and Country Count data. 
+1. Write PostgreSQL code to:
+   a. Create 3 tables: `users`, `saved_countries`, and `country_counts`
+   b. Insert at least 3 rows of sample data into each table
+   c. Write SQL queries your API will need to:
+        - Store and retrieve Form data
+        - Store and retrieve Saved Countries data
+        - Store and retrieve Country Count data
 
 ### 🎯 Milestone: Set up your PostgreSQL database on Neon
-1. Use Neon.tech and your database schema to:
+1. Use Neon.tech to:
   - Create a new database
-  - Create tables in your database for form data, saved countries, and view counts
-  - Insert at least 3 rows of data into each table 
+  - Set up your schema (create the 3 tables and insert rows of sample data)
+  - Confirm that the data was inserted successfully
 
-### Set up your server
-1. Create a `src` folder for `server-local`
+### Set up your server in the `server-local` folder
+1. In the terminal, `cd` into your `server-local` folder
 2. Run `npm init` to create your `package.json` file
 3. Install the following `npm` packages: `express` and `pg`
-4. Create your server file called `index.js`
+4. Create a `src` folder inside of the `server-local` folder
+5. In the `src` folder, create your new server file called `index.js`. This file is where you will build all of your API endpoints! 
 
 ### 🎯 Milestone: Build API Endpoints for Form data
 - `POST /add-one-user`: Save submitted form data
