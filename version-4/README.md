@@ -62,31 +62,37 @@ Build a working backend that allows your frontend to store and retrieve the foll
 
 ## 🚀 Roadmap: Step-by-step guide to building Version 4
 
-### Set up your PostgreSQL database on Neon
-1. Use Neon.tech to:
+### 🎯 Milestone: Create your database schema
+1. Write PostgreSQL code that will do the following:
+   a. Create the 3 tables: users, saved countries, and country counts
+   b. Insert at least 3 rows of data into each of the 3 tables.
+   c. Create the SQL queries that your project will need in order to store and retrieve the Form data, Saved Countries data, and Country Count data. 
+
+### 🎯 Milestone: Set up your PostgreSQL database on Neon
+1. Use Neon.tech and your database schema to:
   - Create a new database
   - Create tables in your database for form data, saved countries, and view counts
+  - Insert at least 3 rows of data into each table 
 
 ### Set up your server
 1. Create a `src` folder for `server-local`
 2. Run `npm init` to create your `package.json` file
-3. Install the following `npm` packages: `express`, `pg`
-4. Create your base server file (e.g. `index.js`) and make a simple `GET /` API endpoint to check that your server's boilerplate is all correct
+3. Install the following `npm` packages: `express` and `pg`
+4. Create your server file called `index.js`
 
-### Connect your backend to the database
-1. Use the `pg` library to set up a pool or client to query the database
-2. Test your connection and queries using a simple route
-
-#### 🎯 Milestone: Build API Endpoints for Form data
+### 🎯 Milestone: Build API Endpoints for Form data
 - `POST /add-one-user`: Save submitted form data
 - `GET /newest-user`: Return the form data if it exists
+- Test your API endpoints in Postman to make sure they're working
 
 ### 🎯 Milestone: Build API Endpoints for Saved Countries
 - `POST /save-one-country`: Save a country
 - `GET /get-all-saved-countries`: Return all saved countries
+- Test your API endpoints in Postman to make sure they're working
 
-### 🎯 Milestone: Build API Endpoints for Country Count
+### 🎯 Milestone: Build API Endpoint for Country Count
 - `POST /update-one-country-count`: Increment the view count
+- Test your API endpoint in Postman to make sure they're working
 
 ### Connect your frontend to your backend
 1. Update your `vite.config.js` file so that it fetches data from `http://localhost:3000` as the base URL
