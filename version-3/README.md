@@ -88,20 +88,20 @@ Make sure you've finished Version 2 before starting.
 ### Review the API documentation
 1. Check out the `api-documentation.md` file to learn about all of the API endpoints you can use to store & retrieve the Form data, Saved Countries data, and Country Count data. 
 
-### Implement Form data
+### 🎯 Milestone: Form data
 1. Pseudo-code your plan to store and retrieve Form data. 
 2. Store the data with a `POST` request: When the user submits the form, send the form data to the backend.
 3. Retrieve the data with a `GET` request: If the user has already submitted the form, display “Welcome, [name]!” instead.
 4. Add comments explaining your logic so that Future You can understand it later.
 5. Push your code to Github! 
 
-### Implement View Count data 
+### 🎯 Milestone: View Count data 
 1. Pseudo-code your plan for tracking the View Count data. 
 2. Store the data with a `POST` request: Each time the user views a country's CountryDetail page, update its view count by sending a POST request to the API. In the response, you will get back the new count within an object: display the new count on the country's CountryDetail page. 
 3. Add comments explaining your logic so that Future You can understand it later.
 4. Push your code to Github!
 
-### Implement Saved Countries data
+### 🎯 Milestone: Saved Countries data
 1. Pseudo-code your plan to store and retrieve Saved Countries data.
 2. Store the data with a `POST` request: When the user saves a country, send that country's data to the backend.
 3. Retrieve the data with a `GET` request: Retrieve and display saved countries on the Saved Countries page.
