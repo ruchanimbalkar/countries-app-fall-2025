@@ -33,18 +33,18 @@ Make sure you've finished Version 0 before moving on with the following steps.
 2. Paste all of the files into your `version-1` folder
 3. Push your code to Github! You will use your `version-0` code as the starting point for your `version-1`. 
 
-### Create API Call to REST Countries API
+### 🎯 Milestone: Create API Call to REST Countries API
 1. In App.jsx, create API call that pulls countries data from the [REST Countries API](https://restcountries.com) using the `useEffect` hook
 2. Pass the countries API data down as a prop from the App component as a prop into the 3 pages: Home page, Saved Countries page, and CountryDetail page
 3. Display countries data from API call on the Home page, instead of displaying data from `data.json`
 4. Push your code to Github!
 
-### Build the SavedCountries Page
+### 🎯 Milestone: Build the SavedCountries Page
 1. In SavedCountries.jsx, create the Form so that the user can submit their profile information
 2. Style the Form according to the designs
 3. Push your code to Github!
 
-### Create the CountryDetail page
+### 🎯 Milestone: Create the CountryDetail page
 1. Create the CountryDetail page and and style it according to the Figma designs.
 2. Implement [dynamic routing with React Router by following this guide](https://docs.google.com/document/d/18jxCUA0bebCyYaIHy8aaKMgOQH4w5-b-iCGDWpV4K4M/edit?tab=t.f13uxxkk1u49#heading=h.k4m41u3ojj4d). This allows you to show details about a specific country based on which country you clicked on. 
 3. Push your code to Github!
