@@ -16,7 +16,7 @@ Include functionality in your Countries API project to store and retrieve these 
 
 1. **Form data**
     - As a user, when I submit the form, my data should be stored in the backend
-    - As a user, if I have already submitted the form, I should see "Welcome, [my name]!" instead of the form. 
+    - As a user, if I have already submitted the form, I should see "Welcome, [user name]!" above the Form on the Saved Countries page. 
 2. **Saved Countries data**
     - As a user, on my Saved Countries page, I should be able to see all of the Saved Countries.
     - As a user, when I click the Save button in an individual country's page, I should be able to see that country's card in my Saved Countries page
