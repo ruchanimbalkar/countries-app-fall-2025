@@ -11,6 +11,7 @@ In Version 0, you'll build a mobile-responsive React app that:
 - Shows all countries on the Home page using a reusable CountryCard component
 - Displays country data from the `localData.js` file 
 - Is styled according to provided [Figma designs](https://www.figma.com/design/YuEMNteoQic0h6RRiYprpV/Countries-API-Project?node-id=1045-2&p=f&t=T2oSD2lU7TuxaG13-0)
+- **Deployment to Netlify is NOT required. 
 
 ![Example of Version 0 project](https://github.com/user-attachments/assets/79094b58-6856-4491-8fa5-0a394f85f0b9)
 
@@ -83,9 +84,6 @@ Refer to this [react-router guide](https://docs.google.com/document/d/18jxCUA0be
 1. Clean up your code by renaming confusing variables, removing unused code, and organizing your logic. Your code should read like a newspaper: clear, easy to follow, and understandable at a glance.
 2. Comment your code generously — Future You will thank you. You’ll be building on top of this project over the next 3 months, so help yourself out by writing clear, helpful comments that explain what your code is doing. Trust us, it will save you time and confusion later.
 3. Don't forget to push your code to Github!
-
-### Deploy to Netlify
-1. Deploy your `version-0` folder to Netlify by [following this Netlify guide](https://docs.google.com/document/d/18jxCUA0bebCyYaIHy8aaKMgOQH4w5-b-iCGDWpV4K4M/edit?tab=t.jnwta4jrhylr#heading=h.scmsi7a6s9yz)
 
 ### Submit to Canvas, and prepare for your demo 
 1. Submit the Github repo link to Canvas.
