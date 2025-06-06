@@ -19,6 +19,7 @@ In Version 0, you'll build a mobile-responsive React app that:
 - **Designs:** You will need to use this [Figma file](https://www.figma.com/design/YuEMNteoQic0h6RRiYprpV/Countries-API-Project?node-id=1045-2&p=f&t=T2oSD2lU7TuxaG13-0) for the designs
 - **Style Guide:** Refer to the `style-guide.md` file for info about the color palette, fonts, and design.
 - **Local Countries Data:** You will use the `localData.js` file to get the country data and flag images
+- **Feeling stuck with React?** Understanding the core concepts is essential for building this project. If you need to strengthen your foundation, try working through the [React Tic-Tac-Toe tutorial](https://react.dev/learn/tutorial-tic-tac-toe) — it’s a great way to build confidence and learn by doing.
 
 ## 📖 Pages & Routes 
 
@@ -40,19 +41,13 @@ In addition, your App.jsx file should render a header with two links:
 
 ## ⚙️ Components 
 
-Your Version 0 should have the following 2 components: CountryCard and CountryCardList. 
+Your Version 0 should have the following component: CountryCard. 
 
 ### CountryCard 
 
 This component displays data for a single country 
 
 ![CountryCard component which displays data for a single country](https://github.com/user-attachments/assets/78528aa5-655c-4b2c-add7-319bfde63143)
-
-### CountryCardList 
-
-This component maps over the array of data from the `localData.js` file and renders a list of `CountryCard` components
-
-![CountryCardList component which displays a list of CountryCard components](https://github.com/user-attachments/assets/b69c6d6b-e06c-440f-8b1a-a342fc16f245)
 
 
 ## 🚀 Roadmap: Step-by-step guide to building your project
