@@ -11,7 +11,7 @@ In Version 0, you'll build a mobile-responsive React app that:
 - Shows all countries on the Home page using a reusable CountryCard component
 - Displays country data from the `localData.js` file 
 - Is styled according to provided [Figma designs](https://www.figma.com/design/YuEMNteoQic0h6RRiYprpV/Countries-API-Project?node-id=1045-2&p=f&t=T2oSD2lU7TuxaG13-0)
-- **Deployment to Netlify is NOT required. 
+- Deployment to Netlify is NOT required. 
 
 ![Example of Version 0 project](https://github.com/user-attachments/assets/79094b58-6856-4491-8fa5-0a394f85f0b9)
 
