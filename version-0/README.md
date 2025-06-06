@@ -19,7 +19,7 @@ In Version 0, you'll build a mobile-responsive React app that:
 - **Designs:** You will need to use this [Figma file](https://www.figma.com/design/YuEMNteoQic0h6RRiYprpV/Countries-API-Project?node-id=1045-2&p=f&t=T2oSD2lU7TuxaG13-0) for the designs
 - **Style Guide:** Refer to the `style-guide.md` file for info about the color palette, fonts, and design.
 - **Local Countries Data:** You will use the `localData.js` file to get the country data and flag images
-- **Feeling stuck with React?** Understanding the core concepts is essential for building this project. If you need to strengthen your foundation, try working through the [React Tic-Tac-Toe tutorial](https://react.dev/learn/tutorial-tic-tac-toe) — it’s a great way to build confidence and learn by doing.
+- **Feeling stuck with React?** A solid grasp of the core concepts is key to building this project. If you need to brush up, try working through the [React Tic-Tac-Toe tutorial](https://react.dev/learn/tutorial-tic-tac-toe).
 
 ## 📖 Pages & Routes 
 
