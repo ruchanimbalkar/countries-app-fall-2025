@@ -62,6 +62,12 @@ This component displays data for a single country
 2. In the `version-0` folder, create a new React project with [Vite](https://vite.dev/). Use this [How to create a new project with Vite guide](https://docs.google.com/document/d/18jxCUA0bebCyYaIHy8aaKMgOQH4w5-b-iCGDWpV4K4M/edit?tab=t.rxwa6murqe1y#heading=h.wvxq6966uco7) to help you. 
 3. Push your code to Github!
 
+### Set up files & folder structure
+1. In the `src` folder, create a `pages` folder
+2. In the `pages` folder, set up components for each page by making these 3 files: Home.jsx, SavedCountries.jsx, and CountryDetail.jsx
+3. In the `src` folder, create a `components` folder
+4. In the `components` folder, make a file called `CountryCard.jsx` 
+
 ### Set up Routes with `react-router`
 Refer to this [react-router guide](https://docs.google.com/document/d/18jxCUA0bebCyYaIHy8aaKMgOQH4w5-b-iCGDWpV4K4M/edit?tab=t.hbxxe6vmm0fq#heading=h.snu4ai1ffrgi) as you do the following steps:
 1. In the terminal, in your `version-0` folder, install the `react-router` package using the command `npm install react-router`. 
@@ -69,16 +75,14 @@ Refer to this [react-router guide](https://docs.google.com/document/d/18jxCUA0be
 3. In App.jsx, render a header that contains two links:
      - "Where in the world?" should link to the Home page
      - "Saved Countries" should link to the SavedCountries page
-4. In the `src` folder, create a `pages` folder
-5. In the `pages` folder, set up components for each page by making these 3 files: Home.jsx, SavedCountries.jsx, and CountryDetail.jsx
-6. In App.css, style the header 
-7. Don't forget to push your code to Github!
+4. In App.css, style the header 
+5. Don't forget to push your code to Github!
 
 ### In the Home page, display localData from `localData.js` file as CountryCard components
-1. In Home.jsx, import the `localData.js` file. This file contains all of the data about each country as an array of objects.  
-2. In Home.jsx, display the data for all countries as **CountryCard** components. 
-3. In App.css, style the Home page and CountryCard components according to the Figma designs
-4. Don't forget to push your code to Github!
+1. In Home.jsx, import the `localData.js` file. This file contains all of the data about each country as an array of objects.
+3. In Home.jsx, display the country data as **CountryCard** components. 
+4. In App.css, style the Home page and CountryCard components according to the Figma designs
+5. Don't forget to push your code to Github!
 
 ### Clean and Comment your code
 1. Clean up your code by renaming confusing variables, removing unused code, and organizing your logic. Your code should read like a newspaper: clear, easy to follow, and understandable at a glance.
