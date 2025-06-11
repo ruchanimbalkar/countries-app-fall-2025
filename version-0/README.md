@@ -66,7 +66,11 @@ This component displays data for a single country
 1. In the `src` folder, create a `pages` folder
 2. In the `pages` folder, set up components for each page by making these 3 files: Home.jsx, SavedCountries.jsx, and CountryDetail.jsx
 3. In the `src` folder, create a `components` folder
-4. In the `components` folder, make a file called `CountryCard.jsx` 
+4. In the `components` folder, make a file called `CountryCard.jsx`
+5. By now, your project's folder structure should look like this. Double check to make sure you have all the right files and folders before moving on:
+   
+![image](https://github.com/user-attachments/assets/19d923f4-1861-404d-9d1b-819951f99d06)
+
 
 ### Set up Routes with `react-router`
 Refer to this [react-router guide](https://docs.google.com/document/d/18jxCUA0bebCyYaIHy8aaKMgOQH4w5-b-iCGDWpV4K4M/edit?tab=t.hbxxe6vmm0fq#heading=h.snu4ai1ffrgi) as you do the following steps:
