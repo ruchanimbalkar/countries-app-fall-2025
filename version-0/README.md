@@ -60,7 +60,7 @@ This component displays data for a single country
 ### Create a new React project with Vite 
 1. In the terminal, navigate into your repo and then into the `version-0` folder
 2. In the `version-0` folder, create a new React project with [Vite](https://vite.dev/). Use this [How to create a new project with Vite guide](https://docs.google.com/document/d/18jxCUA0bebCyYaIHy8aaKMgOQH4w5-b-iCGDWpV4K4M/edit?tab=t.rxwa6murqe1y#heading=h.wvxq6966uco7) to help you. 
-3. Push your code to Github!
+3. Once you're done, commit your changes and push your code to GitHub.
 
 ### Set up files & folder structure
 1. In the `src` folder, create a `pages` folder
@@ -80,13 +80,17 @@ Refer to this [react-router guide](https://docs.google.com/document/d/18jxCUA0be
      - "Where in the world?" should link to the Home page
      - "Saved Countries" should link to the SavedCountries page
 4. In App.css, style the header 
-5. Don't forget to push your code to Github!
+5. Once you're done, commit your changes and push your code to GitHub.
 
 ### In the Home page, display localData from `localData.js` file as CountryCard components
-1. In Home.jsx, import the `localData.js` file. This file contains all of the data about each country as an array of objects.
-3. In Home.jsx, display the country data as **CountryCard** components. 
-4. In App.css, style the Home page and CountryCard components according to the Figma designs
-5. Don't forget to push your code to Github!
+1. In `App.jsx`, import the `localData.js` file. This file contains an array of country objects.
+2. In `App.jsx`, pass the data to the `Home` component using a prop called `countriesData`. 
+   ```
+   <Home countriesData={dataFromLocalFile} />
+   ```
+3. In `Home.jsx`, use the `countriesData` prop to render a list of `CountryCard` components—one for each country.
+4. In `App.css`, style the `Home` and `CountryCard` components to match the Figma designs.
+5. Once you're done, commit your changes and push your code to GitHub.
 
 ### Clean and Comment your code
 1. Clean up your code by renaming confusing variables, removing unused code, and organizing your logic. Your code should read like a newspaper: clear, easy to follow, and understandable at a glance.
