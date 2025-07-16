@@ -38,25 +38,8 @@ Build a working backend that allows your frontend to store and retrieve the foll
 - **Node.js + Express Starter**  
   [Node.js Docs](https://nodejs.org/en/docs), [Express Docs](https://expressjs.com/)
 
-- **PostgreSQL + pgAdmin Setup Guide**  
-  [Official pgAdmin Docs](https://www.pgadmin.org/docs/)
-
-- **SQL Crash Course**  
-  [SQL for Beginners - freeCodeCamp YouTube](https://www.youtube.com/watch?v=HXV3zeQKqGY)
-
 - **RESTful API Design**  
   [REST API Tutorial](https://restfulapi.net/)
-
----
-
-## 📝 Tips for building your project
-
-1. **Start small and test often.** Build one API endpoint at a time and test it with Postman.
-2. **Use clear, consistent endpoints.** Follow REST conventions:  
-   `GET /form`, `POST /form`, `GET /saved-countries`, `POST /view-count`, etc.
-3. **Don’t forget your `.env` file.** Store your database URL and port here — never hardcode secrets!
-4. **Comment your backend code** just like your frontend. Future You will thank you.
-5. **Use `console.log()` wisely.** Log helpful messages, especially in route handlers and database queries.
 
 ---
 
@@ -77,31 +60,40 @@ Build a working backend that allows your frontend to store and retrieve the foll
   - Set up your schema (create the 3 tables and insert rows of sample data)
   - Confirm that the data was inserted successfully
 
+### Copy your files over from `version-3` to `version-4`
+1. Copy all of the files from your `version-3` folder and paste them into your `version-4` folder
+1. Push your code to Github! Your `version-3` code will serve as the starting point for `version-4`.
+
+### Connect your frontend to your backend
+1. Look in your `version-4` folder. Locate your `vite.config.js` file. 
+2. Update your `vite.config.js` file so that it fetches data from `http://localhost:3000/` as the base URL
+
 ### Set up your server in the `server-local` folder
 1. In the terminal, `cd` into your `server-local` folder
-2. Run `npm init` to create your `package.json` file
-3. Install the following `npm` packages: `express` and `pg`
-4. Create a `src` folder inside of the `server-local` folder
-5. In the `src` folder, create your new server file called `index.js`. This file is where you will build all of your API endpoints! 
+2. Run `npm init -y` to create your `package.json` file, which will contain your project's information and list of dependencies 
+3. Add `"type": "module"` as a property to the `package.json` file
+4. Run `npm install express` and `npm install pg`. Once you do that, you should see `express` and `pg` listed as dependencies in your `package.json`. 
+5. Create a `src` folder inside of the `server-local` folder
+6. In the `src` folder, create your new server file called `index.js`. This file is where you will write your server code! 
 
 ### 🎯 Milestone: Build API Endpoints for Form data
 - `POST /add-one-user`: Save submitted form data
 - `GET /newest-user`: Return the form data if it exists
 - Test your API endpoints in Postman to make sure they're working
+- Test your API endpoints with your frontend
 
 ### 🎯 Milestone: Build API Endpoints for Saved Countries
 - `POST /save-one-country`: Save a country
 - `GET /get-all-saved-countries`: Return all saved countries
 - Test your API endpoints in Postman to make sure they're working
+- Test your API endpoints with your frontend
 
 ### 🎯 Milestone: Build API Endpoint for Country Count
 - `POST /update-one-country-count`: Increment the view count
 - Test your API endpoint in Postman to make sure they're working
+- Test your API endpoints with your frontend
 
-### Connect your frontend to your backend
-1. Update your `vite.config.js` file so that it fetches data from `http://localhost:3000` as the base URL
-
-### Test everything
+### Test everything again... and again! 
 1. Test all user flows: submitting the form, saving a country, viewing a country’s view count
 2. Check your database to make sure the data is updating correctly
 
@@ -119,5 +111,6 @@ Build a working backend that allows your frontend to store and retrieve the foll
 
 Finished the main requirements? Here are some bonus challenges:
 
-- 🏆 Add a “Delete” route to unsave a country
-- 🏆 Add a “Reset Form” feature that lets the user re-submit the form
+- 🏆 Add a “Delete” route to unsave a single country
+- 🏆 Add a “Clear” feature to unsave all countries
+- 🏆 Add a “Reset Count” feature to reset a country's count back to 0 
