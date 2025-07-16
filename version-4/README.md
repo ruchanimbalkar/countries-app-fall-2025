@@ -80,7 +80,21 @@ Build a working PostgreSQL database and Express API/server that allows your fron
 
 6. In the `server-local` folder, create a `src` folder
 7. In the `src` folder, create a file called `index.js`. This file is where you will write your server code!
-9. In the `src` folder, create a file called `config.js`. This file is where you will put your database access credentials. Copy over the code from the `config.js` file for your `06-recipe-API-server-SQL` project. Replace the `databaseUrl` with the one from _your_ Neon database. 
+
+### Connect your Neon-hosted PostgreSQL database to your Express server
+1. In the `src` folder, create a file called `config.js`. This file is where you will put your database access credentials.
+2. Copy the code from the `config.js` file for your `06-recipe-API-server-SQL` project. Paste that code into the `config.js` file in your `server-local` folder.
+3. Next, you need to get your Neon database's Connection string. To do this, go to the Neon.tech website and open up your Neon project. You should see a 'Connect to your database' section where you can click on the Connect button.
+
+    <img width="439" height="453" alt="Connect to the Neon database on your Neon project's dashboard" src="https://github.com/user-attachments/assets/c7c37881-3b58-4329-8078-a8cfab02f85d" />
+4. Once you click on the Connect button, you should see a window pop up with your database's Connection String. Choose _'Show password'_ on the bottom left to reveal the password. 
+    <img width="1066" height="417" alt="image" src="https://github.com/user-attachments/assets/e9d2711d-b3ba-485f-a599-f51b5f46c557" />
+5. Copy your database's Connection string, and paste it into your `config.js` file as the value of the `databaseUrl` property:
+    <img width="797" height="170" alt="Connection string as databaseUrl in the config.js file" src="https://github.com/user-attachments/assets/af6cf409-17ad-4b4e-a092-8fca0e7537ef" />
+
+
+
+
 
 ### Set up your server's boilerplate code 
 1. In your `server-local`'s `index.js` file, set up your server using the same boilerplate code as the `06-recipe-API-server-SQL` project. 
