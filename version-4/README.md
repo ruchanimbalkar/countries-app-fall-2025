@@ -17,7 +17,7 @@ Coming up in Version 5, you’ll deploy your full-stack app to the web and see e
 
 ## 🎯 Requirements for Version 4
 
-Build a working backend that allows your frontend to store and retrieve the following data:
+Build a working PostgreSQL database and Express API/server that allows your frontend to store and retrieve the following data:
 
 1. **Form data**
     - As a user, when I submit the form, my data should be stored in a PostgreSQL database
@@ -65,14 +65,14 @@ Build a working backend that allows your frontend to store and retrieve the foll
 1. Push your code to Github! Your `version-3` code will serve as the starting point for `version-4`.
 
 ### Connect your frontend to your backend
-1. Look in your `version-4` folder. Locate your `vite.config.js` file. 
+1. In your `version-4` folder, locate your `vite.config.js` file. 
 2. Update your `vite.config.js` file so that it fetches data from `http://localhost:3000/` as the base URL
 
 ### Set up your server in the `server-local` folder
 1. In the terminal, `cd` into your `server-local` folder
-2. Run `npm init -y` to create your `package.json` file, which will contain your project's information and list of dependencies 
+2. In the `server-local` folder, run `npm init -y` to create your `package.json` file, which will contain your project's information and list of dependencies 
 3. Add `"type": "module"` as a property to the `package.json` file
-4. Run `npm install express` and `npm install pg`. Once you do that, you should see `express` and `pg` listed as dependencies in your `package.json`. 
+4. In the `server-local` folder, run `npm install express` and `npm install pg`. Once you do that, you should see `express` and `pg` listed as dependencies in your `package.json`.
 5. Create a `src` folder inside of the `server-local` folder
 6. In the `src` folder, create your new server file called `index.js`. This file is where you will write your server code! 
 
