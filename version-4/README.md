@@ -73,8 +73,17 @@ Build a working PostgreSQL database and Express API/server that allows your fron
 2. In the `server-local` folder, run `npm init -y` to create your `package.json` file, which will contain your project's information and list of dependencies 
 3. Add `"type": "module"` as a property to the `package.json` file
 4. In the `server-local` folder, run `npm install express` and `npm install pg`. Once you do that, you should see `express` and `pg` listed as dependencies in your `package.json`.
-5. Create a `src` folder inside of the `server-local` folder
-6. In the `src` folder, create your new server file called `index.js`. This file is where you will write your server code! 
+5. In the `server-local` folder, create a `.gitignore` file. In this file, list the following files that Git should ignore: 
+
+        node_modules
+        config.js
+
+6. In the `server-local` folder, create a `src` folder
+7. In the `src` folder, create a file called `index.js`. This file is where you will write your server code!
+9. In the `src` folder, create a file called `config.js`. This file is where you will put your database access credentials. Copy over the code from the `config.js` file for your `06-recipe-API-server-SQL` project. Replace the `databaseUrl` with the one from _your_ Neon database. 
+
+### Set up your server's boilerplate code 
+1. In your `server-local`'s `index.js` file, set up your server using the same boilerplate code as the `06-recipe-API-server-SQL` project. 
 
 ### 🎯 Milestone: Build API Endpoints for Form data
 - `POST /add-one-user`: Save submitted form data
