@@ -17,26 +17,6 @@
 
 ---
 
-### 🔹 GET `/get-newest-user`
-
-**Description:** Retrieves the most recently added user.
-
-**Response:**
-
-```json
-[
-  {
-    "user_id": 42,
-    "name": "John Smith",
-    "country_name": "Canada",
-    "email": "john@example.com",
-    "bio": "Another bio"
-  }
-]
-```
-
----
-
 ### 🔹 GET `/get-all-users`
 
 **Description:** Retrieves all users in the system ordered by `user_id`.
@@ -152,6 +132,39 @@ Success! User has been added.
 
 ```
 Success! The country is saved.
+```
+
+---
+
+## 🌟 STRETCH GOALS 🌟
+
+Add these extra API endpoints as a bonus challenge! 
+
+## Overview
+
+| Resource         | Method | Endpoint                   | Description                                           |
+|------------------|--------|----------------------------|-------------------------------------------------------|
+| `users`          | GET    | /get-newest-user           | Retrieves the most recently added user.              |
+| `saved_countries`| POST   | /unsave-one-country        | Unsaves a country if it has been saved.     |
+
+---
+
+### 🔹 GET `/get-newest-user`
+
+**Description:** Retrieves the most recently added user.
+
+**Response:**
+
+```json
+[
+  {
+    "user_id": 42,
+    "name": "John Smith",
+    "country_name": "Canada",
+    "email": "john@example.com",
+    "bio": "Another bio"
+  }
+]
 ```
 
 ---
