@@ -35,11 +35,8 @@ Build a working PostgreSQL database and Express API/server that allows your fron
 
 ## 🔗 Resources
 
-- **Node.js + Express Starter**  
-  [Node.js Docs](https://nodejs.org/en/docs), [Express Docs](https://expressjs.com/)
-
-- **RESTful API Design**  
-  [REST API Tutorial](https://restfulapi.net/)
+- **API Documentation**  
+  Build your Countries API according to the [API Documentation](https://github.com/AnnieCannons/countries-api-project-may-2025/blob/main/version-4/api-documentation.md)
 
 ---
 
@@ -91,10 +88,6 @@ Build a working PostgreSQL database and Express API/server that allows your fron
     <img width="1066" height="417" alt="image" src="https://github.com/user-attachments/assets/e9d2711d-b3ba-485f-a599-f51b5f46c557" />
 5. Copy your database's Connection string, and paste it into your `config.js` file as the value of the `databaseUrl` property:
     <img width="797" height="170" alt="Connection string as databaseUrl in the config.js file" src="https://github.com/user-attachments/assets/af6cf409-17ad-4b4e-a092-8fca0e7537ef" />
-
-
-
-
 
 ### Set up your server's boilerplate code 
 1. In your `server-local`'s `index.js` file, set up your server using the same boilerplate code as the `06-recipe-API-server-SQL` project. 
