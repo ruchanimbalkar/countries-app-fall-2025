@@ -99,7 +99,8 @@ The `client` folder will contain all the frontend code, and the `server` folder 
 2. Copy the code from the `config.js` file for your `06-recipe-API-server-SQL` project. Paste that code into the `config.js` file in your `server` folder.
 3. Next, you need to get your Neon database's Connection string. To do this, go to the Neon.tech website and open up your Neon project. You should see a 'Connect to your database' section where you can click on the Connect button.
 
-    <img width="439" height="453" alt="Connect to the Neon database on your Neon project's dashboard" src="https://github.com/user-attachments/assets/c7c37881-3b58-4329-8078-a8cfab02f85d" />
+    <img width="1073" height="425" alt="Connect to the Neon database on your Neon project's dashboard" src="https://github.com/user-attachments/assets/d42a10f0-c414-43dc-a9ac-7ef978d424ee" />
+
 4. Once you click on the Connect button, you should see a window pop up with your database's Connection String. Choose _'Show password'_ on the bottom left to reveal the password. 
     <img width="1066" height="417" alt="image" src="https://github.com/user-attachments/assets/e9d2711d-b3ba-485f-a599-f51b5f46c557" />
 5. Copy your database's Connection string, and paste it into your `config.js` file as the value of the `databaseUrl` property:
