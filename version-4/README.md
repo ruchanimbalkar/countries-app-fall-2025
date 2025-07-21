@@ -42,6 +42,8 @@ Build a working PostgreSQL database and Express API/server that allows your fron
 
 ## 🚀 Roadmap: Step-by-step guide to building Version 4
 
+---
+
 ### 🎯 Milestone: Create your database schema
 1. Write PostgreSQL code to:
    a. Create 3 tables: `users`, `saved_countries`, and `country_counts`
@@ -51,21 +53,31 @@ Build a working PostgreSQL database and Express API/server that allows your fron
         - Store and retrieve Saved Countries data
         - Store and retrieve Country Count data
 
+---
+
 ### 🎯 Milestone: Set up your PostgreSQL database on Neon
 1. Use Neon.tech to:
   - Create a new database
   - Set up your schema (create the 3 tables and insert rows of sample data)
   - Confirm that the data was inserted successfully
 
+---
+
 ### In your `version-4` folder, create a `client` and `server` folder
 The `client` folder will contain all the frontend code, and the `server` folder will contain all of the backend server/API code. 
+
+---
 
 ### Copy your files over from `version-3` to the `client` folder in `version-4`
 1. Copy all of the files from your `version-3` folder and paste them into the `client` folder in your `version-4` folder. This `client` folder will contain the frontend of your Version 4. 
 
+---
+
 ### Connect your frontend to your backend
 1. In your `client` folder in the `version-4` folder, locate your `vite.config.js` file. 
 2. Update your `vite.config.js` file so that it fetches data from `http://localhost:3000/` as the base URL
+
+---
 
 ### Set up your `server` folder
 1. In the terminal, `cd` into your `server` folder in the `version-4` folder
@@ -80,6 +92,8 @@ The `client` folder will contain all the frontend code, and the `server` folder 
 6. In the `server` folder, create a `src` folder
 7. In the `src` folder, create a file called `index.js`. This file is where you will write your server code!
 
+---
+
 ### Connect your Neon-hosted PostgreSQL database to your Express server
 1. In the `src` folder in the `server` folder, create a file called `config.js`. This file is where you will put your database access credentials.
 2. Copy the code from the `config.js` file for your `06-recipe-API-server-SQL` project. Paste that code into the `config.js` file in your `server` folder.
@@ -91,8 +105,12 @@ The `client` folder will contain all the frontend code, and the `server` folder 
 5. Copy your database's Connection string, and paste it into your `config.js` file as the value of the `databaseUrl` property:
     <img width="797" height="170" alt="Connection string as databaseUrl in the config.js file" src="https://github.com/user-attachments/assets/af6cf409-17ad-4b4e-a092-8fca0e7537ef" />
 
+---
+
 ### Set up your server's boilerplate code 
 1. In your server's `index.js` file, set up your server using the same boilerplate code as the `06-recipe-API-server-SQL` project. 
+
+---
 
 ### 🎯 Milestone: Build API Endpoints for Form data
 - `POST /add-one-user`: Save submitted form data
@@ -100,24 +118,34 @@ The `client` folder will contain all the frontend code, and the `server` folder 
 - Test your API endpoints in Postman to make sure they're working
 - Test your API endpoints with your frontend
 
+---
+
 ### 🎯 Milestone: Build API Endpoints for Saved Countries
 - `POST /save-one-country`: Save a country
 - `GET /get-all-saved-countries`: Return all saved countries
 - Test your API endpoints in Postman to make sure they're working
 - Test your API endpoints with your frontend
 
+---
+
 ### 🎯 Milestone: Build API Endpoint for Country Count
 - `POST /update-one-country-count`: Increment the view count
 - Test your API endpoint in Postman to make sure they're working
 - Test your API endpoints with your frontend
 
+---
+
 ### Test everything again... and again! 
 1. Test all user flows: submitting the form, saving a country, viewing a country’s view count
 2. Check your database to make sure the data is updating correctly
 
+---
+
 ### Clean and Comment your code
 1. Refactor your backend code to make it clean and modular
 2. Comment complex logic to explain how it works
+
+---
 
 ### Deploy & Submit
 1. Push your code to Github
