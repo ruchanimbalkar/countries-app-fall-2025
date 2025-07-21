@@ -5,6 +5,7 @@
 | Resource         | Method | Endpoint                   | Description                                           |
 |------------------|--------|----------------------------|-------------------------------------------------------|
 | `users`          | GET    | /get-all-users             | Retrieves all users from the database.               |
+| `users`          | GET    | /get-newest-user           | Retrieves the most recently added user.              |
 | `users`          | POST   | /add-one-user              | Adds a new user to the database.                     |
 | `country_counts` | POST   | /update-one-country-count  | Updates (or initializes) the view count of a country.|
 | `saved_countries`| GET    | /get-all-saved-countries   | Retrieves a list of all saved countries.             |
@@ -37,6 +38,26 @@
     "email": "paul@example.com",
     "bio": "Short bio here"
   },
+]
+```
+
+---
+
+### 🔹 GET `/get-newest-user`
+
+**Description:** Retrieves the most recently added user.
+
+**Response:**
+
+```json
+[
+  {
+    "user_id": 42,
+    "name": "John Smith",
+    "country_name": "Canada",
+    "email": "john@example.com",
+    "bio": "Another bio"
+  }
 ]
 ```
 
@@ -142,28 +163,7 @@ Add these extra API endpoints as a bonus challenge!
 
 | Resource         | Method | Endpoint                   | Description                                           |
 |------------------|--------|----------------------------|-------------------------------------------------------|
-| `users`          | GET    | /get-newest-user           | Retrieves the most recently added user.              |
 | `saved_countries`| POST   | /unsave-one-country        | Unsaves a country if it has been saved.     |
-
----
-
-### 🔹 GET `/get-newest-user`
-
-**Description:** Retrieves the most recently added user.
-
-**Response:**
-
-```json
-[
-  {
-    "user_id": 42,
-    "name": "John Smith",
-    "country_name": "Canada",
-    "email": "john@example.com",
-    "bio": "Another bio"
-  }
-]
-```
 
 ---
 
