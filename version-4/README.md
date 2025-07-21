@@ -57,30 +57,32 @@ Build a working PostgreSQL database and Express API/server that allows your fron
   - Set up your schema (create the 3 tables and insert rows of sample data)
   - Confirm that the data was inserted successfully
 
-### Copy your files over from `version-3` to `version-4`
-1. Copy all of the files from your `version-3` folder and paste them into your `version-4` folder
-1. Push your code to Github! Your `version-3` code will serve as the starting point for `version-4`.
+### In your `version-4` folder, create a `client` and `server` folder
+The `client` folder will contain all the frontend code, and the `server` folder will contain all of the backend server/API code. 
+
+### Copy your files over from `version-3` to the `client` folder in `version-4`
+1. Copy all of the files from your `version-3` folder and paste them into the `client` folder in your `version-4` folder. This `client` folder will contain the frontend of your Version 4. 
 
 ### Connect your frontend to your backend
-1. In your `version-4` folder, locate your `vite.config.js` file. 
+1. In your `client` folder in the `version-4` folder, locate your `vite.config.js` file. 
 2. Update your `vite.config.js` file so that it fetches data from `http://localhost:3000/` as the base URL
 
-### Set up your server in the `server-local` folder
-1. In the terminal, `cd` into your `server-local` folder
-2. In the `server-local` folder, run `npm init -y` to create your `package.json` file, which will contain your project's information and list of dependencies 
+### Set up your `server` folder
+1. In the terminal, `cd` into your `server` folder in the `version-4` folder
+2. In the `server` folder, run `npm init -y` to create your `package.json` file, which will contain your project's information and list of dependencies 
 3. Add `"type": "module"` as a property to the `package.json` file
-4. In the `server-local` folder, run `npm install express` and `npm install pg`. Once you do that, you should see `express` and `pg` listed as dependencies in your `package.json`.
-5. In the `server-local` folder, create a `.gitignore` file. In this file, list the following files that Git should ignore: 
+4. In the `server` folder, run `npm install express` and `npm install pg`. Once you do that, you should see `express` and `pg` listed as dependencies in your `package.json`.
+5. In the `server` folder, create a `.gitignore` file. In this file, list the following files that Git should ignore: 
 
         node_modules
         config.js
 
-6. In the `server-local` folder, create a `src` folder
+6. In the `server` folder, create a `src` folder
 7. In the `src` folder, create a file called `index.js`. This file is where you will write your server code!
 
 ### Connect your Neon-hosted PostgreSQL database to your Express server
-1. In the `src` folder, create a file called `config.js`. This file is where you will put your database access credentials.
-2. Copy the code from the `config.js` file for your `06-recipe-API-server-SQL` project. Paste that code into the `config.js` file in your `server-local` folder.
+1. In the `src` folder in the `server` folder, create a file called `config.js`. This file is where you will put your database access credentials.
+2. Copy the code from the `config.js` file for your `06-recipe-API-server-SQL` project. Paste that code into the `config.js` file in your `server` folder.
 3. Next, you need to get your Neon database's Connection string. To do this, go to the Neon.tech website and open up your Neon project. You should see a 'Connect to your database' section where you can click on the Connect button.
 
     <img width="439" height="453" alt="Connect to the Neon database on your Neon project's dashboard" src="https://github.com/user-attachments/assets/c7c37881-3b58-4329-8078-a8cfab02f85d" />
@@ -90,11 +92,11 @@ Build a working PostgreSQL database and Express API/server that allows your fron
     <img width="797" height="170" alt="Connection string as databaseUrl in the config.js file" src="https://github.com/user-attachments/assets/af6cf409-17ad-4b4e-a092-8fca0e7537ef" />
 
 ### Set up your server's boilerplate code 
-1. In your `server-local`'s `index.js` file, set up your server using the same boilerplate code as the `06-recipe-API-server-SQL` project. 
+1. In your server's `index.js` file, set up your server using the same boilerplate code as the `06-recipe-API-server-SQL` project. 
 
 ### 🎯 Milestone: Build API Endpoints for Form data
 - `POST /add-one-user`: Save submitted form data
-- `GET /newest-user`: Return the form data if it exists
+- `GET /get-newest-user`: Return the form data if it exists
 - Test your API endpoints in Postman to make sure they're working
 - Test your API endpoints with your frontend
 
