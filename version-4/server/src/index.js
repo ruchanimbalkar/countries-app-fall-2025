@@ -1,23 +1,28 @@
-// Countries API Version 4
+/* Server/API for Countries Project Version 4
 
-// ---------------------------------
-// Boilerplate Code to Set Up Server
-// ---------------------------------
+DB Fiddle with SQL Database Schema: 
+*/
 
-// ---------------------------------
-// Helper Functions
-// ---------------------------------
+/*----------------------------------
+Boilerplate Code to Set Up Server
+----------------------------------*/
 
-// ---------------------------------
-// API Endpoints
-// ---------------------------------
+/*----------------------------------
+Helper Functions
+----------------------------------*/
+
+/*----------------------------------
+API Endpoints
+----------------------------------*/
 
 // GET /get-all-users
 
-// POST /add-one-user
+// GET /get-newest-user
 
-// POST /update-one-country-count
+// POST /add-one-user
 
 // GET /get-all-saved-countries
 
-// POST /save-one-country
+// GET /save-one-country/:cca3
+
+// GET /update-one-country-count/:cca3
