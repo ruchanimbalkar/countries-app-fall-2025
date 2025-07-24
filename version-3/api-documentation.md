@@ -96,7 +96,7 @@ Success! User has been added.
 
 ### 🔹 POST `/update-one-country-count`
 
-**Description:** Increments the view count of a given country. If it doesn't exist, initializes it with count 1.
+**Description:** Increments the view count of a given country. If it doesn't exist, initializes it with count 1. Returns a response with the updated country's count. 
 
 **Request Body:**
 
