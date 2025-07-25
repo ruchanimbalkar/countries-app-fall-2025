@@ -24,7 +24,11 @@ Base URL: `https://backend-answer-keys.onrender.com`
 
 **Description:** Retrieves the most recently added user.
 
-**Response:**
+**Example Request URL:**
+
+`GET https://backend-answer-keys.onrender.com/get-newest-user`
+
+**Example Response:**
 
 ```json
 [
@@ -44,7 +48,11 @@ Base URL: `https://backend-answer-keys.onrender.com`
 
 **Description:** Retrieves all users in the system ordered by `user_id`.
 
-**Response:**
+**Example Request URL:**
+
+`GET https://backend-answer-keys.onrender.com/get-all-users`
+
+**Example Response:**
 
 ```json
 [
@@ -71,7 +79,11 @@ Base URL: `https://backend-answer-keys.onrender.com`
 
 **Description:** Adds a new user.
 
-**Request Body:**
+**Example Request URL:**
+
+`POST https://backend-answer-keys.onrender.com/add-one-user`
+
+**Example Request Body:**
 
 ```json
 {
@@ -82,7 +94,7 @@ Base URL: `https://backend-answer-keys.onrender.com`
 }
 ```
 
-**Response:**
+**Example Response:**
 
 ```
 Success! User has been added.
@@ -98,7 +110,11 @@ Success! User has been added.
 
 **Description:** Increments the view count of a given country. If it doesn't exist, initializes it with count 1. Returns a response with the updated country's count. 
 
-**Request Body:**
+**Example Request URL:**
+
+`POST https://backend-answer-keys.onrender.com/update-one-country-count`
+
+**Example Request Body:**
 
 ```json
 {
@@ -106,7 +122,7 @@ Success! User has been added.
 }
 ```
 
-**Response:**
+**Example Response:**
 
 ```json
 {
@@ -124,7 +140,11 @@ Success! User has been added.
 
 **Description:** Retrieves all saved country names.
 
-**Response:**
+**Example Request URL:**
+
+`GET https://backend-answer-keys.onrender.com/get-all-saved-countries`
+
+**Example Response:**
 
 ```json
 [
@@ -143,7 +163,11 @@ Success! User has been added.
 
 **Description:** Saves a country name if it hasn’t already been saved.
 
-**Request Body:**
+**Example Request URL:**
+
+`POST https://backend-answer-keys.onrender.com/save-one-country`
+
+**Example Request Body:**
 
 ```
 {
@@ -151,7 +175,7 @@ Success! User has been added.
 }
 ```
 
-**Response:**
+**Example Response:**
 
 ```
 Success! The country is saved.
@@ -163,7 +187,11 @@ Success! The country is saved.
 
 **Description:** Unsaves a country name if it has been saved. 
 
-**Request Body:**
+**Example Request URL:**
+
+`POST https://backend-answer-keys.onrender.com/unsave-one-country`
+
+**Example Request Body:**
 
 ```
 {
@@ -171,7 +199,7 @@ Success! The country is saved.
 }
 ```
 
-**Response:**
+**Example Response:**
 
 ```
 Success! The country is unsaved.
