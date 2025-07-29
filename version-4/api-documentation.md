@@ -1,5 +1,7 @@
 # 📘 API Documentation
 
+**Base URL:** `http://localhost:3000`
+
 ## Overview
 
 | Resource         | Method | Endpoint                   | Description                                           |
