@@ -47,36 +47,9 @@ We will create a remote web server on Render that will run our Node.js code.
 
 ---
 
-## Step 3: Create a Neon account
+## Step 4: Find your Neon Database's Connection String
 
-We will use Neon to deploy our database remotely to the web. 
-
-- Go to [neon.tech]([neon.tech](https://neon.tech)) to create your new account using your Github credentials.
-
-## Step 4: Create a Database on Neon
-
-- First, we need to create a project on Neon that will hold our database. In the [Neon console](console.neon.tech), select "Create Project" to create a new project.
-- For the Project name, write `countries-api-project`.
-- For the Postgres version, choose the latest version 17.
-- For the Database name, write `countries-api-db`.
-- For the Cloud Service Provider, choose AWS.
-- For the Region, choose the region that is closest to your current location.
-  
-- <img width="999" alt="image" src="https://github.com/user-attachments/assets/b03ff07b-cbe0-49d9-b4cb-8a193c1702d5" />
-
-Now that you have your database, you can create your SQL tables! 
-
-- In the left sidebar on Neon, select the SQL Editor.
-- <img width="200" alt="SQL Editor on Neon" src="https://github.com/user-attachments/assets/74924f5c-715e-491d-b42c-2181286e9550" />
-- In the SQL Editor, run your `CREATE TABLE` and `INSERT INTO` SQL commands from your `database-schema.sql` file to create your users, saved_countries, and country_counts tables. Make sure to insert at least 3 rows of data for each table. 
-- To confirm your SQL tables were created, run `SELECT` commands to see if your new tables exist. For example, `SELECT * FROM users` should give you all 3 users as 3 rows of data in your users table. 
-
-
----
- 
-## Step 5: Configure your Web Server's Environment Variables in Render
-
-To connect your Render web server to your Neon database, you will need to update the Render web server's environment variables to match the Neon database's connection values. 
+To connect your Render-hosted web server to your Neon-hosted database, you will need to first find your Neon database's connection string, which contains its access credentials. 
 
   - First, pull up your Neon database's connection values by opening up your Neon project's dashboard. You should see a 'Connect to your database' section where you can click on the Connect button.
     
@@ -91,6 +64,11 @@ To connect your Render web server to your Neon database, you will need to update
 
 <img width="764" alt="Neon database credentials in the Neon dashboard" src="https://github.com/user-attachments/assets/5a80b6bc-ddd0-425d-9fcd-93198a096904" />
 
+---
+ 
+## Step 5: Configure your Web Server's Environment Variables in Render
+
+To update your Render-hosted server to your Neon-hosted database, you will need to update the Render web server's environment variables to match the Neon database's connection string. 
 
   - In your Render Console for your remote server, go to the Environment section.  
   - Add the values for 5 environment variables:
@@ -110,22 +88,17 @@ To connect your Render web server to your Neon database, you will need to update
 
 ## Step 6: Configuring our Web Server Code in VS Code 
 
-- **Copy the contents of your server-local folder into your server-deployed folder**
-    - This server-deployed folder will hold the code for the server that you run remotely with your version-5.
-- **Configure our remote server:**
-    - We will update the server configuration so that it works with our remote server that we are deploying to Render.
-    - In the `index.js` file, which is located in the server/src directory, add the following JS object after the import statements:
-        
-        ```jsx
-        let config = {
-        	user: process.env.USER,
-        	host: process.env.HOST,
-        	database: process.env.DATABASE,
-        	password: process.env.PASSWORD,
-        	port: process.env.DATABASE_PORT,
-        	ssl: true
-        };
-        ```
+  - In our server's `index.js` file, we will update the server boilerplate code so that it works with our remote server that we are deploying to Render.
+  - In the `index.js` file, update the value of the `connectionString` variable:
+      
+      ```js
+      // db stands for database
+      // this code connects our server to our PostgreSQL database
+      const db = new pg.Pool({
+        connectionString: process.env.DATABASE_URL,
+        ssl: true, // use SSL encryption when connecting to the database
+      });
+      ```
         
 - Now your index.js file in your server folder should look something like this:
 
