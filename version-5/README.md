@@ -72,13 +72,10 @@ To update your Render-hosted server to your Neon-hosted database, you will need 
 
   - In your Render Console for your remote server, go to the Environment section.  
   - Add the values for 5 environment variables:
-      - `DATABASE` which should match the `PGDATABASE` value in your Neon database credentials. 
-      - `DATABASE_PORT`, which should be `5432`. 
-      - `HOST` which should match the `PGHOST` value in your Neon database credentials. 
-      - `PASSWORD` which should match the `PGPASSWORD` value in your Neon database credentials. 
-      - `USER` which should match the `PGUSER` value in your Neon database credentials. 
+      - `DATABASE_URL` which should contain your Neon database's connection string that you copied in the previous step. 
   - It should look something like this:
-    ![image](https://github.com/user-attachments/assets/5071b35e-c2ae-4189-b593-ff45f4377ace)
+    <img width="834" height="367" alt="Adding Neon database's connection string as an environmental variable called DATABASE_URL to the Render-hosted server" src="https://github.com/user-attachments/assets/1f13e87d-f3a5-4e4f-aec3-8c31c30783b6" />
+
 
 - Click Save, Rebuild, and Deploy
 - Commit your code so that it pushes to Github (and redeploys to the server instance).
@@ -99,14 +96,10 @@ To update your Render-hosted server to your Neon-hosted database, you will need 
         ssl: true, // use SSL encryption when connecting to the database
       });
       ```
-        
-- Now your index.js file in your server folder should look something like this:
-
-![image.png](Deploying%20to%20a%20Remote%20Database%20Server%20on%20Render%201d5bb7044bb18058b787fc258f37e764/image%204.png)
 
 - **Delete the `config.js` file**, which is located in the server/src directory.
-    - Originally you created the `config.js` file to connect to your *local* database in Version 4.
-    - However, in Version 5, you no longer need `config.js` because your code is no longer connecting to the *local* database. Instead, you will connect to your *remote* database deployed on Render using the `config` object you just created in the `index.js` file.
+    - Originally you created the `config.js` file, which contained your database's connection string to access the Neon database. 
+    - However, in Version 5, you no longer need `config.js` because your code will be hosted remotely on Render, instead of locally on your computer. Instead, you will connect to your *remote* database deployed on Render using the `config` object you just created in the `index.js` file.
 - **Add, Commit, and Push to your updated code to Github**
     - Pushing to Github should trigger a re-deployment of our updated server code, which is super neat!
 
