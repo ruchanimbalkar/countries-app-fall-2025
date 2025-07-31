@@ -21,19 +21,6 @@ We will deploy our web server remotely to [Render](https://render.com/) and our 
 
 ---
 
-## What are the steps we are going to take?
-
-| **Step** | **Why?** |
-| --- | --- |
-| 1: Create a Render Account | We will be deploying code and our database on Render’s servers so that our website can be accessible over the internet. Render will handle keeping our code running as well as the directing of HTTP requests to our code. |
-| 2: Creating a Web Server | We will spin up a server that will host our backend (server) code. We will connect this server to our Github repo storing our Node repo so that when we push code updates, it will automatically update our server! |
-| 3: Adding a Database Server | We will create a database server that will host our database remotely. We will use our SQL commands to create our tables, and we will get the new database/host information to update our config data. |
-| 4: Connecting to the Remote Database on pgAdmin | We will use pgAdmin to connect to our remote Database server. This is exactly like the process for connecting to our local database, but instead of localhost as our host, we will use the URL created by Render |
-| 5: Updating our Web Server | We will need to add our database config to environment variables so that stay secure (and aren’t added to our Github repo) |
-| 6: Updating our Frontend code | We will need to update our API calls to make requests to our Render URL instead of localhost, then we can deploy our FE to Netlify! |
-
----
-
 ## Step 1: Create a Render account
 
 We will use Render to deploy our web server remotely to the web. 
