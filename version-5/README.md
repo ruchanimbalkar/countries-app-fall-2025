@@ -49,20 +49,20 @@ We will create a remote web server on Render that will run our Node.js code.
 
 ## Step 4: Find your Neon Database's Connection String
 
-To connect your Render-hosted web server to your Neon-hosted database, you will need to first find your Neon database's connection string, which contains its access credentials. 
+1. Go to the Neon.tech website and open up your Neon project's dashboard. You should see a 'Connect to your database' section where you can click on the Connect button.
 
-  - First, pull up your Neon database's connection values by opening up your Neon project's dashboard. You should see a 'Connect to your database' section where you can click on the Connect button.
+    <img width="461" height="392" alt="Connect to the Neon database on your Neon project's dashboard" src="https://github.com/user-attachments/assets/91f9e3cd-09f3-4899-b9e1-73f3fe58506a" />
     
-    <img width="300" alt="image" src="https://github.com/user-attachments/assets/8c637f2a-d672-4e05-8604-b0cbd393066e" />
-    
-  - Where it says `Connection string`, click on it and change it to Parameters only
+2. Once you click on the Connect button, you should see a window pop up with your database's Connection String, which contains the password/access credentials to your database. 
 
-<img width="202" alt="Change Connection String option to Parameters Only" src="https://github.com/user-attachments/assets/54dcb699-99b4-440a-860c-2e813ebe5590" />
+    <img width="1073" height="425" alt="Connect to the Neon database on your Neon project's dashboard" src="https://github.com/user-attachments/assets/d42a10f0-c414-43dc-a9ac-7ef978d424ee" />
 
+    Make sure the Connection string starts with `postgresql://` — if it doesn't, you'll need to click on the dropdown menu to the upper left of the Connection String and make sure you have `Connection String` selected, and not something else like `psql`. 
 
-  - You should see your Neon database credentials like below. You will use these values as the environment variables for your Render web server. You will need to choose "Show password" to reveal your password. 
+    <img width="1075" height="427" alt="Selecting Connection String when connecting to Neon database instead of another option like psql" src="https://github.com/user-attachments/assets/fdf21a6b-c862-40ab-83bc-a0d3b949c5dc" />
 
-<img width="764" alt="Neon database credentials in the Neon dashboard" src="https://github.com/user-attachments/assets/5a80b6bc-ddd0-425d-9fcd-93198a096904" />
+3. Copy your database's Connection string by clicking on the "Copy Snippet" button below it. You will use it in the next step! 
+
 
 ---
  
