@@ -113,11 +113,10 @@ To update your Render-hosted server to your Neon-hosted database, you will need 
 In your Countries API web service in Render, you should see a URL that looks like this: [https://countries-api-vn58.onrender.com](https://countries-api-vn58.onrender.com/)
     - You can find yours on the main tab under Settings or Events
     - This is the URL of our remote server. It’s what we’re going to use to point all of our API endpoints.
-    - This URL should replace localhost:3000 in your frontend fetch queries to send your GET or POST requests.
-    - For example, if our frontend is trying to make a request, such as getting all saved countries, the URL would look something like `https://countries-api-vn58.onrender.com/get-all-saved-countries`
+    - This URL will replace the `http://localhost:3000` base URL that you've been using in your frontend fetch queries to send your GET or POST requests.
+    - For example, if our frontend is trying to make a request, such as getting all saved countries, the URL would look like `https://countries-api-vn58.onrender.com/get-all-saved-countries` instead of `http://localhost:3000/get-all-saved-countries` 
 - **Update `vite.config.js` file**
-We also need to make sure our CORs is set up properly. In your `vite.config.js` file, be sure that you have added the URL for the Render server
-    - **Be sure that the target key reflects your correct URL from Render**
+We are going to update this file to prevent CORS errors. In your `vite.config.js` file, change the value of the `target` key so that it is your Render server's URL rather than `http://localhost:3000`:
     
     ```jsx
     // vite.config.js
@@ -141,52 +140,59 @@ We also need to make sure our CORs is set up properly. In your `vite.config.js` 
     
     ```
     
-- **Add a `_redirects` file in the `public` folder** of your frontend `version-5` folder. It will have the following content:
-    - **Make sure the URL reflects your correct URL of your API deployed on Render**
+- **Locate the `_redirects` file in the `public` folder** of your `client` folder. Currently it will have the following content:
         
-        ```
-        /api/* https://countries-api-vn58.onrender.com/:splat 200
-        /\* /index.html 404
-        /* /index.html 200
-        ```
+    ```
+    /api/* https://backend-answer-keys.onrender.com/:splat 200
+    /\* /index.html 404
+    /* /index.html 200
+    ```
         
-    - Here is an example of what that file will look like on VS Code. It might throw errors on VS Code but that is okay. Just make sure you’ve changed the URL.
+    - In this file, you should replace the `https://backend-answer-keys.onrender.com` URL with your own Render server's URL. Don't forget to keep the `/:splat 200` at the tail end of it. It might throw errors on VS Code but that is okay. Just make sure you’ve changed the URL.
         
         ![image.png](Deploying%20to%20a%20Remote%20Database%20Server%20on%20Render%201d5bb7044bb18058b787fc258f37e764/image%206.png)
         
-
 
 Now your `version-5` folder, which contains all of the frontend code, should be able to connect to your remote web server that you deployed on Render! 
 
 ---
 
-## Deploy `version-5`'sFrontend to Netlify
+## Deploy `version-5/client` folder to Netlify
 
-- In your Netlify account, deploy your `version-5/client` folder. [Refer to this guide if you need help with this.](https://docs.google.com/document/d/18jxCUA0bebCyYaIHy8aaKMgOQH4w5-b-iCGDWpV4K4M/edit?tab=t.jnwta4jrhylr#heading=h.scmsi7a6s9yz)
+- In your Netlify account, deploy your `version-5/client` folder, which contains the frontend of your application. [Refer to this guide if you need help with this.](https://docs.google.com/document/d/18jxCUA0bebCyYaIHy8aaKMgOQH4w5-b-iCGDWpV4K4M/edit?tab=t.jnwta4jrhylr#heading=h.scmsi7a6s9yz)
 - Open the Netlify deployment link in the browser.
-- Test your application by going to its Netlify deployment link. If it’s all working, then as you interact with your `version-5` site, you should see data show up in your tables on pgAdmin.
+- Test your application by going to its Netlify deployment link. If it’s all working, then as you interact with your `version-5` site, you should see data change in your Neon database.
 
-YAY! You’ve deployed your frontend! 
+At this point, you've:  
+- deployed your frontend to Netlify
+- deployed your backend PostgreSQL database to Render
+- deployed your backend API to Render
+That means you’ve deployed all 3 parts of your full-stack application to the internet! YAY! 
 
 ---
 
 ## Test your full-stack application
 
-- So at this point you’ve…
-    - deployed your frontend `version-5/client` folder to Netlify
-    - deployed your backend PostgreSQL database to Render, connected to it on pgAdmin, and created your tables on pgAdmin
-    - deployed your backend API to Render
-- So now it’s time to test! Go to your Netlify deployment link in the browser. Test your site by doing the following:
-    - Submit to the form.
-        - Does that form data show up in the users table on pgAdmin? Does the “Welcome, {user}!” on the Saved Countries page welcome our new user?
-    - Save a country.
-        - Does that country show up on the Saved Countries page?
-        - Does that newly saved country show up in the tables on pgAdmin?
-    - Check a country’s view count.
-        - Each time you open a country’s CountryDetail page, do you see its view count go up by 1?
-    - If you answered yes to all the above questions, you’re done!
+Now it’s time to test! Go to your Netlify deployment link in the browser. Test your site by doing the following:
 
-YOU’RE DONE WITH VERSION 5! You’ve now built a full-stack application from start to finish, and deployed it remotely! Pat yourself on the back for all your hard work! 🎉
+1. **Submit to the form.** 
+    
+    - Does that form data show up in the `users` table on Neon?
+    - Does the Saved Countries page welcome our new user?
+
+1. **Save a country that hasn't been saved yet.**
+
+    - Does that country show up on the Saved Countries page?
+
+1. Save a country that has already been saved before. 
+
+    - Does that country show up on the Saved Countries page only once? Saved countries should not be saved multiple times. 
+
+1. Update a country’s view count.
+
+    - Each time you open a country’s CountryDetail page, do you see its view count go up by 1?
+
+If you answered yes to all the above questions, you’re done with the Countries API project! You’ve now built a full-stack application from start to finish, and deployed it remotely to the internet! Now you can send the Netlify deployment link to your friends and they will be able to interact with your frontend, which will send requests to your server. which will change the data in the database. Pat yourself on the back for all your hard work! 🎉 
 
 ---
 
