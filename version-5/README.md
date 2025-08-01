@@ -51,7 +51,7 @@ We will create a remote web server on Render that will run our Node.js code.
 
 1. Go to the Neon.tech website and open up your Neon project's dashboard. You should see a 'Connect to your database' section where you can click on the Connect button.
 
-    <img width="461" height="392" alt="Connect to the Neon database on your Neon project's dashboard" src="https://github.com/user-attachments/assets/91f9e3cd-09f3-4899-b9e1-73f3fe58506a" />
+    <img width="1508" height="805" alt="Connect to the Neon database on your Neon project's dashboard by choosing 'Connect'" src="https://github.com/user-attachments/assets/c98b8efc-1d97-4452-84f6-1020b648a71b" />
     
 2. Once you click on the Connect button, you should see a window pop up with your database's Connection String, which contains the password/access credentials to your database. 
 
