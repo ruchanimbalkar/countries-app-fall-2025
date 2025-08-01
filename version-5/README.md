@@ -21,7 +21,11 @@ We will deploy our web server remotely to [Render](https://render.com/) and our 
 
 ---
 
-## Step 1: Create a Render account
+## Copy the contents of your `version-4` folder into your `version-5` folder
+
+---
+
+## Create a Render account
 
 We will use Render to deploy our web server remotely to the web. 
 
@@ -30,7 +34,7 @@ We will use Render to deploy our web server remotely to the web.
 
 ---
 
-## Step 2: Create a Web Server on Render
+## Create a Web Server on Render
 
 We will create a remote web server on Render that will run our Node.js code.
 
@@ -47,7 +51,7 @@ We will create a remote web server on Render that will run our Node.js code.
 
 ---
 
-## Step 4: Find your Neon Database's Connection String
+## Find your Neon Database's Connection String
 
 1. Go to the Neon.tech website and open up your Neon project's dashboard. You should see a 'Connect to your database' section where you can click on the Connect button.
 
@@ -66,7 +70,7 @@ We will create a remote web server on Render that will run our Node.js code.
 
 ---
  
-## Step 5: Configure your Web Server's Environment Variables in Render
+## Configure your Web Server's Environment Variables in Render
 
 To update your Render-hosted server to your Neon-hosted database, you will need to update the Render web server's environment variables to match the Neon database's connection string. 
 
@@ -76,14 +80,12 @@ To update your Render-hosted server to your Neon-hosted database, you will need 
   - It should look something like this:
     <img width="834" height="367" alt="Adding Neon database's connection string as an environmental variable called DATABASE_URL to the Render-hosted server" src="https://github.com/user-attachments/assets/1f13e87d-f3a5-4e4f-aec3-8c31c30783b6" />
 
-
 - Click Save, Rebuild, and Deploy
-- Commit your code so that it pushes to Github (and redeploys to the server instance).
-- Now that your web server is running, if you have any console.log() calls in your index.js file, those will show up in the Logs section because this is deployed remotely. It’s not going to show up in the terminal anymore, because we’re no longer running our server on our local machine.
-- Now your web server on Render can talk to your database on Neon! Hooray! 
+- Now that your web server is running, if you have any console.log() calls in your index.js file, those will show up in the Logs section on Render because this is deployed remotely. It’s not going to show up in the server terminal anymore, because we’re no longer running our server on our local machine.
+- Now your web server on Render can talk to your database on Neon! Hooray! 🎉
 ---
 
-## Step 6: Configuring our Web Server Code in VS Code 
+## Configuring our Web Server Code in VS Code 
 
   - In our server's `index.js` file, we will update the server boilerplate code so that it works with our remote server that we are deploying to Render.
   - In the `index.js` file, update the value of the `connectionString` variable:
@@ -105,10 +107,9 @@ To update your Render-hosted server to your Neon-hosted database, you will need 
 
 ---
 
-## Step 7: Updating our Frontend Code
+## Updating our Frontend Code
 
-- **Copy the contents of your version-4 folder into your version-5 folder**
-- **Find your API’s URL in Render**
+- **Find your Server’s URL in Render**
 In your Countries API web service in Render, you should see a URL that looks like this: [https://countries-api-vn58.onrender.com](https://countries-api-vn58.onrender.com/)
     - You can find yours on the main tab under Settings or Events
     - This is the URL of our remote server. It’s what we’re going to use to point all of our API endpoints.
@@ -159,9 +160,9 @@ Now your `version-5` folder, which contains all of the frontend code, should be 
 
 ---
 
-## Step 8: Deploy Frontend to Netlify
+## Deploy `version-5`'sFrontend to Netlify
 
-- In your Netlify account, deploy your `version-5` folder. [Refer to this guide if you need help with this.](https://docs.google.com/document/d/18jxCUA0bebCyYaIHy8aaKMgOQH4w5-b-iCGDWpV4K4M/edit?tab=t.jnwta4jrhylr#heading=h.scmsi7a6s9yz)
+- In your Netlify account, deploy your `version-5/client` folder. [Refer to this guide if you need help with this.](https://docs.google.com/document/d/18jxCUA0bebCyYaIHy8aaKMgOQH4w5-b-iCGDWpV4K4M/edit?tab=t.jnwta4jrhylr#heading=h.scmsi7a6s9yz)
 - Open the Netlify deployment link in the browser.
 - Test your application by going to its Netlify deployment link. If it’s all working, then as you interact with your `version-5` site, you should see data show up in your tables on pgAdmin.
 
@@ -169,10 +170,10 @@ YAY! You’ve deployed your frontend!
 
 ---
 
-## Step 9: Test your full-stack application
+## Test your full-stack application
 
 - So at this point you’ve…
-    - deployed your frontend `version-5` folder to Netlify
+    - deployed your frontend `version-5/client` folder to Netlify
     - deployed your backend PostgreSQL database to Render, connected to it on pgAdmin, and created your tables on pgAdmin
     - deployed your backend API to Render
 - So now it’s time to test! Go to your Netlify deployment link in the browser. Test your site by doing the following:
