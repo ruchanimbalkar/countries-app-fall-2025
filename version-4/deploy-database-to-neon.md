@@ -1,4 +1,4 @@
-# Deploying to a Remote Database to Neon
+# Deploying a Database to Neon
 
 
 ## Introduction
