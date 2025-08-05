@@ -39,7 +39,8 @@ Now that you have your database, you can create your SQL tables!
 
 - In the left sidebar on Neon, select the SQL Editor.
 
-  <img width="200" alt="SQL Editor on Neon" src="https://github.com/user-attachments/assets/74924f5c-715e-491d-b42c-2181286e9550" />
+  <img width="1507" height="723" alt="image" src="https://github.com/user-attachments/assets/6e791e77-3215-4e91-8c61-23792ad39fd4" />
+
 - In the SQL Editor, run your `CREATE TABLE` and `INSERT INTO` SQL commands from your `database-schema.sql` file to create your users, saved_countries, and country_counts tables. Make sure to insert at least 3 rows of data for each table. 
 - To confirm your SQL tables were created, run `SELECT` commands to see if your new tables exist. For example, `SELECT * FROM users` should give you all 3 users as 3 rows of data in your users table.
 
