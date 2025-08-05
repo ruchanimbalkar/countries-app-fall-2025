@@ -1,4 +1,4 @@
-# Deploying to a Remote Database/Server on Render
+# Deploying a Server/API on Render
 
 
 ## Introduction
