@@ -17,9 +17,12 @@ We will use Neon to deploy our database remotely to the web.
 
 ---
 
-## Step 2: Create a Database on Neon
+## Step 2: Create a new Project on Neon
 
-- First, we need to create a project on Neon that will hold our database. In the [Neon console](console.neon.tech), select "Create Project" to create a new project.
+- First, we need to create a project on Neon that will hold our database. Go to your [Neon Projects page](https://console.neon.tech/app/projects) and select "New Project" to create a new project.
+
+  <img width="1514" height="797" alt="image" src="https://github.com/user-attachments/assets/0e46e1e6-3c34-4a27-ac04-b7beefc4547e" />
+
 - For the Project name, write `countries-api-project`.
 - For the Postgres version, choose the latest version 17.
 - For the Database name, write `countries-api-db`.
@@ -35,9 +38,16 @@ We will use Neon to deploy our database remotely to the web.
 Now that you have your database, you can create your SQL tables! 
 
 - In the left sidebar on Neon, select the SQL Editor.
+
   <img width="200" alt="SQL Editor on Neon" src="https://github.com/user-attachments/assets/74924f5c-715e-491d-b42c-2181286e9550" />
 - In the SQL Editor, run your `CREATE TABLE` and `INSERT INTO` SQL commands from your `database-schema.sql` file to create your users, saved_countries, and country_counts tables. Make sure to insert at least 3 rows of data for each table. 
-- To confirm your SQL tables were created, run `SELECT` commands to see if your new tables exist. For example, `SELECT * FROM users` should give you all 3 users as 3 rows of data in your users table. 
+- To confirm your SQL tables were created, run `SELECT` commands to see if your new tables exist. For example, `SELECT * FROM users` should give you all 3 users as 3 rows of data in your users table.
+
+---
+
+## Step 4: View the data in the Tables tab
 - Click on the "Tables" tab in the left sidebar on Neon to see the data in your tables.
+
+<img width="1630" height="847" alt="image" src="https://github.com/user-attachments/assets/bac17a4d-5525-426e-89af-0039a5edf4b2" />
 
                                 
