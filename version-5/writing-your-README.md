@@ -44,8 +44,6 @@ _italic text_
 ![Alt text for image](./images/image.png)
 ```
 
-
-
 # Fill Out the Template Below ⬇️ 
 Once you're done filling out the template, paste it into your Github repo's main `README.md` file! 
 
@@ -60,7 +58,6 @@ Give your project a clear, simple name.
 
 - What is this project?
 - Why did you build it?
-- What did you learn?
 
 
 ## 🚀 Live Site
@@ -71,6 +68,7 @@ Give your project a clear, simple name.
 ## 🖼️ Screenshots
 
 Copy & paste 1–2 images of your project here to show it off! 
+
 To take a screenshot of a specific portion of the screen, press and hold `Command + Control + Shift + 4`, then drag the crosshair cursor to select the area. The screenshot will be automatically copied, so that you can paste it directly into this README.md file. 
 
 
@@ -85,6 +83,7 @@ List the tools and languages you used. For example:
 
 
 ## 💭 Reflections
+
 - What did you learn?
 - What was challenging?
 - What are you proud of?
@@ -93,4 +92,4 @@ List the tools and languages you used. For example:
 
 ## 🙌 Acknowledgements
 
-- Did anyone help you? Shout out tutorials or teammates with links if possible. 
+Did anyone help you? Shout out tutorials or teammates with links if possible. 
