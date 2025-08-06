@@ -94,7 +94,7 @@ The `client` folder will contain all the frontend code, and the `server` folder 
 
      Once you do that, you should see `express` and `pg` listed as dependencies in your `package.json`. 
 
-     You should see your `node_modules` folder was generated. This folder contains all of the code from your project's dependencies. 
+     You should also see your `node_modules` folder was generated. This folder contains all of the code from your project's dependencies. 
 
 
 ---
@@ -157,5 +157,6 @@ Finished the main requirements? Here are some bonus challenges:
 - 🏆 Add a “Delete” route to unsave a single country
 - 🏆 Add a “Clear” feature to unsave all countries
 - 🏆 Add a “Reset Count” feature to reset a country's count back to 0 
+
 
 
