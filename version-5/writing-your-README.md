@@ -49,7 +49,7 @@ Give your project a clear, simple name.
 
 ## 📌 Description
 
-- What is this project?
+- What is this project and its purpose? 
 - Why did you build it?
 
 ## 🚀 Live Site
@@ -62,22 +62,21 @@ Copy & paste 1–2 images of your project here to show it off!
 
 To take a screenshot of a specific portion of the screen, press and hold `Command + Control + Shift + 4`, then drag the crosshair cursor to select the area. The screenshot will be automatically copied, so that you can paste it directly into this README.md file. 
 
-## 🛠️ Technologies Used
+## ✨ Features
 
-List the tools and languages you used. For example:
+What are the features that you implemented in the app? For example, list the pages you built and what the user can do on those pages. 
 
-- HTML
-- CSS
-- JavaScript
-- React.js
+## 🛠️ Tech Stack
+
+List the technologies you used, including programming languages, libraries, frameworks, tools, and APIs (such as HTML, CSS, etc.) 
 
 ## 💭 Reflections
 
 - What did you learn?
-- What was challenging?
 - What are you proud of?
-- What would you do differently next time?
+- What was challenging?
+- Any future ideas for how you'd continue building the project?
 
-## 🙌 Acknowledgements
+## 🙌 Credits
 
-Did anyone help you? Shout out tutorials or teammates with links if possible. 
+Did anyone or anything help you? Shout out tutorials or teammates with links if possible. 
