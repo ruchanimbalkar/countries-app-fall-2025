@@ -1,4 +1,4 @@
-# How to connect your Neon Database to your Express server
+# How to connect your Neon Database to your Local Express server
 
 ---
 
@@ -18,6 +18,7 @@
 
 3. Copy your database's Connection string by clicking on the `Copy snippet` button. This connection string contains the secret key needed to access your database. You'll use it in the next step.
 
+---
 
 ## Paste your database's Connection String into your server's `config.js` file
 1. In the `src` folder in the `server` folder, locate the file called `config.js`. 
