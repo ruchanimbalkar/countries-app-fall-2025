@@ -47,6 +47,7 @@ _italic text_
 ---
 
 # Fill Out the Template Below ⬇️ 
+Once you're done filling out the template, paste it into your Github repo's main `README.md` file! 
 
 ---
 
