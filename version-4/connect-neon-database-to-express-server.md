@@ -2,11 +2,12 @@
 
 ---
 
-## Get your Neon database's Connection String
+## Find your Neon Database's Connection String
 
-1. Get your Neon database's Connection string. To do this, go to the Neon.tech website and open up your Neon project. You should see a 'Connect to your database' section where you can click on the Connect button.
+1. Go to the Neon.tech website and open up your Neon project's dashboard. You should see a 'Connect to your database' section where you can click on the Connect button.
 
-    <img width="461" height="392" alt="Connect to the Neon database on your Neon project's dashboard" src="https://github.com/user-attachments/assets/91f9e3cd-09f3-4899-b9e1-73f3fe58506a" />
+    <img width="1508" height="805" alt="Connect to the Neon database on your Neon project's dashboard by choosing 'Connect'" src="https://github.com/user-attachments/assets/c98b8efc-1d97-4452-84f6-1020b648a71b" />
+    
 2. Once you click on the Connect button, you should see a window pop up with your database's Connection String, which contains the password/access credentials to your database. 
 
     <img width="1073" height="425" alt="Connect to the Neon database on your Neon project's dashboard" src="https://github.com/user-attachments/assets/d42a10f0-c414-43dc-a9ac-7ef978d424ee" />
@@ -15,8 +16,8 @@
 
     <img width="1075" height="427" alt="Selecting Connection String when connecting to Neon database instead of another option like psql" src="https://github.com/user-attachments/assets/fdf21a6b-c862-40ab-83bc-a0d3b949c5dc" />
 
+3. Copy your database's Connection string by clicking on the `Copy snippet` button. This connection string contains the secret key needed to access your database. You'll use it in the next step.
 
-5. Copy your database's Connection string by clicking on the `Copy snippet` button. This connection string contains the secret key needed to access your database. 
 
 ## Paste your database's Connection String into your server's `config.js` file
 1. In the `src` folder in the `server` folder, locate the file called `config.js`. 
