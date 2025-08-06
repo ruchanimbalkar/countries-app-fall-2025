@@ -1,4 +1,4 @@
-# 📝 How to Write a README
+# 📝 Writing a README
 
 A well-written README helps others (and your future self!) understand, use, and appreciate your project. Here’s a quick guide to writing one.
 
