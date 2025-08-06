@@ -63,7 +63,7 @@ Build a working PostgreSQL database and Express API/server that allows your fron
 
 ---
 
-### ⚙️ In your `version-4` folder, create a `client` and `server` folder
+### ⚙️ In your `version-4` folder, create a `client` folder
 The `client` folder will contain all the frontend code, and the `server` folder will contain all of the backend server/API code. 
 
 ---
@@ -80,17 +80,22 @@ The `client` folder will contain all the frontend code, and the `server` folder 
 ---
 
 ### ⚙️ Set up your `server` folder
-1. In the terminal, `cd` into your `server` folder in the `version-4` folder
-2. In the `server` folder, run `npm init -y` to create your `package.json` file, which will contain your project's information and list of dependencies 
-3. Add `"type": "module"` as a property to the `package.json` file
-4. In the `server` folder, run `npm install express` and `npm install pg`. Once you do that, you should see `express` and `pg` listed as dependencies in your `package.json`.
-5. In the `server` folder, create a `.gitignore` file. In this file, list the following files that Git should ignore: 
+ 
+1. Open up the `server` folder. In that folder, you should see the following files already provided for you:
 
-        node_modules
-        config.js
+      - `package.json` — lists information about your project and its dependencies 
+      - `.gitignore` — lists which files and folders that Git should ignore 
+      - `src` folder — where all your custom code will live
+      - `index.js` — where you will write your server/API code
+      - `config.js` — contains your database's access credentials
 
-6. In the `server` folder, create a `src` folder
-7. In the `src` folder, create a file called `index.js`. This file is where you will write your server code!
+2. In VS Code, open the terminal and `cd` into your `server` folder in the `version-4` folder
+3. In the `server` folder, run `npm install express` and `npm install pg`. 
+
+     Once you do that, you should see `express` and `pg` listed as dependencies in your `package.json`. 
+
+     You should see your `node_modules` folder was generated. This folder contains all of the code from your project's dependencies. 
+
 
 ---
 
@@ -152,4 +157,5 @@ Finished the main requirements? Here are some bonus challenges:
 - 🏆 Add a “Delete” route to unsave a single country
 - 🏆 Add a “Clear” feature to unsave all countries
 - 🏆 Add a “Reset Count” feature to reset a country's count back to 0 
+
 
