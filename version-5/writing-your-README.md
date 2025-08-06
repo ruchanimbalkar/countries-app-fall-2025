@@ -71,6 +71,7 @@ Give your project a clear, simple name.
 ## 🖼️ Screenshots
 
 Copy & paste 1–2 images of your project here to show it off! 
+To take a screenshot of a specific portion of the screen, press and hold `Command + Control + Shift + 4`, then drag the crosshair cursor to select the area. The screenshot will be automatically copied, so that you can paste it directly into this README.md file. 
 
 
 ## 🛠️ Technologies Used
