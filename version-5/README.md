@@ -30,9 +30,27 @@ We will deploy our web server remotely to [Render](https://render.com/) and our 
 
 ## Set up your `version-5` folder
 
-1. Duplicate your `version-4` folder. Rename the duplicate folder as `version-5`. This `version-5` contains the code that you will deploy!
-2. Push your code changes to Github.
-3. Open up your Github repo in the browser to make sure your repo has a `version-5` folder with your `client` and `server` code. 
+1. Copy the `client` folder in your `version-4` folder. Paste it into your `version-5` folder.
+2. Copy the `server` folder in your `version-4` folder. Paste it into your `version-5` folder.
+3. Push your code changes to Github.
+
+---
+
+## Updating your server/API's code in its `index.js` file 
+
+  - Locate the `version-5/server/index.js` file, where your server/API code lives. We will update the boilerplate code in this `index.js` file. 
+  - In the `index.js` file, update the value of the `connectionString` property to be `process.env.DATABASE_URL`: 
+      
+      ```js
+      const db = new pg.Pool({
+        connectionString: process.env.DATABASE_URL,
+        ssl: true, // use SSL encryption when connecting to the database
+      });
+      ```
+
+- **Delete the `config.js` file**, which is located in the `version-5/server/src` directory. You don't need this anymore, because it's only for connecting a _local_ server to the database. 
+- **Delete this line of code from your `index.js` file: `import config.js file from "./config.js`
+- **Add, Commit, and Push to your updated code to Github**
 
 ---
 
@@ -86,7 +104,7 @@ We will create a remote web server on Render that will run our Node.js code.
 To update your Render-hosted server to your Neon-hosted database, you will need to update the Render web server's environment variables to match the Neon database's connection string. 
 
   - In your Render Console for your remote server, go to the Environment section.  
-  - Add the values for 5 environment variables:
+  - Add one environment variable:
       - `DATABASE_URL` which should contain your Neon database's connection string that you copied in the previous step. 
   - It should look something like this:
     <img width="834" height="367" alt="Adding Neon database's connection string as an environmental variable called DATABASE_URL to the Render-hosted server" src="https://github.com/user-attachments/assets/1f13e87d-f3a5-4e4f-aec3-8c31c30783b6" />
@@ -94,27 +112,6 @@ To update your Render-hosted server to your Neon-hosted database, you will need 
 - Click Save, Rebuild, and Deploy
 - Now that your web server is running, if you have any console.log() calls in your index.js file, those will show up in the Logs section on Render because this is deployed remotely. It’s not going to show up in the server terminal anymore, because we’re no longer running our server on our local machine.
 - Now your web server on Render can talk to your database on Neon! Hooray! 🎉
----
-
-## Configuring our Web Server Code in VS Code 
-
-  - In our server's `index.js` file, we will update the server boilerplate code so that it works with our remote server that we are deploying to Render.
-  - In the `index.js` file, update the value of the `connectionString` variable:
-      
-      ```js
-      // db stands for database
-      // this code connects our server to our PostgreSQL database
-      const db = new pg.Pool({
-        connectionString: process.env.DATABASE_URL,
-        ssl: true, // use SSL encryption when connecting to the database
-      });
-      ```
-
-- **Delete the `config.js` file**, which is located in the server/src directory.
-    - Originally you created the `config.js` file, which contained your database's connection string to access the Neon database. 
-    - However, in Version 5, you no longer need `config.js` because your code will be hosted remotely on Render, instead of locally on your computer. Instead, you will connect to your *remote* database deployed on Render using the `config` object you just created in the `index.js` file.
-- **Add, Commit, and Push to your updated code to Github**
-    - Pushing to Github should trigger a re-deployment of our updated server code, which is super neat!
 
 ---
 
@@ -139,7 +136,7 @@ We are going to update this file to prevent CORS errors. In your `vite.config.js
       server: {
         proxy: {
           "/api": {
-            target: "[https://countries-api-vn58.onrender.com](https://countries-api-vn58.onrender.com/)/",
+            target: "https://countries-api-vn58.onrender.com/",
             changeOrigin: true,
             secure: false,
             rewrite: (path) => path.replace(/^\/api/, ""),
