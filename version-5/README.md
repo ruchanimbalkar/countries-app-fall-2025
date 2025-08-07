@@ -158,7 +158,7 @@ We are going to update this file to prevent CORS errors. In your `vite.config.js
         
     - In this file, you should replace the `https://backend-answer-keys.onrender.com` URL with your own Render server's URL. Don't forget to keep the `/:splat 200` at the tail end of it. It might throw errors on VS Code but that is okay. Just make sure you’ve changed the URL.
         
-        ![image.png](Deploying%20to%20a%20Remote%20Database%20Server%20on%20Render%201d5bb7044bb18058b787fc258f37e764/image%206.png)
+        <img width="720" height="179" alt="The _redirects file" src="https://github.com/user-attachments/assets/440a3a38-f6b6-48fa-a5f8-6892bfc5d072" />
         
 
 Now your `version-5` folder, which contains all of the frontend code, should be able to connect to your remote web server that you deployed on Render! 
