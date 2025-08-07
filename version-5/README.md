@@ -1,15 +1,17 @@
-# Countries API App — Version 5
+# Countries API Application - Version 5
 
-In Version 5, you will...
+## 👋 Welcome!
+
+We are so close to completing our Countries API Application! The only thing left to do is deploy it so it's fully accessible on the internet, then write our README to explain our project to the world 🚀
+
+---
+
+## 🎯 Requirements for Version 4
+
+To complete Version 5, you will...
 - Deploy your server/API to Render
-- Deploy your database to Neon
 - Deploy your frontend to Netlify
-
-## Why do we deploy our code to the internet? 
-
-Deploying your application remotely makes your app accessible via a URL on the internet, not just your computer.
-
-There are many deployment tools out there (like Heroku, DigitalOcean, and AWS) but we are using these ones because they are free to use. Let's get started!
+- Write a README.md file to explain your project
 
 ---
 
@@ -20,6 +22,14 @@ There are many deployment tools out there (like Heroku, DigitalOcean, and AWS) b
 | UI | Netlify | Deploy frontend through Github. Creates an accessible URL in the browser. 
 | Web server | Render | Deploy backend web server through Github. Can respond to HTTP requests from our deployed frontend.
 | Database | Neon | Deploy PostgreSQL database to Neon. Connects to Render web server to respond to SQL queries.
+
+---
+
+## Why do we deploy our code to the internet? 
+
+Deploying your application remotely makes your app accessible via a URL on the internet, not just your computer.
+
+There are many deployment tools out there (like Heroku, DigitalOcean, and AWS) but we are using these ones because they are free to use. Let's get started!
 
 ---
 
