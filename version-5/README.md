@@ -43,9 +43,9 @@ There are many deployment tools out there (like Heroku, DigitalOcean, and AWS) b
       });
       ```
 
-- **Delete the `config.js` file**, which is located in the `version-5/server/src` directory. You don't need this anymore, because it's only for connecting a _local_ server to the database. 
-- **Delete this line of code from your `index.js` file: `import config.js file from "./config.js`
-- **Add, Commit, and Push to your updated code to Github**
+- Delete the `config.js` file, which is located in the `version-5/server/src` directory. You don't need this anymore, because it's only for connecting a _local_ server to the database. 
+- Delete this line of code from the top of your `index.js` file:  `import config.js file from "./config.js`
+- Add, Commit, and Push to your updated code to Github
 
 ---
 
@@ -64,7 +64,7 @@ We will create a remote web server on Render that will run our Node.js code.
 
 - Click on the Web Server option in main dashboard
 - Link your Github repo with the countries_api project
-- Click on Create a Project, give it a name (“Countries Project”)
+- Click on Create a Project, give it a name (such as “Countries Project”)
 - Root Directory should have the file path to your `src` directory that contains your server’s `index.js` file
 - Build Command should be `npm install`
 - Start Command should be `node index.js`, which is the same command we use to run our server locally
@@ -105,21 +105,44 @@ To update your Render-hosted server to your Neon-hosted database, you will need 
     <img width="834" height="367" alt="Adding Neon database's connection string as an environmental variable called DATABASE_URL to the Render-hosted server" src="https://github.com/user-attachments/assets/1f13e87d-f3a5-4e4f-aec3-8c31c30783b6" />
 
 - Click Save, Rebuild, and Deploy
-- Now that your web server is running, if you have any console.log() calls in your index.js file, those will show up in the Logs section on Render because this is deployed remotely. It’s not going to show up in the server terminal anymore, because we’re no longer running our server on our local machine.
-- Now your web server on Render can talk to your database on Neon! Hooray! 🎉
+
+--- 
+
+## Debug your deployed server/API 
+
+- Check the Logs tab on Render, which is where any error messages or console.log messages will show up. They will no longer show up in the server terminal anymore, because we're no longer running it on our local machine. 
+
+    <img width="1484" height="857" alt="image" src="https://github.com/user-attachments/assets/aa2f82cd-b3a6-450f-a2e5-c55e62c1bf76" />
+- If you see any error messages in the Logs, read it carefully to decipher how to fix the issue. 
+- If you don't see any error messages, and the deployment was successful, you should see a green checkmark on the Events tab in Render.
+
+  <img width="1486" height="847" alt="image" src="https://github.com/user-attachments/assets/0810f8f2-8591-4002-b76d-48e8cd8d3ad3" />
 
 ---
 
-## Updating our Frontend Code
+## Find your deployed server's URL and test its endpoints 
 
-- **Find your Server’s URL in Render**
-In your Countries API web service in Render, you should see a URL that looks like this: [https://countries-api-vn58.onrender.com](https://countries-api-vn58.onrender.com/)
-    - You can find yours on the main tab under Settings or Events
-    - This is the URL of our remote server. It’s what we’re going to use to point all of our API endpoints.
-    - This URL will replace the `http://localhost:3000` base URL that you've been using in your frontend fetch queries to send your GET or POST requests.
-    - For example, if our frontend is trying to make a request, such as getting all saved countries, the URL would look like `https://countries-api-vn58.onrender.com/get-all-saved-countries` instead of `http://localhost:3000/get-all-saved-countries` 
-- **Update `vite.config.js` file**
-We are going to update this file to prevent CORS errors. In your `vite.config.js` file, change the value of the `target` key so that it is your Render server's URL rather than `http://localhost:3000`:
+If you've cleared all error messages on Render and it looks like it deployed successfully, it's time to test it!
+
+- Locate your server's URL in Render, which ends in `.onrender.com`. That's your deployed server/API's URL! This will replace the `http://localhost:3000` base URL, which is only for local servers. 
+
+    <img width="1487" height="330" alt="Render Server's Deployment URL" src="https://github.com/user-attachments/assets/e07f9f14-94a2-4749-8927-cce255c01a92" />
+
+- Copy your server's URL and paste it into the browser.
+- If your Render server hasn't received a request in a while, it will go to sleep. If you try to send it a request when it's asleep, you'll see a loading screen like below. It'll take a minute to wake up, so hang tight. 
+
+  <img width="1473" height="933" alt="Application Loading screen for the Render server" src="https://github.com/user-attachments/assets/5d37b03a-b702-4874-8822-8fbb00f446c2" />
+
+- Once it's awake, you can send a request to your deployed server/API. Test it by sending a GET request to any of your GET endpoints! For example, if you want to get all saved countries, the URL might look like `https://countries-api-vn58.onrender.com/get-all-saved-countries`.
+
+- Now your server is deployed remotely to Render! It's live on the internet! Hooray! 🎉
+
+---
+
+## Update the `vite.config.js` file in the frontend
+
+- Now it's time to update the frontend code, which is in the `client` folder. First, locate your `vite.config.js` file in your `client` folder. 
+- In your `vite.config.js` file, change the value of the `target` key so that it is your Render server's URL rather than `http://localhost:3000`:
     
     ```jsx
     // vite.config.js
@@ -142,8 +165,12 @@ We are going to update this file to prevent CORS errors. In your `vite.config.js
     });
     
     ```
+
+---
+
+## Update the `_redirects` file in the frontend
     
-- **Locate the `_redirects` file in the `public` folder** of your `client` folder. Currently it will have the following content:
+- Locate the `_redirects` file in the `public` folder** of your `client` folder. Currently it will have the following content:
         
     ```
     /api/* https://backend-answer-keys.onrender.com/:splat 200
@@ -156,7 +183,7 @@ We are going to update this file to prevent CORS errors. In your `vite.config.js
         <img width="720" height="179" alt="The _redirects file" src="https://github.com/user-attachments/assets/440a3a38-f6b6-48fa-a5f8-6892bfc5d072" />
         
 
-Now your `version-5` folder, which contains all of the frontend code, should be able to connect to your remote web server that you deployed on Render! 
+- Add, Commit, and Push your code to Github  
 
 ---
 
@@ -170,6 +197,7 @@ At this point, you've:
 - deployed your frontend to Netlify
 - deployed your backend PostgreSQL database to Render
 - deployed your backend API to Render
+- 
 That means you’ve deployed all 3 parts of your full-stack application to the internet! YAY! 
 
 ---
