@@ -21,7 +21,18 @@ We will deploy our web server remotely to [Render](https://render.com/) and our 
 
 ---
 
-## Copy the contents of your `version-4` folder into your `version-5` folder
+## Confirm your Version 4 works correctly 
+
+1. In VS Code, open your `countries-api-project` folder.
+3. Run your frontend and backend code to make sure your Version 4 code is working correctly. 
+
+---
+
+## Set up your `version-5` folder
+
+1. Duplicate your `version-4` folder. Rename the duplicate folder as `version-5`. This `version-5` contains the code that you will deploy!
+2. Push your code changes to Github.
+3. Open up your Github repo in the browser to make sure your repo has a `version-5` folder with your `client` and `server` code. 
 
 ---
 
@@ -30,8 +41,7 @@ We will deploy our web server remotely to [Render](https://render.com/) and our 
 We will use Render to deploy our web server remotely to the web. 
 
 - Go to [https://dashboard.render.com/billing#plan](https://dashboard.render.com/billing#plan) to sign up using your Github credentials. 
-- Enter information about your profile, and then select Hobbyist as the plan.
-- Go through the onboarding flow to create a new workspace. 
+- Go through the onboarding flow to enter information about your profile and create a workspace. Select Hobbyist as the plan.
 
 ---
 
