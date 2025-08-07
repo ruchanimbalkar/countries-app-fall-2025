@@ -1,13 +1,16 @@
-# Deploying a Server/API on Render
+# Deploying a Server/API to Render
 
 
 ## Introduction
 
-Deploying your database and web server remotely makes your app accessible from anywhere, not just your computer. It ensures better reliability, security, and performance, plus it's easier to scale and collaborate with others. Remote deployment is also the standard for professional, always-online services.
+Deploying your application remotely makes your app accessible from anywhere, not just your computer.
 
-Technically we could host our websites ourselves on our own computers, but that takes a lot of work. Using a cloud hosting platform means that we, as developers, don’t have to worry about things like maintaining physical servers, configuring them, making sure they don’t overheat, etc. so we can focus on the fun stuff — coding! 
+In Version 5, you will...
+- Deploy your server/API to Render
+- Deploy your database to Neon
+- Deploy your frontend to Netlify
 
-We will deploy our web server remotely to [Render](https://render.com/) and our database to [Neon](https://neon.tech). There are many other options out there (like Heroku, DigitalOcean, and AWS) but we are using these two because they are free to use, don't require a credit card to get started, and relatively easy to set up!
+There are many deployment tools out there (like Heroku, DigitalOcean, and AWS) but we are using these ones because they are free to use. Let's get started!
 
 ---
 
