@@ -31,6 +31,7 @@ We will use Render to deploy our web server remotely to the web.
 
 - Go to [https://dashboard.render.com/billing#plan](https://dashboard.render.com/billing#plan) to sign up using your Github credentials. 
 - Enter information about your profile, and then select Hobbyist as the plan.
+- Go through the onboarding flow to create a new workspace. 
 
 ---
 
