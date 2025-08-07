@@ -1,14 +1,13 @@
-# Deploying a Server/API to Render
-
-
-## Introduction
-
-Deploying your application remotely makes your app accessible from anywhere, not just your computer.
+# Countries API App — Version 5
 
 In Version 5, you will...
 - Deploy your server/API to Render
 - Deploy your database to Neon
 - Deploy your frontend to Netlify
+
+## Why do we deploy our code to the internet? 
+
+Deploying your application remotely makes your app accessible via a URL on the internet, not just your computer.
 
 There are many deployment tools out there (like Heroku, DigitalOcean, and AWS) but we are using these ones because they are free to use. Let's get started!
 
@@ -21,13 +20,6 @@ There are many deployment tools out there (like Heroku, DigitalOcean, and AWS) b
 | UI | Netlify | Deploy frontend through Github. Creates an accessible URL in the browser. 
 | Web server | Render | Deploy backend web server through Github. Can respond to HTTP requests from our deployed frontend.
 | Database | Neon | Deploy PostgreSQL database to Neon. Connects to Render web server to respond to SQL queries.
-
----
-
-## Confirm your Version 4 works correctly 
-
-1. In VS Code, open your `countries-api-project` folder.
-3. Run your frontend and backend code to make sure your Version 4 code is working correctly. 
 
 ---
 
