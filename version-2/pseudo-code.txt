@@ -1,0 +1,51 @@
+🧠 Pseudo-Coding Version 2
+
+
+When working with data, we ask:
+
+Storing Data
+- WHAT data should we store?
+- WHEN should we store the data?
+- WHERE should we store the data?
+- HOW should we store the data?
+
+Retrieving Data
+- WHAT data should we retrieve?
+- WHEN should we retrieve the data?
+- WHERE should we render the data?
+- HOW should we render the data? 
+
+
+Answer the Questions below by filling in the blanks _______. 
+
+Storing Form Data to Local Storage
+
+WHEN should we store the data? 
+When the user _______, 
+
+WHAT data should we store? 
+We store the _______  to Local Storage
+
+WHERE in the code did this happen? 
+On the _______
+
+HOW should we store the data?
+
+As a key-value pair, 
+where the key is _______
+And the value is _______
+
+
+Retrieving Form Data from Local Storage
+Question
+Answer
+WHEN should we retrieve the data? 
+When the user _______, 
+WHAT data should we retrieve? 
+We retrieve the _______  from Local Storage
+WHERE should we render the data?
+And render it on the _______
+HOW should we render the data?
+The user should see _______ on the page. 
+
+
