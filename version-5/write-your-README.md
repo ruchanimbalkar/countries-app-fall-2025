@@ -43,7 +43,7 @@ Once you're done filling out the template, paste it into your Github repo's main
 
 ---
 
-# 📝 Project Title
+# 📝 Your Project's Title — Replace this!
 
 Give your project a clear, simple name.
 
@@ -64,11 +64,31 @@ To take a screenshot of a specific portion of the screen, press and hold `Comman
 
 ## ✨ Features
 
-What are the features that you implemented in the app? For example, list the pages you built and what the user can do on those pages. 
+What are the features that you implemented in the app? 
+For example:
+- List the pages you built (e.g. Home, About, Dashboard)
+- Describe what the user can do on each page (e.g. view data, submit a form, search, etc.)
 
 ## 🛠️ Tech Stack
 
-List the technologies you used, including programming languages, libraries, frameworks, tools, and APIs (such as HTML, CSS, etc.) 
+List the tools and technologies you used to build the frontend, backend and database. 
+
+**Frontend**
+
+- **Languages:**
+- **Framework:**
+- **Deployment:**
+
+**Server/API**
+
+- **Languages:**
+- **Framework:**
+- **Deployment:**
+
+**Database**
+
+- **Languages:**
+- **Deployment:**
 
 ## 💭 Reflections
 
@@ -79,4 +99,4 @@ List the technologies you used, including programming languages, libraries, fram
 
 ## 🙌 Credits
 
-Did anyone or anything help you? Shout out tutorials or teammates with links if possible. 
+Did anyone or anything help you? Shout out tutorials or teammates. 
