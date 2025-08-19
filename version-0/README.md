@@ -1,3 +1,3 @@
-# Countries API Application - Version 0
+# Countries Application - Version 0
 
 ## [View Instructions Here](https://github.com/AnnieCannons/countries-app-instructions/tree/main/version-0)
