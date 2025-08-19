@@ -1,6 +1,12 @@
-------------
-Home
-------------
+--------------------
+🎯 Countries App — Version 1 — Milestone: Pseudo-Code
+--------------------
+
+Answer the below questions to pseudo-code your Version 1. 
+
+--------------------
+Home Page
+--------------------
   
   1. What props will this component receive from its parent, if any? 
   
@@ -14,9 +20,9 @@ Home
   
   6. Write any other notes you would like
 
-------------
-SavedCountries
-------------
+--------------------
+SavedCountries Page
+--------------------
   
   1. What props will this component receive from its parent, if any? 
   
@@ -30,9 +36,9 @@ SavedCountries
   
   6. Write any other notes you would like
 
-------------
-CountryDetail
-------------
+--------------------
+CountryDetail Page
+--------------------
   
   1. What props will this component receive from its parent, if any? 
   
