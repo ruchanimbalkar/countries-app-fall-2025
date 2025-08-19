@@ -1,5 +1,5 @@
 {
-  "name": "countries-app-server",
+  "name": "countries-app-server-api",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
