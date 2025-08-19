@@ -6,8 +6,6 @@ Throughout the Backend course, you will build a full-stack web application that 
 
 ## 📝 Instructions
 
-All instructions live in [this countries-app-instructions Github repo](https://github.com/AnnieCannons/countries-app-instructions).
-
 Each version of this app has a different set of instructions:
 - [Version 0 Instructions](https://github.com/AnnieCannons/countries-app-instructions/tree/main/version-0)
 - [Version 1 Instructions](https://github.com/AnnieCannons/countries-app-instructions/tree/main/version-1)
@@ -15,6 +13,8 @@ Each version of this app has a different set of instructions:
 - [Version 3 Instructions](https://github.com/AnnieCannons/countries-app-instructions/tree/main/version-3)
 - [Version 4 Instructions](https://github.com/AnnieCannons/countries-app-instructions/tree/main/version-4)
 - [Version 5 Instructions](https://github.com/AnnieCannons/countries-app-instructions/tree/main/version-5)
+
+All instructions live in the [countries-app-instructions Github repo](https://github.com/AnnieCannons/countries-app-instructions).
 
 ## 🔗 Resources
 
