@@ -1,4 +1,4 @@
-# Countries App
+# 🌍 Countries App
 
 ## 👋 Welcome!
 
