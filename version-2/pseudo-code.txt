@@ -70,9 +70,9 @@ STORING SAVED COUNTRIES DATA
 
 1. WHAT data should we store? 
 YOUR ANSWER: 
-The key is "savedCountries"
+The key is "_______"
 The value is _______
-Example value: ["Japan", "Brazil", "Canada"]
+Example value: _______
 
 2. WHEN should we store the data? 
 YOUR ANSWER: _______
@@ -93,9 +93,9 @@ RETRIEVING SAVED COUNTRIES DATA
 
 1. WHAT data should we retrieve? 
 YOUR ANSWER: 
-The key is "savedCountries"
+The key is _______
 and the value is _______
-Example value: ["Japan", "Brazil", "Canada"]
+Example value: _______
 
 2. WHEN should we retrieve the data? 
 YOUR ANSWER: _______
@@ -116,9 +116,9 @@ STORING COUNTRY COUNTS DATA
 
 1. WHAT data should we store? 
 YOUR ANSWER: 
-The key is "countryCounts"
+The key is _______
 The value is _______
-Example value: { "Japan": 3, "Brazil": 1, "Canada": 5 }
+Example value: _______
 
 2. WHEN should we store the data? 
 YOUR ANSWER: _______
@@ -139,9 +139,9 @@ RETRIEVING COUNTRY COUNTS DATA
 
 1. WHAT data should we retrieve? 
 YOUR ANSWER: 
-The key is "countryCounts"
+The key is _______
 and the value is _______
-Example value: { "Japan": 3, "Brazil": 1, "Canada": 5 }
+Example value: _______
 
 2. WHEN should we retrieve the data? 
 YOUR ANSWER: _______
