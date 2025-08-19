@@ -15,9 +15,8 @@ The designs were created to the following widths:
 - Light Gray (Background Color): `#fafafa`
 - White (CountryCard Background Color): `#ffffff`
 - Dark Gray (Input Border Color): `#858585`
+- Purple (Submit Button Color): `#7672ce`
 
-## Typography
-
-### Fonts
+## Fonts
 
 - Family: [Nunito Sans](https://fonts.google.com/specimen/Nunito+Sans)
