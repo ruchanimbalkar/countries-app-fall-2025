@@ -1,0 +1,49 @@
+------------
+Home
+------------
+  
+  1. What props will this component receive from its parent, if any? 
+  
+  2. What child components will you need, if any? What props will those components receive?
+  
+  3. What actions will the user be able to take on this page, and what function will handle that action? 
+  
+  4. What state variables will you need?
+  
+  5. Write down the first 3-5 steps you'll take to build this component. 
+  
+  6. Write any other notes you would like
+
+------------
+SavedCountries
+------------
+  
+  1. What props will this component receive from its parent, if any? 
+  
+  2. What child components will you need, if any? What props will those components receive?
+  
+  3. What actions will the user be able to take on this page, and what function will handle that action? 
+  
+  4. What state variables will you need?
+  
+  5. Write down the first 3-5 steps you'll take to build this component. 
+  
+  6. Write any other notes you would like
+
+------------
+CountryDetail
+------------
+  
+  1. What props will this component receive from its parent, if any? 
+  
+  2. What child components will you need, if any? What props will those components receive?
+  
+  3. What actions will the user be able to take on this page, and what function will handle that action? 
+  
+  4. What state variables will you need?
+  
+  5. Write down the first 3-5 steps you'll take to build this component. 
+  
+  6. Write any other notes you would like
+
+
