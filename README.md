@@ -4,7 +4,7 @@
 
 Throughout the Backend course, you will build a full-stack web application that displays information about countries around the world.
 
-## Instructions
+## 📝 Instructions
 
 Each version of this app has a different set of instructions:
 - [Version 0 Instructions](https://github.com/AnnieCannons/countries-app-instructions/tree/main/version-0)
