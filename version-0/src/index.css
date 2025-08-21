@@ -3,3 +3,10 @@
   line-height: 1.5;
   font-weight: 400;
 }
+
+body{
+  background-color: #fafafa;
+  font-family: "Nunito Sans", sans-serif;
+  padding: 1rem;
+  margin: 1rem;
+}
