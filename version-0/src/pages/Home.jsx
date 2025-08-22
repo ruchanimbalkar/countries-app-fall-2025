@@ -1,7 +1,15 @@
-export default function Home(){
-    console.log("Home");
+import CountryCard from '../components/CountryCard.jsx';
+export default function Home({countriesData}){
+    console.log('Home');
     return (<> 
-    <h1> Home Page</h1>
+        <main>
+            <div className='parent'>
+                {/* map over countriesData and render using component CountryCard */}
+                {countriesData.map((item, index)=>
+                    <CountryCard country={item} key={'country_' + index} />
+                )}
+            </div>
+        </main>
     </>);
 
 }

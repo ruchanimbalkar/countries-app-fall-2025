@@ -25967,4 +25967,5 @@ const localData = [
   },
 ];
 
+//Export localData to be used 
 export default localData;

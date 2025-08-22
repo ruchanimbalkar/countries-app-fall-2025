@@ -1,3 +1,4 @@
+
 header{
     background-color: white;
     border-radius: 8px;
@@ -22,4 +23,13 @@ header nav ul a{
 
 .home-page{
     font-weight: bold;
+}
+
+
+.parent{
+    display: grid;
+    margin-top: 1rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2rem;
+    padding: 1rem;
 }

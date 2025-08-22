@@ -1,11 +1,18 @@
-:root {
+/* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+} */
+:root{
+  --dark-blue: #111517; /*Dark Blue (Text Color)*/
+  --light-gray: #fafafa; /*Light Gray (Background Color)*/
+  --white: #ffffff; /* CountryCard Background Color*/
+  --dark-gray: #858585; /* Input Border Color*/
+  --purple: #7672ce ; /* Submit Button Color*/
 }
 
 body{
-  background-color: #fafafa;
+  background-color: var(--light-gray);
   font-family: "Nunito Sans", sans-serif;
   padding: 1rem;
   margin: 1rem;
