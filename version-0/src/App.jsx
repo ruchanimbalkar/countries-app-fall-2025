@@ -6,14 +6,28 @@ import SavedCountries from './pages/SavedCountries.jsx';
 import CountryDetail from './pages/CountryDetail.jsx';
 //import styles from App.css
 import './App.css';
-//import localData from localData.js
-import localData from '../localData.js';
+//import useState from React
+import { useState, useEffect } from 'react';
 
 function App() {
-  let dataFromLocalFile = localData;
-  //Sort Countries in alphabetical order
-  //Reference : https://stackoverflow.com/questions/1129216/sort-array-of-objects-by-string-property-value
-  dataFromLocalFile.sort((a,b) => a.name.official.localeCompare(b.name.official));
+  const [countryData, setCountryData] = useState([]);
+  let url =
+  'https://restcountries.com/v3.1/all?fields=name,flags,population,capital,region';
+
+  //useEffect to fetch data by making an API call for Google Books
+  useEffect(() => {
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        //Sort Countries in alphabetical order
+        //Reference : https://stackoverflow.com/questions/1129216/sort-array-of-objects-by-string-property-value
+        data.sort((a, b) => a.name.official.localeCompare(b.name.official));
+        setCountryData(data);
+      })
+      .catch((err) => console.log('Error Fetching API : ', err));
+  }, []);
+
   return (
     <div>
       <header>
@@ -30,7 +44,7 @@ function App() {
       </header>
 
       <Routes>
-        <Route path="/" element={<Home countriesData={dataFromLocalFile} />} />
+        <Route path="/" element={<Home countriesData={countryData} />} />
         <Route path="/savedcountries" element={<SavedCountries  />} />
         <Route path="/countrydetail" element={<CountryDetail  />} />
       </Routes>
