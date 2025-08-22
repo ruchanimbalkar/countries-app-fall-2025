@@ -10,9 +10,10 @@ import './App.css';
 import localData from '../localData.js';
 
 function App() {
+  let dataFromLocalFile = localData;
   //Sort Countries in alphabetical order
   //Reference : https://stackoverflow.com/questions/1129216/sort-array-of-objects-by-string-property-value
-  let dataFromLocalFile = localData.sort((a,b) => a.name.official.localeCompare(b.name.official));
+  dataFromLocalFile.sort((a,b) => a.name.official.localeCompare(b.name.official));
   return (
     <div>
       <header>
