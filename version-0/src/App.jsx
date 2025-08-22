@@ -10,11 +10,13 @@ import './App.css';
 import { useState, useEffect } from 'react';
 
 function App() {
+  //Using useState and array de-structuring declare variable "countryData" and function "setCountryData"
   const [countryData, setCountryData] = useState([]);
+  //save url in variable named "url"
   let url =
   'https://restcountries.com/v3.1/all?fields=name,flags,population,capital,region';
 
-  //useEffect to fetch data by making an API call for Google Books
+  //useEffect to fetch data by making an API call for Countries
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
