@@ -23,7 +23,7 @@ function App() {
         console.log(data);
         //Sort Countries in alphabetical order
         //Reference : https://stackoverflow.com/questions/1129216/sort-array-of-objects-by-string-property-value
-        data.sort((a, b) => a.name.official.localeCompare(b.name.official));
+        data.sort((a, b) => a.name.common.localeCompare(b.name.common));
         setCountryData(data);
       })
       .catch((err) => console.log('Error Fetching API : ', err));

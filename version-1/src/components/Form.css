@@ -1,24 +1,30 @@
 form{
+    margin-top: 1.5rem;
     padding: auto;
+    max-width: 600px;
 }
 input{
     border: none;
     border-radius: 0.1rem;
-    padding: 0.8rem;
+    margin-bottom: 0.3rem;
+    padding: 0.9rem;
+    width: 100%;
 }
 
 textarea{
     border: none;
     border-radius: 0.1rem;
     resize: none;
-    padding: 0.3rem;
+    padding: 0.9rem;
     margin-bottom: 1rem;
+    width: 100%;
 }
 button{
     background-color: var(--purple );
     border: none;
-    font-weight: 200;
+    font-size: 0.9rem;
     color: var(--white);
     display: block;
-    padding:0.2rem 0.8rem;
+    margin-top: 1rem;
+    padding:0.2rem 1.1rem;
 }
