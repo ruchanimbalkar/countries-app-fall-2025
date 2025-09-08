@@ -29,7 +29,14 @@ header nav ul a{
 .parent{
     display: grid;
     margin-top: 1rem;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 2rem;
     padding: 1rem;
 }
+
+/* 700px and larger - display with all 4 cards on one row.  */
+@media(min-width:700px){
+    .parent{
+       grid-template-columns: 1fr 1fr 1fr 1fr;/* four cards(columns) per row*/
+    } 
+  }
