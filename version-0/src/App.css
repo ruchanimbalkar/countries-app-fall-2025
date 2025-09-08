@@ -25,11 +25,12 @@ header nav ul a{
     font-weight: bold;
 }
 
-
+/* Up to 699px - display all cards in a single column */
+/*Default styles (Mobile First)*/
 .parent{
     display: grid;
     margin-top: 1rem;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; ;/* single column*/
     gap: 2rem;
     padding: 1rem;
 }

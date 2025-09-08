@@ -1,6 +1,8 @@
 //import styles
 import './CountryCard.css';
 export default function CountryCard({country}){
+    //testing : console.log("capital ", country.capital);
+    let displayData = ( country.capital.length !== 0 ) ? ( <>  <b> Capital : </b> {country.capital} </> ) : "";
     return (<> 
         {/* Return country card with official name, population, region and capital */}
         <div className="country-card">
@@ -9,8 +11,17 @@ export default function CountryCard({country}){
                 <h2>{country.name.official}</h2>
                 <p> <b> Population : </b> {country.population} </p>
                 <p> <b> Region : </b> {country.region}  </p>
-                <p> <b> Capital : </b> {country.capital} </p>
+                <p> 
+                    {displayData}
+                    {/* {
+                        (country.capital === "") 
+                        ? "" 
+                        : 
+                        {displayData}
+                    }  */}
+                </p>
             </div>
         </div>
     </>);
 }
+
