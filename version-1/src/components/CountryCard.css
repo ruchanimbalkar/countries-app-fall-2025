@@ -25,22 +25,7 @@ a {
    border-top-left-radius: 8px;
 }
 
-
-.country-card-text{
-    padding: 0.5rem;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    height: 100%;
+.country-card .country-card-text{
+    padding-left: 1rem;
 }
 
-.country-card .country-card-text h2{
-    text-align: start;
-    margin-bottom: 0;
-    /* text-decoration: none; */
-}
-.country-card .country-card-text p{
-    margin-bottom: 0;
-    /* text-decoration: none; */
-}

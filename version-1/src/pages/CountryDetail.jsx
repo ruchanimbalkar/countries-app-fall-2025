@@ -1,5 +1,6 @@
 //import useParams and use it to access the URL parameter called countryName
 import { useParams } from "react-router-dom";
+import Card from "../components/Card.jsx";
 export default function CountryDetail({countries}){
     //get this country's name from the URL parameter
     const countryName = useParams().countryName;
@@ -12,17 +13,11 @@ export default function CountryDetail({countries}){
             countryObject = country;       
         }   
     }
-    console.log("countryObject : ", countryObject);
-    let countryCapital = ( countryObject.capital.length !== 0 ) ? ( <>  <b> Capital : </b> {countryObject.capital} </> ) : "";
+    //testing: console.log("countryObject : ", countryObject);
     return (<> 
+        <a href="/" className="country-detail-back-link" > Back </a>
         <div className="country-detail">
-            <img src={countryObject.flags.png} alt={countryObject.flags.alt}/>
-            <div>
-                <h2> {countryName} </h2>
-                <p> <b> Population : </b>  {countryObject.population} </p>
-                <p> <b> Region : </b> {countryObject.region}  </p>
-                <p> {countryCapital} </p>
-            </div>    
+            <Card country={countryObject}/>
         </div>
     </>);
 

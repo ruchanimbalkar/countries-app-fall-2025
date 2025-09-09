@@ -43,6 +43,15 @@ header nav ul a{
   }
 
 .country-detail{
+    margin-top: 2rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
+}
+.country-detail-back-link{
+    background-color: white;
+    border: 0.1rem outset var(--dark-gray) ;
+    color:var(--dark-gray);
+    padding: 0.3rem;
+    margin-bottom: 1rem;
+
 }
