@@ -41,3 +41,8 @@ header nav ul a{
        grid-template-columns: 1fr 1fr 1fr 1fr;/* four cards(columns) per row*/
     } 
   }
+
+.country-detail{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}

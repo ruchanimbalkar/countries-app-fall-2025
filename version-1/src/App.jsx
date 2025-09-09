@@ -12,21 +12,33 @@ import { useState, useEffect } from 'react';
 function App() {
   //Using useState and array de-structuring declare variable "countryData" and function "setCountryData"
   const [countryData, setCountryData] = useState([]);
-  //save url in variable named "url"
+  //save API url in variable named "url"
   let url = 'https://restcountries.com/v3.1/all?fields=name,flags,population,capital,region,cca3,borders';
+
+  const getCountriesDataAsyncAwait = async () => {
+    try {
+      //Fetch data from API and wait for it to finish. 
+      // Save the value returned by the api call in a variable named 'response'. 
+      //Getting data from API takes time so we use the await keyword
+      const response = await fetch(
+        url
+      );
+      //convert response into JSON notation wait for this line ' await response.json();' to finish before we move to next line
+      const data = await response.json();
+      console.log(data);
+      //Sort Countries in alphabetical order
+      //Reference : https://stackoverflow.com/questions/1129216/sort-array-of-objects-by-string-property-value
+      data.sort((a, b) => a.name.common.localeCompare(b.name.common));
+      setCountryData(data);
+     
+    } catch (error) {
+      console.log('Error Fetching API: ' + error);
+    }
+  };
 
   //useEffect to fetch data by making an API call for Countries
   useEffect(() => {
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        //Sort Countries in alphabetical order
-        //Reference : https://stackoverflow.com/questions/1129216/sort-array-of-objects-by-string-property-value
-        data.sort((a, b) => a.name.common.localeCompare(b.name.common));
-        setCountryData(data);
-      })
-      .catch((err) => console.log('Error Fetching API : ', err));
+    getCountriesDataAsyncAwait();
   }, []);
 
   return (
@@ -47,7 +59,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home countriesData={countryData} />} />
         <Route path="/savedcountries" element={<SavedCountries  />} />
-        <Route path="/countrydetail" element={<CountryDetail  />} />
+        <Route path="/country/:countryName" element={<CountryDetail countries={countryData} />} />
       </Routes>
     </div>
   );

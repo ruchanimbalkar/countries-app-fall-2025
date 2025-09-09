@@ -1,3 +1,7 @@
+a {
+    text-decoration: none;
+    color: black;
+}
 .country-card{
     background-color: var(--white);
     width: auto;
@@ -34,7 +38,9 @@
 .country-card .country-card-text h2{
     text-align: start;
     margin-bottom: 0;
+    /* text-decoration: none; */
 }
 .country-card .country-card-text p{
     margin-bottom: 0;
+    /* text-decoration: none; */
 }
