@@ -12,7 +12,9 @@ export default function CountryDetail({countries}){
     return (<> 
         <a href="/" className="country-detail-back-link" > {leftArrowIcon} Back </a>
         <div className="country-detail">
-            <Card country={countryObject}/>
+            <Card country={countryObject}>
+               <button className="country-detail-back-link"> Save </button>
+            </Card>
         </div>
     </>);
 
