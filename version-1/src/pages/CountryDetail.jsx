@@ -6,14 +6,8 @@ export default function CountryDetail({countries}){
     const countryName = useParams().countryName;
     console.log("Country Detail");
     let leftArrowIcon = String.fromCodePoint(0x2190);
-    let countryObject = {};
-    for (let country of countries) {
-        console.log(typeof country);
-        if(country.name.common === countryName)
-        {
-            countryObject = country;       
-        }   
-    }
+    let countryObject = countries.find((country) => country.name.common === countryName);
+ 
     //testing: console.log("countryObject : ", countryObject);
     return (<> 
         <a href="/" className="country-detail-back-link" > {leftArrowIcon} Back </a>
