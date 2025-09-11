@@ -62,3 +62,9 @@ header nav ul a{
     margin: 2rem;
 
 }
+
+@media(max-width:699px){
+    .country-detail{
+        display: inline-block;
+    }
+}

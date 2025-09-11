@@ -1,8 +1,8 @@
 //import CountryCard component
 import CountryCard from '../components/CountryCard.jsx';
 export default function Home({countriesData}){
-    console.log('Home Page');
-    console.log('countries ', countriesData);
+    //testing: console.log('Home Page');
+    //testing: console.log('countries ', countriesData);
     return (<> 
         <main>
             <div className='parent'>

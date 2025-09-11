@@ -10,6 +10,7 @@ import './App.css';
 import { useState, useEffect } from 'react';
 
 function App() {
+  
   //Using useState and array de-structuring declare variable "countryData" and function "setCountryData"
   const [countryData, setCountryData] = useState([]);
   //save API url in variable named "url"
@@ -17,20 +18,21 @@ function App() {
 
   const getCountriesDataAsyncAwait = async () => {
     try {
-      //Fetch data from API and wait for it to finish. 
-      // Save the value returned by the api call in a variable named 'response'. 
-      //Getting data from API takes time so we use the await keyword
+      //Fetch data from API and wait for it to finish.Save the value returned by the api call in a variable named 'response'. 
       const response = await fetch(
         url
-      );
+      );    //Getting data from API takes time so we use the await keyword
+
       //convert response into JSON notation wait for this line ' await response.json();' to finish before we move to next line
       const data = await response.json();
       console.log(data);
+
       //Sort Countries in alphabetical order
       //Reference : https://stackoverflow.com/questions/1129216/sort-array-of-objects-by-string-property-value
       data.sort((a, b) => a.name.common.localeCompare(b.name.common));
-      setCountryData(data);
-     
+
+      //Set country data using the setter/updater function setCountryData and passing on data
+      setCountryData(data);     
     } catch (error) {
       console.log('Error Fetching API: ' + error);
     }
@@ -38,6 +40,7 @@ function App() {
 
   //useEffect to fetch data by making an API call for Countries
   useEffect(() => {
+    //Call function getCountriesDataAsyncAwait(); that makes the API call
     getCountriesDataAsyncAwait();
   }, []);
 

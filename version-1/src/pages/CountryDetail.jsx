@@ -4,8 +4,10 @@ import Card from "../components/Card.jsx";
 export default function CountryDetail({countries}){
     //get this country's name from the URL parameter
     const countryName = useParams().countryName;
-    console.log("Country Detail");
+    //testing: console.log("Country Detail");
+    //Get the back arrow symbol and convert to string
     let leftArrowIcon = String.fromCodePoint(0x2190);
+    //Use find method to get country with the same name as the countryName in dynamic url
     let countryObject = countries.find((country) => country.name.common === countryName);
  
     //testing: console.log("countryObject : ", countryObject);

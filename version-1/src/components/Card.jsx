@@ -1,5 +1,5 @@
 export default function Card({country, children}){
-
+    //Use ternary operator to see if capital for country exists and show if it exists or empty string if it does not.
     let countryCapital = ( country.capital.length !== 0 ) ? ( <>  <b> Capital : </b> {country.capital} </> ) : "";
 
     return(<>
