@@ -12,8 +12,8 @@ import "./App.css";
 import { useState, useEffect } from "react";
 
 function App() {
-  //Using useState and array de-structuring declare variable "countryData" and function "setCountryData"
-  const [countryData, setCountryData] = useState([]);
+  //Using useState and array de-structuring declare variable "countriesData" and function "setcountriesData"
+  const [countriesData, setCountriesData] = useState([]);
   const [checked, setChecked] = useState(false);
   const [mode, setMode] = useState("on");
   function handleChange(checked) {
@@ -39,8 +39,8 @@ function App() {
       //Reference : https://stackoverflow.com/questions/1129216/sort-array-of-objects-by-string-property-value
       data.sort((a, b) => a.name.common.localeCompare(b.name.common));
 
-      //Set country data using the setter/updater function setCountryData and passing on data
-      setCountryData(data);
+      //Set country data using the setter/updater function setcountriesData and passing on data
+      setCountriesData(data);
     } catch (error) {
       console.log("Error Fetching API: " + error);
     }
@@ -71,11 +71,11 @@ function App() {
       </header>
 
       <Routes>
-        <Route path="/" element={<Home countriesData={countryData} />} />
+        <Route path="/" element={<Home countriesData={countriesData} />} />
         <Route path="/savedcountries" element={<SavedCountries />} />
         <Route
           path="/country/:countryName"
-          element={<CountryDetail countries={countryData} />}
+          element={<CountryDetail countries={countriesData} />}
         />
       </Routes>
     </div>
