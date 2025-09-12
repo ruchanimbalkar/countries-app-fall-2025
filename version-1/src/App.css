@@ -7,7 +7,11 @@ header {
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
+  align-items: center;
   gap: 1rem;
+}
+header nav {
+  width: 100%;
 }
 
 header nav ul {
@@ -16,6 +20,7 @@ header nav ul {
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
+  align-content: center;
   gap: 1rem;
 }
 
@@ -85,4 +90,18 @@ header .toggle {
 .on {
   background-color: #2b3844;
   color: var(--light-gray);
+}
+
+.home-forms {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.home-forms .sort-form select {
+  background-color: inherit;
+  border: 0.01rem solid #2b3844;
+  color: inherit;
+  width: 100%;
+  padding: 1rem;
 }

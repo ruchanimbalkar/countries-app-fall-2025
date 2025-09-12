@@ -3,12 +3,24 @@ export default function Card({ country, children }) {
   let countryCapital =
     country.capital.length !== 0 ? (
       <>
-        {" "}
-        <b> Capital : </b> {country.capital}{" "}
+        <b> Capital : </b> {country.capital}
       </>
     ) : (
       ""
     );
+
+  let countryBorders = "";
+  if (children !== null || children !== undefined) {
+    countryBorders =
+      country.borders.length !== 0 ? (
+        <>
+          {" "}
+          <b> Border Countries : </b> {country.borders}{" "}
+        </>
+      ) : (
+        ""
+      );
+  }
 
   return (
     <>
@@ -25,6 +37,7 @@ export default function Card({ country, children }) {
           <b> Region : </b> {country.region}{" "}
         </p>
         <p> {countryCapital} </p>
+        {/* <p> {countryBorders} </p> */}
       </div>
     </>
   );
