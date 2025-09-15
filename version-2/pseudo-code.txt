@@ -44,15 +44,16 @@ EXAMPLE VALUE: {
 🔶 STORING FORM DATA 
 ------------------------
 
-WHEN: User submits the form
+WHEN: User submits the form / When the user clicks submit
 
-WHERE: localStorage
+WHERE: Saved Countries Page / Form component
 
 HOW: 
-Step 1: // Use JSON.stringify() to convert the object into a string before storing it. 
+Step 1: In the handleSubmit() function that gets the form data,  save it in localStorage
+// Use JSON.stringify() to convert the object into a string before storing it. 
     let userFormData = JSON.stringify(formData);
 Step 2: Store data in local storage 
-    localStorage.setItem('userData', userFormData)
+    localStorage.setItem('userInfo', userFormData)
 Step 3: Print on console for testing/checking:
     console.log('userFormData : ',userFormData)
 Add more steps as needed! 
@@ -61,13 +62,15 @@ Add more steps as needed!
 🔶 RETRIEVING FORM DATA 
 ------------------------
 
-WHEN: When user logs back in
+WHEN: When user loads the Saved Countires Page
 
-WHERE: Saved Countries Page
+WHERE: Saved Countries Page above the form
 
 HOW: 
-Step 1: // Use localStorage.getItem() and JSON.parse() to get the original object back
-    let userFormDataDeserialized = JSON.parse(localStorage.getItem('userData'));
+Step 1: We need to make a useEffect that retrieves the Form Data on page load and saves it in state
+Step 2: We render the state variable in the JSX as a heading that says "Welcome [User]!
+ // Use localStorage.getItem() and JSON.parse() to get the original object back
+    let userFormDataDeserialized = JSON.parse(localStorage.getItem('userInfo'));
 Step 2:  Print on console for testing/checking:
     console.log('userFormDataDeserialized : ',userFormDataDeserialized)
 
