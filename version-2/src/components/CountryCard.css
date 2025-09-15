@@ -1,0 +1,31 @@
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.country-card {
+  background-color: inherit;
+  color: inherit;
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  text-align: start;
+  gap: 3px;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  padding: 0;
+  overflow: scroll;
+}
+
+.country-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+}
+
+.country-card .country-card-text {
+  padding-left: 1rem;
+}

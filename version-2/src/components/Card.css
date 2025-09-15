@@ -1,0 +1,16 @@
+.country-card-text{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    height: 100%;
+}
+
+.country-card-text h2{
+    text-align: start;
+    margin-bottom: 0;
+}
+
+.country-card-text p{
+    margin-bottom: 0;
+}
