@@ -45,7 +45,7 @@ export default function SavedCountries({ countriesData }) {
         <h1>
           {userFormInfo === null
             ? "My Saved Countries "
-            : `Hi ${userFormInfo.fullName}`}
+            : `Welcome ${userFormInfo.fullName}!`}
         </h1>
         <div className="saved-countries-card"> </div>
         <Form
