@@ -72,7 +72,10 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home countriesData={countriesData} />} />
-        <Route path="/savedcountries" element={<SavedCountries />} />
+        <Route
+          path="/savedcountries"
+          element={<SavedCountries countriesData={countriesData} />}
+        />
         <Route
           path="/country/:countryName"
           element={<CountryDetail countries={countriesData} />}

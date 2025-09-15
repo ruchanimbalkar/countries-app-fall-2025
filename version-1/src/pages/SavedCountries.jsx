@@ -1,6 +1,6 @@
 //import Form component
 import Form from "../components/Form";
-export default function SavedCountries() {
+export default function SavedCountries({ countriesData }) {
   console.log("Saved Countries");
   return (
     <>
