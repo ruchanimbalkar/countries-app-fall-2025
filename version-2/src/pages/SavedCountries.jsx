@@ -4,8 +4,8 @@ import { useState, useEffect } from "react";
 export default function SavedCountries({ countriesData }) {
   //console.log("Saved Countries");
   const emptyFormState = { fullName: "", email: "", country: "", bio: "" };
-  const [userFormInfo, setUserFormInfo] = useState(null);
   const [formData, setFormData] = useState(emptyFormState);
+  const [userFormInfo, setUserFormInfo] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;

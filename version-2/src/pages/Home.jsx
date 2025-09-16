@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 //import CountryCard component
 import CountryCard from "../components/CountryCard.jsx";
-export default function Home({ countriesData }) {
+export default function Home({ countriesData, day }) {
+  console.log("Home day", day);
   //testing: console.log('Home Page');
   //testing: console.log('countries ', countriesData);
 
@@ -19,11 +20,18 @@ export default function Home({ countriesData }) {
   return (
     <>
       <main>
-        <div className="home-forms">
-          <form className="search-form">
+        <div
+          className="home-forms"
+          // style={{
+          //   backgroundColor: day ? "white" : "black",
+          //   color: day ? "black" : "white",
+          // }}
+        >
+          <form>
             <input
               placeholder={`${searchIcon} Search for a country...`}
               type="text"
+              name="searchTerm"
             />
           </form>
 
@@ -45,7 +53,7 @@ export default function Home({ countriesData }) {
         <div className="parent">
           {/* map over countriesData and render using component CountryCard */}
           {checkCountriesData().map((item, index) => (
-            <CountryCard country={item} key={"country_" + index} />
+            <CountryCard country={item} key={"country_" + index} day={day} />
           ))}
         </div>
       </main>

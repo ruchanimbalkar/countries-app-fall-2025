@@ -1,11 +1,10 @@
 form {
+  /* border: 0.1rem solid inherit; */
   margin-top: 1.5rem;
   padding: 1rem;
   max-width: 600px;
 }
 input {
-  background-color: inherit;
-  color: inherit;
   border: none;
   border-radius: 0.1rem;
   margin-bottom: 0.3rem;
@@ -14,8 +13,6 @@ input {
 }
 
 textarea {
-  background-color: inherit;
-  color: inherit;
   border: none;
   border-radius: 0.1rem;
   resize: none;

@@ -24,20 +24,22 @@ export default function Card({ country, children }) {
 
   return (
     <>
-      <img src={country.flags.png} alt={country.flags.alt} />
-      <div className="country-card-text">
-        <h2> {country.name.common} </h2>
-        {children}
-        <p>
-          {" "}
-          <b> Population : </b> {country.population}{" "}
-        </p>
-        <p>
-          {" "}
-          <b> Region : </b> {country.region}{" "}
-        </p>
-        <p> {countryCapital} </p>
-        {/* <p> {countryBorders} </p> */}
+      <div className="card">
+        <img src={country.flags.png} alt={country.flags.alt} />
+        <div className="country-card-text">
+          <h2> {country.name.common} </h2>
+          {children}
+          <p>
+            {" "}
+            <b> Population : </b> {country.population}{" "}
+          </p>
+          <p>
+            {" "}
+            <b> Region : </b> {country.region}{" "}
+          </p>
+          <p> {countryCapital} </p>
+          {/* <p> {countryBorders} </p> */}
+        </div>
       </div>
     </>
   );

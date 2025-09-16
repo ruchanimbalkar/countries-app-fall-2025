@@ -15,10 +15,12 @@ function App() {
   //Using useState and array de-structuring declare variable "countriesData" and function "setcountriesData"
   const [countriesData, setCountriesData] = useState([]);
   const [checked, setChecked] = useState(false);
-  const [mode, setMode] = useState("on");
+  // const [mode, setMode] = useState("on");
+  const [day, setDay] = useState(false);
   function handleChange(checked) {
     setChecked(checked);
-    mode === "on" ? setMode("off") : setMode("on");
+    // mode === "on" ? setMode("off") : setMode("on");
+    setDay(!day);
   }
   //Get the heart symbol and convert to string
   let HeartIcon = String.fromCodePoint(0x2661);
@@ -53,8 +55,19 @@ function App() {
   }, []);
 
   return (
-    <div className={`App ${mode}`}>
-      <header>
+    <div
+      className="App"
+      style={{
+        backgroundColor: day ? "#FAFAFA" : "#202C36",
+        color: day ? "black" : "white",
+      }}
+    >
+      <header
+        style={{
+          backgroundColor: day ? "white" : " #2b3844",
+          color: day ? "black" : "white",
+        }}
+      >
         <nav>
           <ul>
             <li>
@@ -71,14 +84,17 @@ function App() {
       </header>
 
       <Routes>
-        <Route path="/" element={<Home countriesData={countriesData} />} />
+        <Route
+          path="/"
+          element={<Home countriesData={countriesData} day={day} />}
+        />
         <Route
           path="/savedcountries"
           element={<SavedCountries countriesData={countriesData} />}
         />
         <Route
           path="/country/:countryName"
-          element={<CountryDetail countries={countriesData} />}
+          element={<CountryDetail countries={countriesData} day={day} />}
         />
       </Routes>
     </div>
