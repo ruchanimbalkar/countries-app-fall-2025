@@ -14,7 +14,7 @@ export default function SavedCountries({ countriesData }) {
     setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
   };
 
-  function handleSubmit(event) {
+  const handleSubmit = (event) => {
     event.preventDefault();
     // update the user's info in state
     setUserFormInfo(formData);
@@ -24,7 +24,7 @@ export default function SavedCountries({ countriesData }) {
     let userFormData = JSON.stringify(formData);
     //Save user data in local storage
     localStorage.setItem("userInfo", userFormData);
-  }
+  };
 
   useEffect(() => {
     if (localStorage.getItem("userInfo")) {
