@@ -68,7 +68,7 @@ header .toggle {
   display: flex;
   flex-direction: row;
   align-content: space-around;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 5rem;
   margin: 2rem;
 }
@@ -83,9 +83,9 @@ header .toggle {
 }
 
 .country-detail-back-link {
-  background-color: white;
+  /* background-color: white; */
   border: 0.1rem outset var(--light-gray);
-  color: var(--dark-gray);
+  /* color: var(--dark-gray); */
   padding: 0.2rem 1rem;
   margin: 2rem;
 }

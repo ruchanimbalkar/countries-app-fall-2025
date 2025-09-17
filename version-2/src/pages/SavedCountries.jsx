@@ -1,11 +1,16 @@
 //import Form component
-import Form from "../components/Form";
+import Form from "../components/Form.jsx";
+//Import Card component
+import Card from "../components/Card.jsx";
 import { useState, useEffect } from "react";
 export default function SavedCountries({ countriesData }) {
   //console.log("Saved Countries");
   const emptyFormState = { fullName: "", email: "", country: "", bio: "" };
   const [formData, setFormData] = useState(emptyFormState);
   const [userFormInfo, setUserFormInfo] = useState(null);
+  //Declare an empty array named countryObject (this is an array of objects and will contain all country objects)
+  let countryObjects = [];
+  let foundCountry = null;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -37,6 +42,32 @@ export default function SavedCountries({ countriesData }) {
     }
   }, []);
 
+  //Check if there is a savedCountry in localStorage
+  if (localStorage.getItem("savedCountries")) {
+    //declared a variable named 'delimiter' and assign it a comma
+    let delimiter = ",";
+    //Get savedCountries from localStorage using the key
+    let countryNamesInString = localStorage.getItem("savedCountries");
+    //convert savedCountries to array using the delimiter
+    let countryNamesArray = countryNamesInString.split(delimiter);
+    console.log("countryNamesArray : ", countryNamesArray);
+    // Use a for of loop to loop over the countryNamesArray and get countries
+    for (let countryName of countryNamesArray) {
+      console.log(
+        "countryName ",
+        countryName,
+        "typeof countryName ",
+        typeof countryName
+      );
+      foundCountry = countriesData.find(
+        (country) => country.name.common === countryName
+      );
+      console.log("foundCountry : ", foundCountry);
+      //Push found countries in the countryObjects array
+      countryObjects.push(foundCountry);
+    }
+  }
+
   return (
     <>
       <main>
@@ -45,7 +76,12 @@ export default function SavedCountries({ countriesData }) {
             ? "My Saved Countries "
             : `Welcome ${userFormInfo.fullName}!`}
         </h1>
-        <div className="saved-countries-card"> </div>
+        <div className="saved-countries-card">
+          {countryObjects &&
+            countryObjects.map((savedCountry, index) => (
+              <Card country={savedCountry} key={"country_" + index} />
+            ))}
+        </div>
         <Form
           onSubmit={handleSubmit}
           onChange={handleChange}

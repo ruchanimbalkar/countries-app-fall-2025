@@ -10,10 +10,10 @@ export default function Toggle({ checked, onChange }) {
       <Switch
         onChange={onChange}
         checked={checked}
-        checkedIcon={filledMoon}
-        uncheckedIcon={emptyMoon}
-        onColor="#7f7f7f"
-        offColor="#f2f5f2"
+        checkedIcon={emptyMoon}
+        uncheckedIcon={filledMoon}
+        onColor="#f2f5f2"
+        offColor="#202C36"
         onHandleColor="#bfbfbf"
         offHandleColor="#404040"
       />{" "}
