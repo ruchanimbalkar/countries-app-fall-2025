@@ -35,7 +35,7 @@ function App() {
 
       //convert response into JSON notation wait for this line ' await response.json();' to finish before we move to next line
       const data = await response.json();
-      console.log(data);
+      console.log("data ", data);
 
       //Sort Countries in alphabetical order
       //Reference : https://stackoverflow.com/questions/1129216/sort-array-of-objects-by-string-property-value

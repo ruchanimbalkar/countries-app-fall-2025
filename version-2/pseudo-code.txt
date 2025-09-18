@@ -82,38 +82,40 @@ Add more steps as needed!
 
 WHAT data should we store & retrieve? 
 
-KEY: "_______"
-VALUE: _______
-VALUE DATA TYPE: _______
-EXAMPLE VALUE: _______
+KEY: "savedCountries"
+VALUE: An array of the name of countries saved
+VALUE DATA TYPE: Array of Strings
+EXAMPLE VALUE: [Afghanistan, India,China,]
 
 ------------------------
 🔶 STORING SAVED COUNTRIES DATA 
 ------------------------
 
-WHEN: _______
+WHEN: user clicks the save button on country detail page
 
-WHERE: _______
+WHERE: On the CountryDetail page by clicking on the save button(localStorage)
 
 HOW: 
-Step 1: _______
-Step 2: _______
-Step 3: _______
-Add more steps as needed! 
+Step 1: Create an array to save countryNames using useState
+Step 2: Write arrow function for the onSubmit button :  When the user clicks on the save button, call the handleSave function
+Step 3: Inside the function push the countryName in the array
+Step 4: Convert the array to String format
+Step 3: Save the stringified data with key savedCountries in localStorage 
 
 ------------------------
 🔶 RETRIEVING SAVED COUNTRIES DATA 
 ------------------------
 
-WHEN: _______
+WHEN: When user goes to saved countries page /clicks the saved counytries page link
 
-WHERE: _______
+WHERE: Saved Countries page in the saved countries section
 
 HOW: 
-Step 1: _______
-Step 2: _______
-Step 3: _______
-Add more steps as needed! 
+Step 1: Make a useEffect that runs on the page load
+Step 2:  Get the array from by retrieving the key savedCountries from localStorage
+Step 3: Convert back to array format using , delimiter
+Step 4: Use the countriesData prop inside a for loop to find the countries in the savedCountries array and save them in an array of objects
+Step 5: Render the countries on the Saved Countries page using the Country Card component ?? using map method
 
 ------------------------
 📊 COUNTRY COUNTS DATA 
@@ -121,10 +123,10 @@ Add more steps as needed!
 
 WHAT data should we store & retrieve? 
 
-KEY: "_______"
-VALUE: _______
-VALUE DATA TYPE: _______
-EXAMPLE VALUE: _______
+KEY: "visitedCount"
+VALUE: count of how many times a country was visited
+VALUE DATA TYPE: number
+EXAMPLE VALUE: 2
 
 ------------------------
 🔶 STORING & RETRIEVING COUNTRY COUNTS DATA 

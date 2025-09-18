@@ -1,10 +1,13 @@
 //import useParams and use it to access the URL parameter called countryName
 import { useParams } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Card from "../components/Card.jsx";
 export default function CountryDetail({ countries, day }) {
   //Declare an empty array to save country names
   const [savedCountryNames, setSavedCountryNames] = useState([]);
+  console.log("line 8 savedCountryNames", savedCountryNames);
+  console.log("typeof savedCountryNames", typeof savedCountryNames);
+  let savedCountryNamesStrings = "";
   console.log("CountryDetail day", day);
   //get this country's name from the URL parameter
   const countryName = useParams().countryName;
@@ -15,23 +18,50 @@ export default function CountryDetail({ countries, day }) {
   let countryObject = countries.find(
     (country) => country.name.common === countryName
   );
+  console.log("countries ", countries);
 
   const handleSave = () => {
     //Save the country only once
     //check if country not already present in savedCountryNames array
     if (!savedCountryNames.includes(countryName)) {
-      //push country name in the savedCountries Array
-      savedCountryNames.push(countryName);
-      //Set array savedCountryNames using the setter/updater function
-      setSavedCountryNames(savedCountryNames);
+      console.log(
+        "the countryName is not present in the savedCountryNames array "
+      );
+      // Add the new countryName using array spread syntax
+      let countryNamesSaved = [...savedCountryNames, countryName];
       //convert array to string
-      let savedCountryNamesStrings = savedCountryNames.toString();
+      savedCountryNamesStrings = JSON.stringify(countryNamesSaved);
+      console.log("savedCountryNamesStrings===", savedCountryNamesStrings);
       //save stringified countryNames array  in localStorage
       localStorage.setItem("savedCountries", savedCountryNamesStrings);
+      //Set array savedCountryNames using the setter/updater function
+      setSavedCountryNames(countryNamesSaved);
+      console.log("line 38 : savedCountryNames ", savedCountryNames);
     }
   };
 
-  //testing: console.log("countryObject : ", countryObject);
+  //check for previously saved countries on initial render
+  useEffect(() => {
+    //Check if there is a savedCountry in localStorage and length > 0
+    if (
+      localStorage.getItem("savedCountries") &&
+      localStorage.getItem("savedCountries").length > 0
+    ) {
+      //declared a variable named 'delimiter' and assign it a comma
+      // let delimiter = ",";
+      //Get savedCountries from localStorage using the key
+      //let countryNamesInString = localStorage.getItem("savedCountries");
+      //console.log("countryNamesInString ", countryNamesInString);
+      // //convert savedCountries to array using the delimiter
+      // let countryNamesArray = countryNamesInString.split(delimiter);
+      //convert the String back to parse using JSON.parse
+      let countryNamesArray = JSON.parse(
+        localStorage.getItem("savedCountries")
+      );
+      console.log("countryNamesArray ", countryNamesArray);
+      setSavedCountryNames(countryNamesArray);
+    }
+  }, []);
   return (
     <>
       <main>

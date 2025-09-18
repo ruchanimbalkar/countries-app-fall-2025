@@ -9,8 +9,9 @@ export default function SavedCountries({ countriesData }) {
   const [formData, setFormData] = useState(emptyFormState);
   const [userFormInfo, setUserFormInfo] = useState(null);
   //Declare an empty array named countryObject (this is an array of objects and will contain all country objects)
-  let countryObjects = [];
+  const [countryObjects, setCountryObjects] = useState([]);
   let foundCountry = null;
+  let array = [];
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -40,33 +41,38 @@ export default function SavedCountries({ countriesData }) {
       setUserFormInfo(profileDestringified);
       console.log("userFormInfo : ", userFormInfo);
     }
-  }, []);
 
-  //Check if there is a savedCountry in localStorage
-  if (localStorage.getItem("savedCountries")) {
-    //declared a variable named 'delimiter' and assign it a comma
-    let delimiter = ",";
-    //Get savedCountries from localStorage using the key
-    let countryNamesInString = localStorage.getItem("savedCountries");
-    //convert savedCountries to array using the delimiter
-    let countryNamesArray = countryNamesInString.split(delimiter);
-    console.log("countryNamesArray : ", countryNamesArray);
-    // Use a for of loop to loop over the countryNamesArray and get countries
-    for (let countryName of countryNamesArray) {
-      console.log(
-        "countryName ",
-        countryName,
-        "typeof countryName ",
-        typeof countryName
-      );
-      foundCountry = countriesData.find(
-        (country) => country.name.common === countryName
-      );
-      console.log("foundCountry : ", foundCountry);
-      //Push found countries in the countryObjects array
-      countryObjects.push(foundCountry);
+    //Check if there is a savedCountry in localStorage
+    if (localStorage.getItem("savedCountries")) {
+      //declared a variable named 'delimiter' and assign it a comma
+      // let delimiter = ",";
+      //Get savedCountries from localStorage using the key
+      let countryNamesInString = localStorage.getItem("savedCountries");
+      console.log("countryNamesInString", countryNamesInString);
+      //convert savedCountries to array using JSON parse
+      let countryNamesArray = JSON.parse(countryNamesInString) || "[]";
+      console.log("Line 53 countryNamesArray : ", countryNamesArray);
+      // Use a for of loop to loop over the countryNamesArray and get countries
+      for (let countryName of countryNamesArray) {
+        console.log(
+          "countryName ",
+          countryName,
+          "typeof countryName ",
+          typeof countryName
+        );
+        foundCountry = countriesData.find(
+          (country) => country.name.common === countryName
+        );
+        console.log("foundCountry : ", foundCountry);
+        //add found countries in the countryObjects array
+        if (!array.includes(foundCountry)) {
+          // array.push(foundCountry);
+          array = [...array, foundCountry];
+        }
+      }
+      setCountryObjects(array);
     }
-  }
+  }, []);
 
   return (
     <>
