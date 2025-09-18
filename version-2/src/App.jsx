@@ -90,7 +90,7 @@ function App() {
         />
         <Route
           path="/savedcountries"
-          element={<SavedCountries countriesData={countriesData} />}
+          element={<SavedCountries countriesData={countriesData} day={day} />}
         />
         <Route
           path="/country/:countryName"

@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Card from "../components/Card.jsx";
 export default function CountryDetail({ countries, day }) {
+  const [count, setCount] = useState(0);
+  let visit = 0;
   //Declare an empty array to save country names
   const [savedCountryNames, setSavedCountryNames] = useState([]);
   console.log("line 8 savedCountryNames", savedCountryNames);
@@ -47,19 +49,35 @@ export default function CountryDetail({ countries, day }) {
       localStorage.getItem("savedCountries") &&
       localStorage.getItem("savedCountries").length > 0
     ) {
-      //declared a variable named 'delimiter' and assign it a comma
-      // let delimiter = ",";
-      //Get savedCountries from localStorage using the key
-      //let countryNamesInString = localStorage.getItem("savedCountries");
-      //console.log("countryNamesInString ", countryNamesInString);
-      // //convert savedCountries to array using the delimiter
-      // let countryNamesArray = countryNamesInString.split(delimiter);
       //convert the String back to parse using JSON.parse
       let countryNamesArray = JSON.parse(
         localStorage.getItem("savedCountries")
       );
       console.log("countryNamesArray ", countryNamesArray);
       setSavedCountryNames(countryNamesArray);
+    }
+    //Country count
+    //check for previous visits using the localStorage data "visitedCount"
+    if (localStorage.getItem(`visitedCount_${countryName}`)) {
+      visit = JSON.parse(localStorage.getItem(`visitedCount_${countryName}`));
+      //previous visits # + first visit
+      visit = visit + 1;
+      localStorage.setItem(
+        `visitedCount_${countryName}`,
+        JSON.stringify(visit)
+      );
+      //increment count by visit
+      setCount(count + visit);
+    }
+    //Otherwise it is a first visit
+    else {
+      visit = 1;
+      localStorage.setItem(
+        `visitedCount_${countryName}`,
+        JSON.stringify(visit)
+      );
+      //first visit
+      setCount(visit);
     }
   }, []);
   return (
@@ -90,6 +108,7 @@ export default function CountryDetail({ countries, day }) {
               Save{" "}
             </button>
           </Card>
+          {count && <h2> Visits : {count} </h2>}
         </div>
       </main>
     </>

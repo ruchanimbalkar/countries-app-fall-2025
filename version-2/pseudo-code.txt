@@ -133,12 +133,14 @@ EXAMPLE VALUE: 2
 ------------------------
 NOTE: We combine storing & retrieving country counts data into one section because they always happen together. Each time we look up a country’s view count, we also need to increase it and save the new total.
 
-WHEN: _______
+WHEN: when user visits the country (Country Detail page)
 
-WHERE: _______
+WHERE: in count variable in Country Detail page and later in localStorage
 
 HOW: 
-Step 1: _______
-Step 2: _______
-Step 3: _______
+Step 1: Declare a useEffect function. Then on initial render retrieve "visitedCount" and save in a useState variable
+Step 2: in setter function for the count in the Country Detail page, increment count by 1 (visitedCount +1)
+Step 3: store the updated count in localStorage
+Step 4: Set count in the state variable
+Step 5: Display /Render Visited count in the JSX .
 Add more steps as needed! 

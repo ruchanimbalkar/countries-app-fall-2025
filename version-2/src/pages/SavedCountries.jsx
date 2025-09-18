@@ -1,9 +1,9 @@
 //import Form component
 import Form from "../components/Form.jsx";
 //Import Card component
-import Card from "../components/Card.jsx";
+import CountryCard from "../components/CountryCard.jsx";
 import { useState, useEffect } from "react";
-export default function SavedCountries({ countriesData }) {
+export default function SavedCountries({ countriesData, day }) {
   //console.log("Saved Countries");
   const emptyFormState = { fullName: "", email: "", country: "", bio: "" };
   const [formData, setFormData] = useState(emptyFormState);
@@ -85,7 +85,11 @@ export default function SavedCountries({ countriesData }) {
         <div className="saved-countries-card">
           {countryObjects &&
             countryObjects.map((savedCountry, index) => (
-              <Card country={savedCountry} key={"country_" + index} />
+              <CountryCard
+                country={savedCountry}
+                key={"country_" + index}
+                day={day}
+              />
             ))}
         </div>
         <Form
