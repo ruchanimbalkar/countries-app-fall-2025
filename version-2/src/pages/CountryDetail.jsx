@@ -95,7 +95,7 @@ export default function CountryDetail({ countries, day }) {
           {leftArrowIcon} Back{" "}
         </a>
         <div className="country-detail">
-          <Card country={countryObject} day={day}>
+          <Card country={countryObject} day={day} viewed={count}>
             <button
               className="country-detail-back-link"
               style={{
@@ -108,7 +108,6 @@ export default function CountryDetail({ countries, day }) {
               Save{" "}
             </button>
           </Card>
-          {count && <h2> Visits : {count} </h2>}
         </div>
       </main>
     </>

@@ -1,4 +1,4 @@
-export default function Card({ country, children }) {
+export default function Card({ country, children, viewed = undefined }) {
   console.log("country :", country);
   //Use ternary operator to see if capital for country exists and show if it exists or empty string if it does not.
   let countryCapital =
@@ -9,7 +9,14 @@ export default function Card({ country, children }) {
     ) : (
       ""
     );
-
+  let viewedCount =
+    viewed != undefined ? (
+      <>
+        <b> Viewed : </b> {`${viewed} times`}
+      </>
+    ) : (
+      ""
+    );
   let countryBorders = "";
   if (children !== null || children !== undefined) {
     countryBorders =
@@ -22,6 +29,7 @@ export default function Card({ country, children }) {
         ""
       );
   }
+  console.log("children", children);
 
   return (
     <>
@@ -39,6 +47,7 @@ export default function Card({ country, children }) {
             <b> Region : </b> {country.region}{" "}
           </p>
           <p> {countryCapital} </p>
+          <p> {viewedCount} </p>
           {/* <p> {countryBorders} </p> */}
         </div>
       </div>
