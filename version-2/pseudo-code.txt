@@ -135,7 +135,7 @@ NOTE: We combine storing & retrieving country counts data into one section becau
 
 WHEN: when user visits the country (Country Detail page)
 
-WHERE: in count variable in Country Detail page and later in localStorage
+WHERE: in count variable in Country Detail page and (later also set it in localStorage)
 
 HOW: 
 Step 1: Declare a useEffect function. Then on initial render retrieve "visitedCount" and save in a useState variable
@@ -143,4 +143,3 @@ Step 2: in setter function for the count in the Country Detail page, increment c
 Step 3: store the updated count in localStorage
 Step 4: Set count in the state variable
 Step 5: Display /Render Visited count in the JSX .
-Add more steps as needed! 
