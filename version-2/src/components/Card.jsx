@@ -1,5 +1,5 @@
 export default function Card({ country, children, viewed = undefined }) {
-  console.log("country :", country);
+  //console.log("country :", country);
   //Use ternary operator to see if capital for country exists and show if it exists or empty string if it does not.
   let countryCapital =
     country.capital.length !== 0 ? (
@@ -32,7 +32,7 @@ export default function Card({ country, children, viewed = undefined }) {
   //       ""
   //     );
   // }
-  console.log("children", children);
+  //console.log("children", children);
 
   return (
     <>

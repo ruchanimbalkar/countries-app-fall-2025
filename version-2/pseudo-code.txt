@@ -139,7 +139,7 @@ WHERE: in count variable in Country Detail page and (later also set it in localS
 
 HOW: 
 Step 1: Declare a useEffect function. Then on initial render retrieve "visitedCount" and save in a useState variable
-Step 2: in setter function for the count in the Country Detail page, increment count by 1 (visitedCount +1)
+Step 2: In setter function for the count in the Country Detail page, increment count by 1 (visitedCount +1)
 Step 3: store the updated count in localStorage
 Step 4: Set count in the state variable
 Step 5: Display /Render Visited count in the JSX .
