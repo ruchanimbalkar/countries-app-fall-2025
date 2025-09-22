@@ -15,11 +15,9 @@ function App() {
   //Using useState and array de-structuring declare variable "countriesData" and function "setcountriesData"
   const [countriesData, setCountriesData] = useState([]);
   const [checked, setChecked] = useState(false);
-  // const [mode, setMode] = useState("on");
   const [day, setDay] = useState(false);
   function handleChange(checked) {
     setChecked(checked);
-    // mode === "on" ? setMode("off") : setMode("on");
     setDay(!day);
   }
   //Get the heart symbol and convert to string

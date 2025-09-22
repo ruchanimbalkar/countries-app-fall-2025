@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 //import CountryCard component
 import CountryCard from "../components/CountryCard.jsx";
 export default function Home({ countriesData, day }) {
@@ -8,11 +8,16 @@ export default function Home({ countriesData, day }) {
 
   //Get the heart symbol and convert to string
   let searchIcon = String.fromCodePoint(0x1f50d);
+  //Declare a variable named region and assign it the value of empty string using useState.Also declare the setter/updater function setRegion
   const [region, setRegion] = useState("");
+  //Declare an arroe function that  returns countries filtered country by region or just returns all countries
   const checkCountriesData = () => {
+    //if region is an empty string or "Filter by Data"
     if (region === "" || region === "Filter by Data") {
+      //return all countries data
       return countriesData;
     } else {
+      //return countries in that region
       return countriesData.filter((country) => country.region === region);
     }
   };
