@@ -9,6 +9,8 @@ export default function Card({ country, children, viewed = undefined }) {
     ) : (
       ""
     );
+  //The default value of viewedCount is undefined when Card component is being rendered on SavedCountries page and Home Page
+  //Otherwise viewedCount is the prop passed by the CountryDetail page
   let viewedCount =
     viewed != undefined ? (
       <>
@@ -17,18 +19,19 @@ export default function Card({ country, children, viewed = undefined }) {
     ) : (
       ""
     );
-  let countryBorders = "";
-  if (children !== null || children !== undefined) {
-    countryBorders =
-      country.borders.length !== 0 ? (
-        <>
-          {" "}
-          <b> Border Countries : </b> {country.borders}{" "}
-        </>
-      ) : (
-        ""
-      );
-  }
+  //saved countryBorders for the countryDetail page (version 1 stretch goal)
+  // let countryBorders = "";
+  // if (children !== null || children !== undefined) {
+  //   countryBorders =
+  //     country.borders.length !== 0 ? (
+  //       <>
+  //         {" "}
+  //         <b> Border Countries : </b> {country.borders}{" "}
+  //       </>
+  //     ) : (
+  //       ""
+  //     );
+  // }
   console.log("children", children);
 
   return (
