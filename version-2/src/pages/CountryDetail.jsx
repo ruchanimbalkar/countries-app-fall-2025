@@ -2,6 +2,8 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Card from "../components/Card.jsx";
+import "react-tooltip/dist/react-tooltip.css";
+import { Tooltip } from "react-tooltip";
 export default function CountryDetail({ countries, day }) {
   const [count, setCount] = useState(0);
   let visit = 0;
@@ -14,6 +16,7 @@ export default function CountryDetail({ countries, day }) {
   //get this country's name from the URL parameter
   const countryName = useParams().countryName;
   //testing: console.log("Country Detail");
+  const [dataTooltipContent, setDataTooltipContent] = useState("Save Country");
   //Get the back arrow symbol and convert to string
   let leftArrowIcon = String.fromCodePoint(0x2190);
   //Use find method to get country with the same name as the countryName in dynamic url
@@ -39,6 +42,9 @@ export default function CountryDetail({ countries, day }) {
       //Set array savedCountryNames using the setter/updater function
       setSavedCountryNames(countryNamesSaved);
       console.log("line 38 : savedCountryNames ", savedCountryNames);
+      setDataTooltipContent("Country Saved!");
+    } else {
+      setDataTooltipContent("Country Saved Already !");
     }
   };
 
@@ -103,10 +109,14 @@ export default function CountryDetail({ countries, day }) {
                 color: day ? "black" : "white",
               }}
               onClick={handleSave}
+              data-tooltip-id="my-tooltip"
+              data-tooltip-content={dataTooltipContent}
+              data-tooltip-place="top"
             >
               {" "}
               Save{" "}
             </button>
+            <Tooltip id="my-tooltip" />
           </Card>
         </div>
       </main>
