@@ -67,13 +67,7 @@ export default function Home({ countriesData, day, onClick }) {
   return (
     <>
       <main>
-        <div
-          className="home-forms"
-          // style={{
-          //   backgroundColor: day ? "white" : "black",
-          //   color: day ? "black" : "white",
-          // }}
-        >
+        <div className="home-forms">
           <form onSubmit={handleSearchSubmit}>
             <input
               placeholder={`${searchIcon} Search for a country...`}
@@ -112,7 +106,3 @@ export default function Home({ countriesData, day, onClick }) {
     </>
   );
 }
-
-// useState for showSavedCOuntries. Initial value is false
-//Once the user submits a search, update showSavedCOuntries to be true
-//in the JSX, a ternary - if it's false, show the H2. If its true, render the country card
