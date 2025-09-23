@@ -1,7 +1,7 @@
 import { useState } from "react";
 //import CountryCard component
 import CountryCard from "../components/CountryCard.jsx";
-export default function Home({ countriesData, day }) {
+export default function Home({ countriesData, day, onClick }) {
   const [searchCountry, setSearchCountry] = useState("");
   //Declare an emptyFormState variable of type object to reset the form data
   const emptyFormState = { searchTerm: "" };
@@ -81,7 +81,6 @@ export default function Home({ countriesData, day }) {
               name="searchTerm"
               onChange={handleChange}
             />
-            <input type="submit" hidden />
           </form>
 
           <form className="sort-form">

@@ -46,6 +46,7 @@ function App() {
     }
   };
 
+  const onLogoClick = () => setSearchCountry("");
   //useEffect to fetch data by making an API call for Countries
   useEffect(() => {
     //Call function getCountriesDataAsyncAwait(); that makes the API call
@@ -69,7 +70,7 @@ function App() {
         <nav>
           <ul>
             <li>
-              <Link className="home-page" to="/">
+              <Link className="home-page" to="/" onClick={onLogoClick}>
                 Where in the World
               </Link>
             </li>
