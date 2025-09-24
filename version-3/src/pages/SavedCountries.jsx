@@ -41,6 +41,7 @@ export default function SavedCountries({ countriesData, day }) {
     let userFormData = JSON.stringify(formData);
     //Save user data in local storage
     localStorage.setItem("userInfo", userFormData);
+    //Version -3 Send POST request to give form data to API
   };
 
   useEffect(() => {
