@@ -35,24 +35,24 @@ This is our WHAT, WHEN, WHERE, HOW framework for working with data:
 ------------------------
 
 WHAT...
-  TYPE OF HTTP REQUEST (GET OR POST): POST
-  API ENDPOINT: /add-one-user
+  TYPE OF HTTP REQUEST (GET OR POST): __POST__
+  API ENDPOINT: __/add-one-user__
 
-  REQUEST BODY DATA TYPE (if applicable): Object
+  REQUEST BODY DATA TYPE (if applicable): __Object__
 
-  REQUEST BODY (if applicable): {
+  REQUEST BODY (if applicable): __{
   "name": "Alice",
   "country_name": "Germany",
   "email": "alice@example.com",
   "bio": "A little about Alice"
 }
   
-  RESPONSE DATA TYPE: String
+  RESPONSE DATA TYPE: __String__
   RESPONSE: Success! User has been added.
 
-WHEN: When user clicks Submit button after filling the form
+WHEN: __onSubmit(When user clicks Submit button after filling the form)__
 
-WHERE: Saved Country's Page/ Data stored in Backend (Instructor's API)
+WHERE: handleSubmit function in the SavedCountries.jsx file (Saved Country's Page/ Data stored in Backend (Instructor's API))
 
 HOW: 
 Step 1: _______
@@ -64,13 +64,13 @@ Add more steps as needed!
 🔶 RETRIEVING FORM DATA 
 ------------------------
 WHAT...
-  TYPE OF HTTP REQUEST (GET OR POST): GET
-  API ENDPOINT: /get-newest-user
+  TYPE OF HTTP REQUEST (GET OR POST): __GET__
+  API ENDPOINT: __/get-newest-user__
 
-  REQUEST BODY DATA TYPE (if applicable): Not applicable
-  REQUEST BODY (if applicable): Not applicable
+  REQUEST BODY DATA TYPE (if applicable): __Not applicable__
+  REQUEST BODY (if applicable): __Not applicable__
   
-  RESPONSE DATA TYPE: Array of Objects
+  RESPONSE DATA TYPE: __Array of Objects__
   RESPONSE: [
   {
     "user_id": 42,
@@ -83,7 +83,7 @@ WHAT...
   
 WHEN: User visits the saved Countries page
 
-WHERE: Saved Country's Page/ Data retrieved from Backend (Instructor's API)
+WHERE: useEffect() in the SavedCountries.jsx file (Saved Country's Page/ Data retrieved from Backend (Instructor's API))
 
 HOW: 
 Step 1: _______
@@ -100,20 +100,20 @@ Add more steps as needed!
 ------------------------
 
 WHAT...
-  TYPE OF HTTP REQUEST (GET OR POST): POST
-  API ENDPOINT: /save-one-country
+  TYPE OF HTTP REQUEST (GET OR POST): __POST__
+  API ENDPOINT: __/save-one-country__
 
-  REQUEST BODY DATA TYPE (if applicable): Object
+  REQUEST BODY DATA TYPE (if applicable): __Object__
   REQUEST BODY (if applicable): {
   "country_name": "Brazil"
 }
   
-  RESPONSE DATA TYPE: String
+  RESPONSE DATA TYPE: __String__
   RESPONSE: Success! The country is saved.
 
 WHEN: When user clicks the save button 
 
-WHERE: Country Detail Page
+WHERE: handleSave() function in the CountryDetail.jsx file (Country Detail Page)
 
 HOW: 
 Step 1: _______
@@ -126,13 +126,13 @@ Add more steps as needed!
 ------------------------
 
 WHAT...
-  TYPE OF HTTP REQUEST (GET OR POST): GET
-  API ENDPOINT: /get-all-saved-countries
+  TYPE OF HTTP REQUEST (GET OR POST): __GET__
+  API ENDPOINT: __/get-all-saved-countries__
 
-  REQUEST BODY DATA TYPE (if applicable): Not applicable
-  REQUEST BODY (if applicable): Not applicable
+  REQUEST BODY DATA TYPE (if applicable): __Not applicable__
+  REQUEST BODY (if applicable): __Not applicable__
   
-  RESPONSE DATA TYPE: Array of Objects
+  RESPONSE DATA TYPE: __Array of Objects__
   RESPONSE: [
   {
     "country_name": "Japan"
@@ -144,7 +144,7 @@ WHAT...
 
 WHEN: User clicks on the Saved Countries Page
 
-WHERE: Saved Countries Page
+WHERE: useEffect() in the SavedCountries.jsx file Saved Countries Page
 
 HOW: 
 Step 1: _______
@@ -162,22 +162,22 @@ Add more steps as needed!
 NOTE: We combine storing & retrieving country counts data into one section because they always happen together. Each time we look up a country’s view count, we also need to increase it and save the new total.
 
 WHAT...
-  TYPE OF HTTP REQUEST (GET OR POST): POST
-  API ENDPOINT: /update-one-country-count
+  TYPE OF HTTP REQUEST (GET OR POST): __POST__
+  API ENDPOINT: __/update-one-country-count__
 
-  REQUEST BODY DATA TYPE (if applicable): Object
+  REQUEST BODY DATA TYPE (if applicable): __Object__
   REQUEST BODY (if applicable):{
   "country_name": "France"
 }
   
-  RESPONSE DATA TYPE: Object
+  RESPONSE DATA TYPE: __Object__
   RESPONSE: {
   "count": 3
 }
   
-WHEN: User visits the country by clicking on the country
+WHEN: User visits/views the country by clicking on the country
 
-WHERE: On Country Detail Page
+WHERE: Functions handleSave() and useEffect() in the CountryDetail .jsx (Country Detail Page)
 
 HOW: 
 Step 1: _______
