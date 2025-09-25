@@ -55,10 +55,8 @@ WHEN: __onSubmit(When user clicks Submit button after filling the form)__
 WHERE: handleSubmit function in the SavedCountries.jsx file (Saved Country's Page/ Data stored in Backend (Instructor's API))
 
 HOW: 
-Step 1: _______
-Step 2: _______
-Step 3: _______
-Add more steps as needed! 
+Step 1: Declare a new function called addOneUser which should send a POST request to the API to the /add-one-user endpoint
+Step 2: Call the addOneUser() function on submit ( in handleSubmit function)
 
 ------------------------
 🔶 RETRIEVING FORM DATA 
