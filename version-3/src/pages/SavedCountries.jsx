@@ -23,8 +23,6 @@ export default function SavedCountries({ countriesData, day }) {
   const handleChange = (e) => {
     //this function's job is to update the value of formData with each and every keystroke
     const { name, value } = e.target;
-    const checked = e.target.checked;
-    console.log(name, value, checked);
     //set form data using the setter function setFormData
     setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
   };
@@ -44,16 +42,41 @@ export default function SavedCountries({ countriesData, day }) {
     //Version -3 Send POST request to give form data to API
   };
 
-  useEffect(() => {
-    if (localStorage.getItem("userInfo")) {
-      //if condition is true
-      // get the original form object back.
-      // Use localStorage.getItem() and JSON.parse() to get the original object back
-      let profileDestringified = JSON.parse(localStorage.getItem("userInfo"));
-      //set userFormInfo using the setter function
-      setUserFormInfo(profileDestringified);
-      console.log("userFormInfo : ", userFormInfo);
+  // get the latest user that has submitted the form
+  const getNewestUser = async () => {
+    try {
+      //Declare  a variable that will hold response from the GET request to /get-newest-user
+      const response = await fetch(
+        "https://backend-answer-keys.onrender.com/get-newest-user"
+      );
+      //Convert the response to JSON format
+      const data = await response.json();
+      //print on console
+      console.log(data);
+      //save datat in state
+      setUserFormInfo({
+        fullName: data[0].name,
+        email: data[0].email,
+        country: data[0].country_name,
+        bio: data[0].bio,
+      });
+    } catch (error) {
+      console.log("Error retrieving user data" + error.message);
     }
+  };
+
+  useEffect(() => {
+    // if (localStorage.getItem("userInfo")) {
+    //   //if condition is true
+    //   // get the original form object back.
+    //   // Use localStorage.getItem() and JSON.parse() to get the original object back
+    //   let profileDestringified = JSON.parse(localStorage.getItem("userInfo"));
+    //   //set userFormInfo using the setter function
+    //   setUserFormInfo(profileDestringified);
+    //   console.log("userFormInfo : ", userFormInfo);
+    // }
+
+    getNewestUser();
 
     //Check if there is a savedCountry in localStorage
     if (localStorage.getItem("savedCountries")) {

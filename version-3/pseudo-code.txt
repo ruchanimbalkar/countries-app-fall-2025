@@ -81,15 +81,15 @@ WHAT...
   }
 ]
   
-WHEN: User visits the saved Countries page
+WHEN: on page load (User visits the saved Countries page)
 
 WHERE: useEffect() in the SavedCountries.jsx file (Saved Country's Page/ Data retrieved from Backend (Instructor's API))
 
 HOW: 
-Step 1: _______
-Step 2: _______
-Step 3: _______
-Add more steps as needed! 
+Step 1: Make a function called getNewestUser() that will get the form data from the API by sending a GET request to the /get-newest-user-endpoint 
+Step 2: Save the form data in a state variable using useState() 
+Step 3: Call the getNewestUser() function on page load in the useEffect()
+Step 4: Conditionally render the user's name in the return statement (in JSX) if the user's name exists 
 
 ------------------------
 📊 SAVED COUNTRIES DATA 
