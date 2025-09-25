@@ -27,19 +27,36 @@ export default function SavedCountries({ countriesData, day }) {
     setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
   };
 
+  const addOneUser = async () => {
+    const response = await fetch(
+      "https://backend-answer-keys.onrender.com/add-one-user",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json ",
+        },
+        body: JSON.stringify({
+          name: formData.fullName,
+          country_name: formData.country,
+          email: formData.email,
+          bio: formData.bio,
+        }),
+      }
+    );
+    console.log("response from post method: ", response);
+  };
+
   const handleSubmit = (event) => {
     //prevent default form behavior
     event.preventDefault();
     // update the user's info using the setter function
     setUserFormInfo(formData);
+    //print formData on console
     console.log("formData", formData);
+    //Version -3 Send POST request to store form data in API in function addOneUser()
+    addOneUser();
     //resets   the form to its initial state so it is ready for the next user
     setFormData(emptyFormState);
-    // Use JSON.stringify() to convert the object into a string before storing it.
-    let userFormData = JSON.stringify(formData);
-    //Save user data in local storage
-    localStorage.setItem("userInfo", userFormData);
-    //Version -3 Send POST request to give form data to API
   };
 
   // get the latest user that has submitted the form
@@ -53,7 +70,7 @@ export default function SavedCountries({ countriesData, day }) {
       const data = await response.json();
       //print on console
       console.log(data);
-      //save datat in state
+      //save data in state
       setUserFormInfo({
         fullName: data[0].name,
         email: data[0].email,
@@ -66,16 +83,6 @@ export default function SavedCountries({ countriesData, day }) {
   };
 
   useEffect(() => {
-    // if (localStorage.getItem("userInfo")) {
-    //   //if condition is true
-    //   // get the original form object back.
-    //   // Use localStorage.getItem() and JSON.parse() to get the original object back
-    //   let profileDestringified = JSON.parse(localStorage.getItem("userInfo"));
-    //   //set userFormInfo using the setter function
-    //   setUserFormInfo(profileDestringified);
-    //   console.log("userFormInfo : ", userFormInfo);
-    // }
-
     getNewestUser();
 
     //Check if there is a savedCountry in localStorage
