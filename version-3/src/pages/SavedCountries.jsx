@@ -109,11 +109,12 @@ export default function SavedCountries({ countriesData, day }) {
         );
         console.log("foundCountry : ", foundCountry);
         //only add the country if it is not  already present in array
-        if (!array.includes(foundCountry)) {
+        if (!array.includes(foundCountry) && foundCountry !== undefined) {
           // add the foundCountry object in array using spread syntax
           array = [...array, foundCountry];
         }
       }
+      console.log(array);
       //add found countries in the countryObjects array
       setCountryObjects(array);
     } catch (error) {
