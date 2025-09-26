@@ -25,28 +25,31 @@ export default function CountryDetail({ countries, day }) {
   );
   console.log("countries ", countries);
 
+  const saveOneCountry = async () => {
+    const response = await fetch(
+      "https://backend-answer-keys.onrender.com/save-one-country",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json ",
+        },
+        body: JSON.stringify({
+          country_name: countryName,
+        }),
+      }
+    );
+    const reply = await response.json();
+    console.log("response from post method: ", reply);
+  };
+
   const handleSave = () => {
     //Save the country only once
     //check if country not already present in savedCountryNames array
-    if (!savedCountryNames.includes(countryName)) {
-      console.log(
-        "the countryName is not present in the savedCountryNames array "
-      );
-      // Add the new countryName using array spread syntax
-      let countryNamesSaved = [...savedCountryNames, countryName];
-      //convert array to string
-      savedCountryNamesStrings = JSON.stringify(countryNamesSaved);
-      console.log("savedCountryNamesStrings===", savedCountryNamesStrings);
-      //save stringified countryNames array  in localStorage
-      localStorage.setItem("savedCountries", savedCountryNamesStrings);
-      //Set array savedCountryNames using the setter/updater function
-      setSavedCountryNames(countryNamesSaved);
-      console.log("line 38 : savedCountryNames ", savedCountryNames);
-      setDataTooltipContent("Country Saved!");
-    } else {
-      setDataTooltipContent("Country Saved Already !");
-    }
+    //backend-answer-keys.onrender.com/save-one-country
+    saveOneCountry();
+    setDataTooltipContent("Country Saved Already !");
   };
+
   const updateOneCountryCount = async () => {
     const response = await fetch(
       "https://backend-answer-keys.onrender.com/update-one-country-count",

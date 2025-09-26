@@ -43,7 +43,8 @@ export default function SavedCountries({ countriesData, day }) {
         }),
       }
     );
-    console.log("response from post method: ", response);
+    const reply = await response.json();
+    console.log("response from post method: ", reply);
   };
 
   const handleSubmit = (event) => {
