@@ -47,6 +47,23 @@ export default function CountryDetail({ countries, day }) {
       setDataTooltipContent("Country Saved Already !");
     }
   };
+  const updateOneCountryCount = async () => {
+    const response = await fetch(
+      "https://backend-answer-keys.onrender.com/update-one-country-count",
+      {
+        method: "POST",
+        headers: {
+          "content-type": "application/json ",
+        },
+        body: JSON.stringify({
+          country_name: countryName,
+        }),
+      }
+    );
+    const reply = await response.json();
+    console.log("response from post method: ", reply);
+    setCount(reply.count);
+  };
 
   //check for previously saved countries on initial render
   useEffect(() => {
@@ -62,29 +79,10 @@ export default function CountryDetail({ countries, day }) {
       console.log("countryNamesArray ", countryNamesArray);
       setSavedCountryNames(countryNamesArray);
     }
+
     //Country count
-    //check for previous visits using the localStorage data "visitedCount"
-    if (localStorage.getItem(`visitedCount_${countryName}`)) {
-      visit = JSON.parse(localStorage.getItem(`visitedCount_${countryName}`));
-      //previous visits # + first visit
-      visit = visit + 1;
-      localStorage.setItem(
-        `visitedCount_${countryName}`,
-        JSON.stringify(visit)
-      );
-      //increment count by visit
-      setCount(count + visit);
-    }
-    //Otherwise it is a first visit
-    else {
-      visit = 1;
-      localStorage.setItem(
-        `visitedCount_${countryName}`,
-        JSON.stringify(visit)
-      );
-      //first visit
-      setCount(visit);
-    }
+    //Version -3 Send POST request to update count in API in function updateOneCountryCount()
+    updateOneCountryCount();
   }, []);
   return (
     <>

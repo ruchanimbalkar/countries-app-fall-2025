@@ -145,9 +145,9 @@ WHEN: User clicks on the Saved Countries Page
 WHERE: useEffect() in the SavedCountries.jsx file Saved Countries Page
 
 HOW: 
-Step 1: _______
-Step 2: _______
-Step 3: _______
+Step 1: Declare an asyn function with url to get savedCountries data
+Step 2: convert the response to json
+Step 3: render the countries on page
 Add more steps as needed! 
 
 ------------------------
@@ -175,7 +175,7 @@ WHAT...
   
 WHEN: User visits/views the country by clicking on the country
 
-WHERE: Functions handleSave() and useEffect() in the CountryDetail .jsx (Country Detail Page)
+WHERE: Functions useEffect() in the CountryDetail.jsx (Country Detail Page)
 
 HOW: 
 Step 1: _______

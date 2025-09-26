@@ -82,27 +82,29 @@ export default function SavedCountries({ countriesData, day }) {
     }
   };
 
-  useEffect(() => {
-    getNewestUser();
-
-    //Check if there is a savedCountry in localStorage
-    if (localStorage.getItem("savedCountries")) {
-      //Get savedCountries from localStorage using the key
-      let countryNamesInString = localStorage.getItem("savedCountries");
-      console.log("countryNamesInString", countryNamesInString);
-      //convert savedCountries to array using JSON parse
-      let countryNamesArray = JSON.parse(countryNamesInString) || "[]";
-      console.log("Line 53 countryNamesArray : ", countryNamesArray);
-      // Use a for of loop to loop over the countryNamesArray and get countries
-      for (let countryName of countryNamesArray) {
+  //get all saved countries
+  const getAllSavedCountries = async () => {
+    console.log("Inside getAllSavedCountries() function");
+    console.log("countriesData", countriesData);
+    try {
+      //Declare  a variable that will hold response from the GET request to /get-all-saved-countries
+      const response = await fetch(
+        "https://backend-answer-keys.onrender.com/get-all-saved-countries"
+      );
+      //Convert the response to JSON format
+      const data = await response.json();
+      //print on console
+      console.log("savedCountries data ", data);
+      // Use a for of loop to loop over the data and get country Objects
+      for (let item of data) {
         console.log(
           "countryName ",
-          countryName,
+          item.country_name,
           "typeof countryName ",
-          typeof countryName
+          typeof item.country_name
         );
         foundCountry = countriesData.find(
-          (country) => country.name.common === countryName
+          (country) => country.name.common === item.country_name
         );
         console.log("foundCountry : ", foundCountry);
         //only add the country if it is not  already present in array
@@ -113,7 +115,14 @@ export default function SavedCountries({ countriesData, day }) {
       }
       //add found countries in the countryObjects array
       setCountryObjects(array);
+    } catch (error) {
+      console.log("Error retrieving all saved countries" + error.message);
     }
+  };
+
+  useEffect(() => {
+    getNewestUser();
+    getAllSavedCountries();
   }, []);
 
   return (
