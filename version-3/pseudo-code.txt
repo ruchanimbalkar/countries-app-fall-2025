@@ -114,9 +114,9 @@ WHEN: When user clicks the save button
 WHERE: handleSave() function in the CountryDetail.jsx file (Country Detail Page)
 
 HOW: 
-Step 1: _______
-Step 2: _______
-Step 3: _______
+Step 1: declare an asyn fucntion to POST country
+Step 2: send request body using countryName obtained from useParams
+Step 3: update tool tip
 Add more steps as needed! 
 
 ------------------------
@@ -178,7 +178,7 @@ WHEN: User visits/views the country by clicking on the country
 WHERE: Functions useEffect() in the CountryDetail.jsx (Country Detail Page)
 
 HOW: 
-Step 1: _______
-Step 2: _______
-Step 3: _______
+Step 1: call method to post country name
+Step 2: convert response to json
+Step 3: update count from response.json()
 Add more steps as needed! 
