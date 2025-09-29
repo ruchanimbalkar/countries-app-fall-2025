@@ -11,7 +11,6 @@ export default function CountryDetail({ countries, day }) {
   const [savedCountryNames, setSavedCountryNames] = useState([]);
   console.log("line 8 savedCountryNames", savedCountryNames);
   console.log("typeof savedCountryNames", typeof savedCountryNames);
-  let savedCountryNamesStrings = "";
   console.log("CountryDetail day", day);
   //get this country's name from the URL parameter
   const countryName = useParams().countryName;
@@ -70,19 +69,6 @@ export default function CountryDetail({ countries, day }) {
 
   //check for previously saved countries on initial render
   useEffect(() => {
-    //Check if there is a savedCountry in localStorage and length > 0
-    if (
-      localStorage.getItem("savedCountries") &&
-      localStorage.getItem("savedCountries").length > 0
-    ) {
-      //convert the String back to parse using JSON.parse
-      let countryNamesArray = JSON.parse(
-        localStorage.getItem("savedCountries")
-      );
-      console.log("countryNamesArray ", countryNamesArray);
-      setSavedCountryNames(countryNamesArray);
-    }
-
     //Country count
     //Version -3 Send POST request to update count in API in function updateOneCountryCount()
     updateOneCountryCount();

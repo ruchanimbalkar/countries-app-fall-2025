@@ -173,7 +173,7 @@ WHAT...
   "count": 3
 }
   
-WHEN: User visits/views the country by clicking on the country
+WHEN: User visits/views the country by clicking on the country on home page
 
 WHERE: Functions useEffect() in the CountryDetail.jsx (Country Detail Page)
 
