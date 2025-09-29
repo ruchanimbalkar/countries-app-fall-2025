@@ -98,13 +98,15 @@ export default function SavedCountries({ countriesData, day }) {
       console.log("savedCountries data ", data);
 
       //Use map and find to get countryobjects using the saved country names
-      array = data.map((item) =>
-        countriesData.find(
-          (country) => country.name.common === item.country_name
-        )
-      );
-      //remove country named undefined
-      array = array.filter((arrayItem) => arrayItem !== undefined);
+      array = data
+        .map((item) =>
+          countriesData.find(
+            (country) => country.name.common === item.country_name
+          )
+        ) //remove country/countries named undefined using filter
+        .filter((arrayItem) => arrayItem !== undefined);
+
+      //array = array.filter((arrayItem) => arrayItem !== undefined);
       console.log(array);
       //add found countries in the countryObjects array
       setCountryObjects(array);
