@@ -96,24 +96,15 @@ export default function SavedCountries({ countriesData, day }) {
       const data = await response.json();
       //print on console
       console.log("savedCountries data ", data);
-      // Use a for of loop to loop over the data and get country Objects
-      for (let item of data) {
-        console.log(
-          "countryName ",
-          item.country_name,
-          "typeof countryName ",
-          typeof item.country_name
-        );
-        foundCountry = countriesData.find(
+
+      //Use map and find to get countryobjects using the saved country names
+      array = data.map((item) =>
+        countriesData.find(
           (country) => country.name.common === item.country_name
-        );
-        console.log("foundCountry : ", foundCountry);
-        //only add the country if it is not  already present in array
-        if (!array.includes(foundCountry) && foundCountry !== undefined) {
-          // add the foundCountry object in array using spread syntax
-          array = [...array, foundCountry];
-        }
-      }
+        )
+      );
+      //remove country named undefined
+      array = array.filter((arrayItem) => arrayItem !== undefined);
       console.log(array);
       //add found countries in the countryObjects array
       setCountryObjects(array);
