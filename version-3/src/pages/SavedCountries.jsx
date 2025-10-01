@@ -71,6 +71,11 @@ export default function SavedCountries({ countriesData, day }) {
       const response = await fetch(
         "https://backend-answer-keys.onrender.com/get-newest-user"
       );
+      //Guard Clause Reference : https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+      if (!response.ok) {
+        console.error(`Response status: ${response.status}`);
+        return; // Exit early //Reference : https://dev.to/muthuraja_r/using-guard-clauses-in-asyncawait-a-clean-coding-technique-for-readable-and-maintainable-code-367j
+      }
       //Convert the response to JSON format using json method
       const data = await response.json();
       //print on console
@@ -95,6 +100,12 @@ export default function SavedCountries({ countriesData, day }) {
       const response = await fetch(
         "https://backend-answer-keys.onrender.com/get-all-saved-countries"
       );
+      //Guard Clause
+      if (!response.ok) {
+        console.error(`Response status: ${response.status}`);
+        // Exit early
+        return;
+      }
       //Convert the response to JSON format using json() method and save it in a variable named data
       const data = await response.json();
       //print data on console
