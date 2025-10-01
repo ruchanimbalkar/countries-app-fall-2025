@@ -5,6 +5,8 @@ export default function Home({ countriesData, day, onClick }) {
   const [searchCountry, setSearchCountry] = useState("");
   //Declare an emptyFormState variable of type object to reset the form data
   const emptyFormState = { searchTerm: "" };
+  //Get the heart symbol and convert to string
+  let searchIcon = String.fromCodePoint(0x1f50d);
   //Declare a formData variable and assign it the value of the emptyFormState variable using useState. Also declare the setter/updater function setFormData
   const [formData, setFormData] = useState(emptyFormState);
   //console.log("Home day", day);
@@ -12,19 +14,14 @@ export default function Home({ countriesData, day, onClick }) {
   //Declare a variable named region and assign it the value of empty string using useState.Also declare the setter/updater function setRegion
   const [region, setRegion] = useState("");
 
-  //testing: console.log('Home Page');
-  //testing: console.log('countries ', countriesData);
-  //Get the heart symbol and convert to string
-  let searchIcon = String.fromCodePoint(0x1f50d);
-
+  //Declare an event handler arrow function handleChange to handle changes in form input
   const handleChange = (e) => {
     const { name, value } = e.target;
-    const checked = e.target.checked;
-    //console.log(name, value, checked);
     //set form data using the setter function setFormData
     setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
   };
 
+  //Declare an event handler arrow function handleSearchSubmit to show user entered Country
   const handleSearchSubmit = (event) => {
     //prevent default form behavior
     event.preventDefault();
