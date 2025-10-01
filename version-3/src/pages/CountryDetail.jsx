@@ -2,11 +2,17 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Card from "../components/Card.jsx";
+//Reference : https://react-tooltip.com/docs/getting-started
 import "react-tooltip/dist/react-tooltip.css";
 import { Tooltip } from "react-tooltip";
+import SaveToggle from "../components/SaveToggle.jsx";
 export default function CountryDetail({ countries, day }) {
+  //Declare a state variable and setter/upsetter method
+  const [anchorElementText, setAnchorElementText] = useState("Save");
   //Declare a count variable and setter/upsetter method setCount() using useState
   const [count, setCount] = useState(0);
+  //Declare a state variable checked and the corresponding setter method with intial boolean value false for save Toggle
+  const [checked, setChecked] = useState(false);
   //Declare dataTooltipContent using useState for the save button with initial value "Save Country"
   const [dataTooltipContent, setDataTooltipContent] = useState("Save Country");
   //testing day/night mode: console.log("CountryDetail day", day);
@@ -19,12 +25,19 @@ export default function CountryDetail({ countries, day }) {
     (country) => country.name.common === countryName
   );
 
+  //Declare an arrow function handleChange to save or unsave country
+  const handleChange = (checked) => {
+    console.log("checked", checked);
+    checked === true ? handleSave() : unSaveOneCountry();
+    setChecked(checked);
+  };
   //Declare an Event handler arrow function when user clicks the save button
   const handleSave = () => {
     //Call arrow function saveOneCountry() to send country to the server
     saveOneCountry();
     //Update Tooltip using the setter function with value "Country Saved Already !" once the country is saved
-    setDataTooltipContent("Country Saved Already !");
+    setDataTooltipContent("Country Saved!");
+    setAnchorElementText("Unsave");
   };
 
   //Declare an arrow function saveOneCountry that is asynchronus and sends country to be saved to the server
@@ -45,9 +58,34 @@ export default function CountryDetail({ countries, day }) {
       }
     );
     //Every request gets a response : Convert the response to JSON format using json() method
-    const responseInJSONFormat = await response.json();
+    const responseInTextFormat = await response.text();
     //print response on console
-    console.log("response from post method: ", responseInJSONFormat);
+    console.log("response from post method Save: ", responseInTextFormat);
+  };
+
+  //Declare an arrow function saveOneCountry that is asynchronus and sends country to be saved to the server
+  const unSaveOneCountry = async () => {
+    //Send a POST request to the API with base url and endpoint /save-one-country with headers and body
+    const response = await fetch(
+      "https://backend-answer-keys.onrender.com/unsave-one-country",
+      {
+        method: "POST",
+        //The content type header tells the server that we are sending JSON data
+        headers: {
+          "content-type": "application/json ",
+        },
+        //The request body contains the data to be stored
+        body: JSON.stringify({
+          country_name: countryName,
+        }),
+      }
+    );
+    //Every request gets a response : Convert the response to JSON format using json() method
+    const responseInTextFormat = await response.text();
+    //print response on console
+    console.log("response from post method for unSave: ", responseInTextFormat);
+    setDataTooltipContent("Country un-saved!");
+    setAnchorElementText("Save");
   };
 
   //Declare an arrow function updateOneCountryCount that is asynchronus and sends country Name to update count at the server
@@ -96,21 +134,27 @@ export default function CountryDetail({ countries, day }) {
         </a>
         <div className="country-detail">
           <Card country={countryObject} day={day} viewed={count}>
-            <button
+            <SaveToggle onChange={handleChange} checked={checked} />
+            <a
+              id="test"
+              data-tooltip-id="my-tooltip"
+              data-tooltip-content={dataTooltipContent}
+              data-tooltip-place="top"
+            >
+              {anchorElementText}
+            </a>
+            <Tooltip id="my-tooltip" anchorSelect="#test" />
+            {/* <button
               className="country-detail-back-link"
               style={{
                 backgroundColor: day ? "#FAFAFA" : "#202C36",
                 color: day ? "black" : "white",
               }}
-              onClick={handleSave}
-              data-tooltip-id="my-tooltip"
-              data-tooltip-content={dataTooltipContent}
-              data-tooltip-place="top"
+              // onClick={handleSave}
             >
               {" "}
               Save{" "}
-            </button>
-            <Tooltip id="my-tooltip" />
+            </button> */}
           </Card>
         </div>
       </main>
