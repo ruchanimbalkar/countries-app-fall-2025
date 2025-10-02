@@ -59,6 +59,12 @@ export default function SavedCountries({ countriesData, day }) {
         }),
       }
     );
+    //Guard Clause
+    if (!response.ok) {
+      console.error(`Response status: ${response.status}`);
+      // Exit early
+      return;
+    }
     //Convert the response to JSON format using json method
     const responseInJSONFormat = await response.json();
     console.log("response from post method: ", responseInJSONFormat);

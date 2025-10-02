@@ -57,6 +57,12 @@ export default function CountryDetail({ countries, day }) {
         }),
       }
     );
+    //Guard Clause
+    if (!response.ok) {
+      console.error(`Response status: ${response.status}`);
+      // Exit early
+      return;
+    }
     //Every request gets a response : Convert the response to JSON format using json() method
     const responseInTextFormat = await response.text();
     //print response on console
@@ -80,6 +86,12 @@ export default function CountryDetail({ countries, day }) {
         }),
       }
     );
+    //Guard Clause
+    if (!response.ok) {
+      console.error(`Response status: ${response.status}`);
+      // Exit early
+      return;
+    }
     //Every request gets a response : Convert the response to JSON format using json() method
     const responseInTextFormat = await response.text();
     //print response on console
@@ -105,6 +117,12 @@ export default function CountryDetail({ countries, day }) {
         }),
       }
     );
+    //Guard Clause
+    if (!response.ok) {
+      console.error(`Response status: ${response.status}`);
+      // Exit early
+      return;
+    }
     //Convert response in JSON format using json() method
     const responseInJSONFormat = await response.json();
     console.log("response from post method: ", responseInJSONFormat);
