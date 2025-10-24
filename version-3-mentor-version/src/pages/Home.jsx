@@ -150,12 +150,12 @@ export default function Home({ countriesData, day }) {
             onClick={handleSortDescSubmit}
           >
             {" "}
-            <FaSortAmountDown /> Sort by Population{" "}
+            <FaSortAmountDown /> Sort by Population
           </button>
 
           <button
             className="sort-button"
-            type="button"
+            type="submit"
             onClick={handleSortAscSubmit}
           >
             {" "}
@@ -165,7 +165,7 @@ export default function Home({ countriesData, day }) {
 
           <button
             className="sort-button"
-            type="button"
+            type="submit"
             onClick={() => {
               setSortByField("region");
               setUrl(defaultURL);
