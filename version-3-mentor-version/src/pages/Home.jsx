@@ -6,12 +6,13 @@ import { MdFilterAlt } from "react-icons/md";
 import { FaSortAmountDown } from "react-icons/fa";
 import { FaSortAmountUpAlt } from "react-icons/fa";
 export default function Home({ countriesData, day }) {
+  //Declare a variable named default url
+  let defaultURL =
+    "https://restcountries.com/v3.1/all?fields=name,flags,population,capital,region,cca3,borders";
   //Declare an empty state variable named countriesInfo and initilize it to prop value countriesData
   const [countriesInfo, setCountriesInfo] = useState(countriesData);
   //Declare an empty state variable named url and initilize it to the default url value
-  const [url, setUrl] = useState(
-    "https://restcountries.com/v3.1/all?fields=name,flags,population,capital,region,cca3,borders"
-  );
+  const [url, setUrl] = useState(defaultURL);
   // const [searchCountry, setSearchCountry] = useState("");
   //Declare an emptyFormState variable of type object to reset the form data
   const emptyFormState = { searchTerm: "" };
@@ -21,10 +22,9 @@ export default function Home({ countriesData, day }) {
   const [formData, setFormData] = useState(emptyFormState);
   //console.log("Home day", day);
   const [showCountries, setShowCountries] = useState(true);
-  // //Declare a variable named region and assign it the value of empty string using useState.Also declare the setter/updater function setRegion
-  // const [region, setRegion] = useState("");
-  const [sortByPopulationDESC, setSortByPopulationDESC] = useState(false);
-  const [sortByPopulationASC, setSortByPopulationASC] = useState(false);
+  //Declare a variable named sortByField and assign it the value of "name" using useState.Also declare the setter/updater function setSortByField
+  const [sortByField, setSortByField] = useState("name");
+  const [sortDirection, setSortDirection] = useState(false); //descending by default
 
   //Declare an event handler arrow function handleChange to handle changes in form input
   const handleChange = (e) => {
@@ -38,34 +38,32 @@ export default function Home({ countriesData, day }) {
     //prevent default form behavior
     event.preventDefault();
     console.log("searchTerm", formData.searchTerm);
+    let searchWord = formData.searchTerm;
+    //url encoding in JavaScript +
     //set new url using search term
-    setUrl(
-      `https://restcountries.com/v3.1/name/${formData.searchTerm}?fullText=true`
-    );
+    setUrl(`https://restcountries.com/v3.1/name/${searchWord}?fullText=true`);
     //reset the form to its initial state so it is ready for the next search
-    setFormData(emptyFormState);
+    //setFormData(emptyFormState);
   };
 
   //Declare an event handler arrow function handleSortSubmit to sort population in descending order
   const handleSortDescSubmit = () => {
     console.log("inside sort desc. submit");
-    //set sort by poulation descending to true
-    setSortByPopulationDESC(true);
+    setSortByField("population");
+    //set sortDirection to false (descending)
+    setSortDirection(false);
     //set url
-    setUrl(
-      "https://restcountries.com/v3.1/all?fields=name,flags,population,capital,region,cca3,borders"
-    );
+    setUrl(defaultURL);
   };
 
   //Declare an event handler arrow function handleSortSubmit to sort population in ascending order
   const handleSortAscSubmit = () => {
     console.log("inside sort asc. submit");
-    //set sort by poulation descending to true
-    setSortByPopulationASC(true);
+    setSortByField("population");
+    //set sortDirection to true (ascending)
+    setSortDirection(true);
     //set url
-    setUrl(
-      "https://restcountries.com/v3.1/all?fields=name,flags,population,capital,region,cca3,borders"
-    );
+    setUrl(defaultURL);
   };
 
   //Declare an asynchronous arrow function to make a GET request to the API server
@@ -84,23 +82,39 @@ export default function Home({ countriesData, day }) {
       //print data on console
       console.log("data ", data);
 
-      //Sort countries by name in alphabetical order(ascending) if length of data greater than 1 (more than one country)
-      if (data.length > 1) {
-        //Sort Countries in alphabetical order
-        //Reference : https://stackoverflow.com/questions/1129216/sort-array-of-objects-by-string-property-value
-        data.sort((a, b) => a.name.common.localeCompare(b.name.common));
-      }
-
-      //if sort by population descending is true
-      if (sortByPopulationDESC) {
-        //Reference : https://stackoverflow.com/questions/979256/sorting-an-array-of-objects-by-property-values
-        data.sort((a, b) => parseInt(b.population) - parseInt(a.population));
-      }
-
-      //if sort by population ascending is true
-      if (sortByPopulationASC) {
-        //Reference : https://stackoverflow.com/questions/979256/sorting-an-array-of-objects-by-property-values
-        data.sort((a, b) => parseInt(a.population) - parseInt(b.population));
+      switch (sortByField) {
+        case "name":
+          //Sort countries by name in alphabetical order(ascending) if length of data greater than 1 (more than one country)
+          if (data.length > 1) {
+            //Sort Countries in alphabetical order
+            //Reference : https://stackoverflow.com/questions/1129216/sort-array-of-objects-by-string-property-value
+            data.sort((a, b) => a.name.common.localeCompare(b.name.common));
+          }
+          break;
+        case "population":
+          //if sortDirection is true : sort in ascending order
+          if (sortDirection) {
+            //Reference : https://stackoverflow.com/questions/979256/sorting-an-array-of-objects-by-property-values
+            data.sort(
+              (a, b) => parseInt(a.population) - parseInt(b.population)
+            );
+          }
+          //if sortDirection is false : sort in descending order
+          else {
+            //Reference : https://stackoverflow.com/questions/979256/sorting-an-array-of-objects-by-property-values
+            data.sort(
+              (a, b) => parseInt(b.population) - parseInt(a.population)
+            );
+          }
+          break;
+        case "region":
+          //Sort countries by region in alphabetical order(ascending) if length of data greater than 1 (more than one country)
+          if (data.length > 1) {
+            //Sort Countries in alphabetical order
+            //Reference : https://stackoverflow.com/questions/1129216/sort-array-of-objects-by-string-property-value
+            data.sort((a, b) => a.region.localeCompare(b.region));
+          }
+          break;
       }
 
       //Set country data using the setter/updater function setcountriesInfo and passing on data
@@ -130,15 +144,34 @@ export default function Home({ countriesData, day }) {
             />
           </form>
 
-          <button className="sort-button" onClick={handleSortDescSubmit}>
+          <button
+            className="sort-button"
+            type="button"
+            onClick={handleSortDescSubmit}
+          >
             {" "}
             <FaSortAmountDown /> Sort by Population{" "}
           </button>
 
-          <button className="sort-button" onClick={handleSortAscSubmit}>
+          <button
+            className="sort-button"
+            type="button"
+            onClick={handleSortAscSubmit}
+          >
             {" "}
             <FaSortAmountUpAlt />
             Sort by Population{" "}
+          </button>
+
+          <button
+            className="sort-button"
+            type="button"
+            onClick={() => {
+              setSortByField("region");
+              setUrl(defaultURL);
+            }}
+          >
+            Sort by Region
           </button>
 
           <form className="sort-form">
@@ -149,11 +182,16 @@ export default function Home({ countriesData, day }) {
             <select
               name="continents"
               defaultValue="Filter by Data"
-              onChange={(e) =>
-                setUrl(
-                  `https://restcountries.com/v3.1/region/${e.target.value}`
-                )
-              }
+              onChange={(e) => {
+                if (e.target.value !== "") {
+                  setUrl(
+                    `https://restcountries.com/v3.1/region/${e.target.value}`
+                  );
+                } else {
+                  setSortByField("name");
+                  setUrl(defaultURL);
+                }
+              }}
             >
               <option value="">Filter by Region</option>
               <option value="africa">Africa</option>

@@ -125,3 +125,7 @@ select {
   margin: 1rem;
   width: min-content;
 }
+
+.sort-button:hover {
+  border: 0.1rem ridge gray;
+}
