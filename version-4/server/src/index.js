@@ -92,8 +92,9 @@ const updateOneCountryCount = async (country_name) => {
     "INSERT INTO country_counts(country_name, count) VALUES ($1, 1) ON CONFLICT (country_name) DO UPDATE SET count = country_counts.count + 1 RETURNING *",
     [country_name]
   );
-  let savedCountry = data.rows[0];
-  console.log("addedUser", savedCountry);
+  let count = data.rows[0].count;
+  console.log("count=", count);
+  return count;
 };
 
 /*----------------------------------
@@ -145,9 +146,9 @@ app.post("/update-one-country-count", async (req, res) => {
       return res.status(400).send("Error : Missing required fields!");
     } else {
       //call helper function
-      let result = await updateOneCountryCount(country_name);
-      console.log(result);
-      res.send(`Status Code  : 200 | Success! The country is saved.`);
+      let count = await updateOneCountryCount(country_name);
+      console.log(count);
+      res.json({ count: count });
     }
   } catch (error) {
     res.status(500).send("Internal Server Error!");
