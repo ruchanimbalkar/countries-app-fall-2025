@@ -1,0 +1,184 @@
+-------------------------------------
+🧠 VERSION 3 PSEUDO-CODE WORKSHEET 
+-------------------------------------
+
+This is our WHAT, WHEN, WHERE, HOW framework for working with data:
+
+1. WHAT data should we store & retrieve? 
+   What kind of HTTP request do we need to send, and to what API endpoint? 
+   If we are sending a POST request, what do we need to send in the request body, and what is the data type? 
+   What would we get back in the response, and what is the data type? 
+  
+2. WHEN should we store & retrieve the data? 
+   What event or user action is the trigger, such as clicking a button, submitting a form, or loading a page? 
+
+3. WHERE does this happen in the code? 
+   What component, page or function? 
+
+4. HOW do we accomplish this? 
+   What steps do we need to take? 
+   Do we need to...
+    - make any GET or POST requests to an API endpoint? 
+    - render anything in JSX? 
+    - make any functions? If so, when would we call those functions? 
+    - use any useState or useEffect hooks? 
+  Remember: This is pseudo-code. Don't write code yet — just outline the actions in plain language. 
+
+✨ YOUR TASK: Fill in the answers to each WHAT/WHEN/WHERE/HOW question below for the 3 pieces of data. 
+
+------------------------
+📊 FORM DATA 
+------------------------
+
+------------------------
+🔶 STORING FORM DATA 
+------------------------
+
+WHAT...
+  TYPE OF HTTP REQUEST (GET OR POST): __POST__
+  API ENDPOINT: __/add-one-user__
+
+  REQUEST BODY DATA TYPE (if applicable): __Object__
+
+  REQUEST BODY (if applicable): __{
+  "name": "Alice",
+  "country_name": "Germany",
+  "email": "alice@example.com",
+  "bio": "A little about Alice"
+}
+  
+  RESPONSE DATA TYPE: __String__
+  RESPONSE: Success! User has been added.
+
+WHEN: __onSubmit(When user clicks Submit button after filling the form)__
+
+WHERE: handleSubmit function in the SavedCountries.jsx file (Saved Country's Page/ Data stored in Backend (Instructor's API))
+
+HOW: 
+Step 1: Declare a new function called addOneUser which should send a POST request to the API to the /add-one-user endpoint
+Step 2: Call the addOneUser() function on submit ( in handleSubmit function)
+
+------------------------
+🔶 RETRIEVING FORM DATA 
+------------------------
+WHAT...
+  TYPE OF HTTP REQUEST (GET OR POST): __GET__
+  API ENDPOINT: __/get-newest-user__
+
+  REQUEST BODY DATA TYPE (if applicable): __Not applicable__
+  REQUEST BODY (if applicable): __Not applicable__
+  
+  RESPONSE DATA TYPE: __Array of Objects__
+  RESPONSE: [
+  {
+    "user_id": 42,
+    "name": "John Smith",
+    "country_name": "Canada",
+    "email": "john@example.com",
+    "bio": "Another bio"
+  }
+]
+  
+WHEN: on page load (User visits the saved Countries page)
+
+WHERE: useEffect() in the SavedCountries.jsx file (Saved Country's Page/ Data retrieved from Backend (Instructor's API))
+
+HOW: 
+Step 1: Make a function called getNewestUser() that will get the form data from the API by sending a GET request to the /get-newest-user-endpoint 
+Step 2: Save the form data in a state variable using useState() 
+Step 3: Call the getNewestUser() function on page load in the useEffect()
+Step 4: Conditionally render the user's name in the return statement (in JSX) if the user's name exists 
+
+------------------------
+📊 SAVED COUNTRIES DATA 
+------------------------
+
+------------------------
+🔶 STORING SAVED COUNTRIES DATA 
+------------------------
+
+WHAT...
+  TYPE OF HTTP REQUEST (GET OR POST): __POST__
+  API ENDPOINT: __/save-one-country__
+
+  REQUEST BODY DATA TYPE (if applicable): __Object__
+  REQUEST BODY (if applicable): {
+  "country_name": "Brazil"
+}
+  
+  RESPONSE DATA TYPE: __String__
+  RESPONSE: Success! The country is saved.
+
+WHEN: When user clicks the save button 
+
+WHERE: handleSave() function in the CountryDetail.jsx file (Country Detail Page)
+
+HOW: 
+Step 1: declare an asyn fucntion to POST country
+Step 2: send request body using countryName obtained from useParams
+Step 3: update tool tip
+Add more steps as needed! 
+
+------------------------
+🔶 RETRIEVING SAVED COUNTRIES DATA 
+------------------------
+
+WHAT...
+  TYPE OF HTTP REQUEST (GET OR POST): __GET__
+  API ENDPOINT: __/get-all-saved-countries__
+
+  REQUEST BODY DATA TYPE (if applicable): __Not applicable__
+  REQUEST BODY (if applicable): __Not applicable__
+  
+  RESPONSE DATA TYPE: __Array of Objects__
+  RESPONSE: [
+  {
+    "country_name": "Japan"
+  },
+  {
+    "country_name": "Germany"
+  }
+]
+
+WHEN: User clicks on the Saved Countries Page
+
+WHERE: useEffect() in the SavedCountries.jsx file Saved Countries Page
+
+HOW: 
+Step 1: Declare an asyn function with url to get savedCountries data
+Step 2: convert the response to json
+Step 3: render the countries on page
+Add more steps as needed! 
+
+------------------------
+📊 COUNTRY COUNTS DATA 
+------------------------
+
+------------------------
+🔶 STORING & RETRIEVING COUNTRY COUNTS DATA 
+------------------------
+NOTE: We combine storing & retrieving country counts data into one section because they always happen together. Each time we look up a country’s view count, we also need to increase it and save the new total.
+
+WHAT...
+  TYPE OF HTTP REQUEST (GET OR POST): __POST__
+  API ENDPOINT: __/update-one-country-count__
+
+  REQUEST BODY DATA TYPE (if applicable): __Object__
+  REQUEST BODY (if applicable):{
+  "country_name": "France"
+}
+  
+  RESPONSE DATA TYPE: __Object__
+  RESPONSE: {
+  "count": 3
+}
+  
+WHEN: User visits/views the country by clicking on the country on home page
+
+WHERE: Functions useEffect() in the CountryDetail.jsx (Country Detail Page)
+
+HOW: 
+Step 1: call method to post country name
+Step 2: convert response to json
+Step 3: update count from response.json()
+Add more steps as needed! 
