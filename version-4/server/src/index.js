@@ -77,13 +77,24 @@ const getAllSavedCountries = async () => {
   return data.rows;
 };
 
+//saveOneCountry()
 const saveOneCountry = async (country_name) => {
   const data = await db.query(
     "INSERT INTO saved_countries(country_name) VALUES ($1) ON CONFLICT (country_name) DO NOTHING RETURNING *",
     [country_name]
   );
   let savedCountry = data.rows[0];
-  console.log("addedUser", savedCountry);
+  console.log("savedCountry", savedCountry);
+};
+
+//unsaveOneCountry()
+const unsaveOneCountry = async (country_name) => {
+  const data = await db.query(
+    "DELETE FROM saved_countries WHERE country_name = $1 RETURNING *",
+    [country_name]
+  );
+  let unSavedCountry = data.rows[0];
+  console.log("unSavedCountry", unSavedCountry);
 };
 
 //updateOneCountryCount(country_name)
@@ -138,7 +149,7 @@ app.post("/add-one-user", async (req, res) => {
 //	POST	/update-one-country-count	Updates (or initializes) the view count of a country.
 app.post("/update-one-country-count", async (req, res) => {
   try {
-    const country_name = req.body;
+    const country_name = req.body.country_name;
     //check for missing required field in the request body : id and newName
     if (!country_name) {
       //return error message with 400 Bad request status code, because the request was badly formed with wrong syntax.
@@ -165,7 +176,7 @@ app.get("/get-all-saved-countries", async (req, res) => {
 //	POST	/save-one-country	Saves a country if it hasn’t already been saved.
 app.post("/save-one-country", async (req, res) => {
   try {
-    const country_name = req.body;
+    const country_name = req.body.country_name;
     //check for missing required field in the request body : id and newName
     if (!country_name) {
       //return error message with 400 Bad request status code, because the request was badly formed with wrong syntax.
@@ -176,6 +187,27 @@ app.post("/save-one-country", async (req, res) => {
       let result = await saveOneCountry(country_name);
       console.log(result);
       res.send(`Status Code  : 200 | Success! The country is saved.`);
+    }
+  } catch (error) {
+    res.status(500).send("Internal Server Error!");
+  }
+});
+
+// POST /unsave-one-country Unsaves a country if it has been saved.
+app.post("/unsave-one-country", async (req, res) => {
+  try {
+    const country_name = req.body.country_name;
+    //check for missing required field in the request body : id and newName
+    if (!country_name) {
+      //return error message with 400 Bad request status code, because the request was badly formed with wrong syntax.
+      // All 4XX status codes are client-side errors, which means the client sent a bad request
+      return res.status(400).send("Error : Missing required fields!");
+    } else {
+      //call helper function
+      let result = await unsaveOneCountry(country_name);
+      console.log(result);
+      res.send(`Status Code  : 200 | Success! The country is unsaved.
+`);
     }
   } catch (error) {
     res.status(500).send("Internal Server Error!");
