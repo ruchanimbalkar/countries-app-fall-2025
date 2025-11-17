@@ -118,6 +118,14 @@ const resetOneCountryCount = async (country_name) => {
   return count;
 };
 
+//unSaveAllCountries()
+const unSaveAllCountries = async () => {
+  const data = await db.query("DELETE FROM saved_countries RETURNING *");
+  let output = data.rows[0];
+  console.log("output=", output);
+  return output;
+};
+
 /*----------------------------------
 API Endpoints
 ----------------------------------*/
@@ -239,6 +247,18 @@ app.post("/reset-one-country-count", async (req, res) => {
       console.log(count);
       res.json({ count: count });
     }
+  } catch (error) {
+    res.status(500).send("Internal Server Error!");
+  }
+});
+
+//POST /unsave-all-countries
+app.post("/unsave-all-countries", async (req, res) => {
+  try {
+    //call helper function
+    let result = await unSaveAllCountries();
+    console.log(result);
+    res.json({ deletedCountries: result });
   } catch (error) {
     res.status(500).send("Internal Server Error!");
   }
