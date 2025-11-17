@@ -18,7 +18,7 @@ If you're having trouble finding it, try checking your submission to this Canvas
   https://canvas.instructure.com/courses/12656768/assignments/57733319?module_item_id=137600320
 
 🔗 My Countries App DB Fiddle Link: 
-https://www.db-fiddle.com/f/VJ618HRTy1VgadL7aSXh7/53
+https://www.db-fiddle.com/f/VJ618HRTy1VgadL7aSXh7/57
 ____________________________________________
 
 -------------------------------------
@@ -99,15 +99,7 @@ $1 is country_name
 ____________________________
 
 
-🔹 POST /unsave-one-country  
-Description: Unsaves a country if it has been saved.  
-Your SQL command:
-DELETE FROM saved_countries
-	WHERE country_name =  $1
-    RETURNING *;
-____________________________
-$1 is country_name
-____________________________
+
 
 
 -------------------------------------
@@ -121,6 +113,47 @@ INSERT INTO country_counts(country_name, count)
 	VALUES ($1, 1)
     ON CONFLICT (country_name)
     DO UPDATE SET count = country_counts.count + 1 RETURNING *;
+____________________________
+$1 is country_name
+____________________________
+
+-------------------------------------
+🏆 STRETCH GOALS
+-------------------------------------
+
+🏆 Add an /unsave-one-country API endpoint to unsave a single country
+
+🔹 POST /unsave-one-country  
+Description: Unsaves a country if it has been saved.  
+Your SQL command:
+DELETE FROM saved_countries
+	WHERE country_name =  $1
+    RETURNING *;
+____________________________
+$1 is country_name
+____________________________
+
+🏆 Add an /unsave-all-countries API endpoint to unsave all countries
+
+🔹 POST /unsave-all-countries
+Description: Unsaves all countries that have been saved.  
+Your SQL command:
+DELETE FROM saved_countries
+    RETURNING *;
+____________________________
+ 
+____________________________
+
+
+🏆 Add a /reset-one-country-count API endpoint to reset a country's count back to 0
+
+🔹 POST /reset-one-country-count 
+Description:  reset a country's count back to 0.
+Your SQL command:
+UPDATE country_counts
+SET count = 0
+WHERE country_name = $1
+RETURNING *;
 ____________________________
 $1 is country_name
 ____________________________

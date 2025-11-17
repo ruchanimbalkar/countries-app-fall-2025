@@ -3,19 +3,18 @@ Server/API for Countries App Version 4
 
 DB Fiddle Link: ______________
 ----------------------------------*/
-// https://www.db-fiddle.com/f/VJ618HRTy1VgadL7aSXh7/50
+// https://www.db-fiddle.com/f/VJ618HRTy1VgadL7aSXh7/57
 /*----------------------------------
 Boilerplate Code to Set Up Server
 ----------------------------------*/
 
 import express from "express"; // the framework that lets us build webservers
 import pg from "pg"; //pg stands for postgreSQL, for connecting to the database
-import config from "./config.js"; //importing the connection string to our database hosted on NEON
 
 //connecting to our PostgreSQL database , or db for short
 const db = new pg.Pool({
   //new pg.Pool creates a connection to the database
-  connectionString: config.databaseUrl, //this is the credentials to access the database. Keep private
+  connectionString: process.env.DATABASE_URL, //this is the credentials to access the database. Keep private
   ssl: true, // use SSL encryption when connecting to the database to keep data safe in transit
 });
 //Declare a variable named app and call the express() function to create a new instance of express so we can use all of the methods, fucntions, properties of express
