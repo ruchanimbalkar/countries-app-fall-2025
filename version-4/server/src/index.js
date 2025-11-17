@@ -121,7 +121,7 @@ const resetOneCountryCount = async (country_name) => {
 //unSaveAllCountries()
 const unSaveAllCountries = async () => {
   const data = await db.query("DELETE FROM saved_countries RETURNING *");
-  let output = data.rows[0];
+  let output = data.rows;
   console.log("output=", output);
   return output;
 };
