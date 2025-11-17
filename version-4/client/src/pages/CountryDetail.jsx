@@ -180,7 +180,7 @@ export default function CountryDetail({ countries, day }) {
             </a>
             <Tooltip id="my-tooltip" anchorSelect="#test" />
             <button
-              className="country-detail-back-link"
+              className="reset-button"
               style={{
                 backgroundColor: day ? "#FAFAFA" : "#202C36",
                 color: day ? "black" : "white",

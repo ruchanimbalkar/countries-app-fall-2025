@@ -90,6 +90,11 @@ header .toggle {
   margin: 2rem;
 }
 
+.reset-button {
+  border: 0.1rem outset var(--light-gray);
+  padding: 0.2rem 1rem;
+}
+
 @media (max-width: 699px) {
   .country-detail {
     display: inline-block;
