@@ -4,6 +4,7 @@ import Form from "../components/Form.jsx";
 import CountryCard from "../components/CountryCard.jsx";
 //Import useState and useEffect from react
 import { useState, useEffect } from "react";
+import { MdDelete } from "react-icons/md";
 export default function SavedCountries({ countriesData, day }) {
   //Declare an empty array with variable name array
   let array = [];
@@ -130,6 +131,35 @@ export default function SavedCountries({ countriesData, day }) {
     }
   };
 
+  //Delete all saved countries
+  const handleDelete = async () => {
+    try {
+      //Declare  a variable that will hold response from the POST request to /unsave-all-countries
+      const response = await fetch("/api/unsave-all-countries", {
+        method: "POST",
+        //The content type header tells the server that we are sending JSON data
+        headers: {
+          "content-type": "application/json ",
+        },
+      });
+      //Guard Clause
+      if (!response.ok) {
+        console.error(`Response status: ${response.status}`);
+        // Exit early
+        return;
+      }
+      //Convert the response to JSON format using json() method and save it in a variable named data
+      const data = await response.json();
+      //print data on console
+      console.log("Deleted saved countries data ", data);
+
+      setCountryObjects(array);
+    } catch (error) {
+      //Print error on console
+      console.log("Error deleting all saved countries" + error.message);
+    }
+  };
+
   useEffect(() => {
     //Call function getAllSavedCountries() to retrieve all the saved countries from the server
     getAllSavedCountries();
@@ -145,6 +175,10 @@ export default function SavedCountries({ countriesData, day }) {
             ? "My Saved Countries "
             : `Welcome ${userFormInfo.fullName}!`}
         </h1>
+        <button onClick={handleDelete}>
+          {" "}
+          <MdDelete /> Delete All Saved Countries
+        </button>
         <div className="saved-countries-card">
           {/* //using && operator map over the countryObjects array and render the countryObject using the CountryCard component */}
           {countryObjects &&
