@@ -35,7 +35,7 @@ app.listen(port, () => {
 }); //this method is turning on our server
 
 app.get("/", (req, res) => {
-  res.send("Hi, Sever is ON!");
+  res.send("Hi, Server is ON!");
 });
 
 /*----------------------------------
@@ -100,6 +100,17 @@ const unsaveOneCountry = async (country_name) => {
 const updateOneCountryCount = async (country_name) => {
   const data = await db.query(
     "INSERT INTO country_counts(country_name, count) VALUES ($1, 1) ON CONFLICT (country_name) DO UPDATE SET count = country_counts.count + 1 RETURNING *",
+    [country_name]
+  );
+  let count = data.rows[0].count;
+  console.log("count=", count);
+  return count;
+};
+
+//resetOneCountryCount(country_name)
+const resetOneCountryCount = async (country_name) => {
+  const data = await db.query(
+    "UPDATE country_counts SET count = 0 WHERE country_name = $1 RETURNING *;",
     [country_name]
   );
   let count = data.rows[0].count;
@@ -207,6 +218,26 @@ app.post("/unsave-one-country", async (req, res) => {
       console.log(result);
       res.send(`Status Code  : 200 | Success! The country is unsaved.
 `);
+    }
+  } catch (error) {
+    res.status(500).send("Internal Server Error!");
+  }
+});
+
+//🔹 POST /reset-one-country-count
+app.post("/reset-one-country-count", async (req, res) => {
+  try {
+    const country_name = req.body.country_name;
+    //check for missing required field in the request body : id and newName
+    if (!country_name) {
+      //return error message with 400 Bad request status code, because the request was badly formed with wrong syntax.
+      // All 4XX status codes are client-side errors, which means the client sent a bad request
+      return res.status(400).send("Error : Missing required fields!");
+    } else {
+      //call helper function
+      let count = await resetOneCountryCount(country_name);
+      console.log(count);
+      res.json({ count: count });
     }
   } catch (error) {
     res.status(500).send("Internal Server Error!");

@@ -37,6 +37,7 @@ export default function Card({ country, children, viewed = undefined }) {
   //     );
   // }
   //console.log("children", children);
+  console.log("children", children);
 
   return (
     <>

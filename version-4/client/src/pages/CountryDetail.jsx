@@ -94,6 +94,32 @@ export default function CountryDetail({ countries, day }) {
     setAnchorElementText("Save");
   };
 
+  const handleResetCount = async () => {
+    //Send a POST request to the API with base url and endpoint /update-one-country-count with headers and body
+    const response = await fetch("/api/reset-one-country-count", {
+      method: "POST",
+      //The content type header tells the server that we are sending JSON data
+      headers: {
+        "content-type": "application/json ",
+      },
+      //The request body contains the data to be stored
+      body: JSON.stringify({
+        country_name: countryName,
+      }),
+    });
+    //Guard Clause
+    if (!response.ok) {
+      console.error(`Response status: ${response.status}`);
+      // Exit early
+      return;
+    }
+    //Convert response in JSON format using json() method
+    const responseInJSONFormat = await response.json();
+    console.log("response from post method: ", responseInJSONFormat);
+    //Get count from responseInJSONFormat using dot notation and update count using the setter function
+    setCount(responseInJSONFormat.count);
+  };
+
   //Declare an arrow function updateOneCountryCount that is asynchronus and sends country Name to update count at the server
   const updateOneCountryCount = async () => {
     //Send a POST request to the API with base url and endpoint /update-one-country-count with headers and body
@@ -153,17 +179,16 @@ export default function CountryDetail({ countries, day }) {
               {anchorElementText}
             </a>
             <Tooltip id="my-tooltip" anchorSelect="#test" />
-            {/* <button
+            <button
               className="country-detail-back-link"
               style={{
                 backgroundColor: day ? "#FAFAFA" : "#202C36",
                 color: day ? "black" : "white",
               }}
-              // onClick={handleSave}
+              onClick={handleResetCount}
             >
-              {" "}
-              Save{" "}
-            </button> */}
+              Reset Viewed Count to Zero
+            </button>
           </Card>
         </div>
       </main>
