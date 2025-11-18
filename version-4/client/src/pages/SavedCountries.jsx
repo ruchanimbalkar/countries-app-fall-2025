@@ -177,6 +177,7 @@ export default function SavedCountries({ countriesData, day }) {
             ? "My Saved Countries "
             : `Welcome ${userFormInfo.fullName}!`}
         </h1>
+        {/* If there are no saved countries, do not render or show delete button. Otherwise show delete button and saved countries. */}
         {countryObjects.length > 0 ? (
           <>
             <button onClick={handleDelete}>
