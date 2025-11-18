@@ -6,6 +6,7 @@ import CountryCard from "../components/CountryCard.jsx";
 import { useState, useEffect } from "react";
 import { MdDelete } from "react-icons/md";
 export default function SavedCountries({ countriesData, day }) {
+  const [message, setMessage] = useState("You have zero saved countries");
   //Declare an empty array with variable name array
   let array = [];
   //Declare an emptyFormState variable of type object to reset the form data
@@ -154,6 +155,7 @@ export default function SavedCountries({ countriesData, day }) {
       console.log("Deleted saved countries data ", data);
 
       setCountryObjects(array);
+      setMessage("Deleted all saved countries. " + message);
     } catch (error) {
       //Print error on console
       console.log("Error deleting all saved countries" + error.message);
@@ -175,21 +177,28 @@ export default function SavedCountries({ countriesData, day }) {
             ? "My Saved Countries "
             : `Welcome ${userFormInfo.fullName}!`}
         </h1>
-        <button onClick={handleDelete}>
-          {" "}
-          <MdDelete /> Delete All Saved Countries
-        </button>
-        <div className="saved-countries-card">
-          {/* //using && operator map over the countryObjects array and render the countryObject using the CountryCard component */}
-          {countryObjects &&
-            countryObjects.map((savedCountry, index) => (
-              <CountryCard
-                country={savedCountry}
-                key={"country_" + index}
-                day={day}
-              />
-            ))}
-        </div>
+        {countryObjects.length > 0 ? (
+          <>
+            <button onClick={handleDelete}>
+              {" "}
+              <MdDelete /> Delete All Saved Countries
+            </button>
+            <div className="saved-countries-card">
+              {/* //using && operator map over the countryObjects array and render the countryObject using the CountryCard component */}
+              {countryObjects &&
+                countryObjects.map((savedCountry, index) => (
+                  <CountryCard
+                    country={savedCountry}
+                    key={"country_" + index}
+                    day={day}
+                  />
+                ))}
+            </div>
+          </>
+        ) : (
+          <h2>{message}</h2>
+        )}
+
         <Form
           onSubmit={handleSubmit}
           onChange={handleChange}
