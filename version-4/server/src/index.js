@@ -232,7 +232,7 @@ app.post("/unsave-one-country", async (req, res) => {
   }
 });
 
-//🔹 POST /reset-one-country-count
+//🔹 POST /reset-one-country-count // resets country's count to zero
 app.post("/reset-one-country-count", async (req, res) => {
   try {
     const country_name = req.body.country_name;
@@ -252,7 +252,7 @@ app.post("/reset-one-country-count", async (req, res) => {
   }
 });
 
-//POST /unsave-all-countries
+//POST /unsave-all-countries deletes all saved countries
 app.post("/unsave-all-countries", async (req, res) => {
   try {
     //call helper function
