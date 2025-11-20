@@ -65,14 +65,16 @@ export default function Home({ countriesData, day, onClick }) {
     <>
       <main>
         <div className="home-forms">
-          <form onSubmit={handleSearchSubmit}>
-            <input
-              placeholder={`${searchIcon} Search for a country...`}
-              type="text"
-              name="searchTerm"
-              onChange={handleChange}
-            />
-          </form>
+          <search>
+            <form onSubmit={handleSearchSubmit}>
+              <input
+                placeholder={`${searchIcon} Search for a country...`}
+                type="text"
+                name="searchTerm"
+                onChange={handleChange}
+              />
+            </form>
+          </search>
 
           <form className="sort-form">
             <select
