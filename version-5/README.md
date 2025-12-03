@@ -1,10 +1,10 @@
 # 📝 Countries App - Version 5 Project by Rucha Nimbalkar
 
-## [Github Repo](https://github.com/ruchanimbalkar/countries-app-fall-2025/tree/main/version-4)
+## [Github Repo](https://github.com/ruchanimbalkar/countries-app-fall-2025/tree/main/version-5)
 
 ## 🚀 Live Site
 
-Check out the app: https://countries-version-4-september-2025.netlify.app/
+Check out the app: https://countries-version-5-september-2025.netlify.app/
 
 ## 📌 Project Description & Purpose
 
@@ -27,7 +27,7 @@ On the home page, user can see cards for each country showing the flad, country 
 
 ### Home Page See all countries.
 
-[![Home Page](./client/public/home.png)](https://countries-version-4-september-2025.netlify.app/)
+[![Home Page](./client/public/home.png)](https://countries-version-5-september-2025.netlify.app/)
 
 ### You can sort the countries by region.
 
@@ -68,20 +68,20 @@ I added conditional rendering for SavedCountries page. I want the delete button 
 
 **Frontend**
 
-- **Languages:** \***\*\_\_HTML, CSS, JavaScript\_\_\*\***
-- **Framework:** \***\*\_\_REACT\_\*\***
-- **Deployment:** \***\*\_\_Netlify\_\*\***
+- **Languages:** **HTML, CSS, JavaScript**
+- **Framework:** **REACT**
+- **Deployment:** **Netlify**
 
 **Server/API**
 
-- **Languages:** \***\*\_\_Node.js\_\*\***
-- **Framework:** \***\*\_\_Express.js\_\*\***
-- **Deployment:** \***\*\_\_Render\_\*\***
+- **Languages:** **Node.js**
+- **Framework:** **Express.js**
+- **Deployment:** **Render**
 
 **Database**
 
-- **Languages:** \***\*\_postgreSQL\_\*\***
-- **Deployment:** \***\*\_NEON\_\*\***
+- **Languages:** **postgreSQL**
+- **Deployment:** **NEON**
 
 ## 🔹 API Documentation
 
@@ -96,7 +96,7 @@ These are the API endpoints I built:
 7. POST /reset-one-country-count // resets country's count to zero
 8. POST /unsave-all-countries deletes all saved countries
 
-Learn more about the API endpoints here: [insert link to API documentation] //need to add
+[Learn more about the API endpoints here](/api-documentation.md)
 
 ## 🗄️ Database Schema
 
@@ -137,7 +137,7 @@ CREATE TABLE country_counts(
 
 **What I'm proud of:** **Completeing the project and truing the stretch goals**
 
-**What challenged me:**The stretch goals and day/night mode challenged me.\*\*
+**What challenged me:The stretch goals and day/night mode challenged me.**
 
 **Future ideas for how I'd continue building this project:**
 
