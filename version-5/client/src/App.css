@@ -1,0 +1,125 @@
+/*General */
+.App {
+  min-height: 100vh;
+}
+
+/*header */
+header {
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+header nav {
+  width: 100%;
+}
+
+header nav ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-content: center;
+  gap: 1rem;
+}
+
+header nav ul a {
+  color: inherit;
+  text-decoration: none;
+  align-items: start;
+}
+
+header .toggle {
+  align-self: flex-end;
+}
+.home-page {
+  align-self: flex-start;
+  font-weight: bold;
+  flex-basis: 1;
+}
+
+/* Up to 699px - display all cards in a single column */
+/*Default styles (Mobile First)*/
+.parent {
+  display: grid;
+  margin-top: 1rem;
+  grid-template-columns: 1fr; /* single column*/
+  gap: 2rem;
+  padding: 1rem;
+}
+
+/* 700px and larger - display with all 4 cards on one row.  */
+@media (min-width: 700px) {
+  .parent {
+    grid-template-columns: 1fr 1fr 1fr 1fr; /* four cards(columns) per row*/
+  }
+}
+
+.country-detail .card {
+  background-color: inherit;
+  color: inherit;
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-content: space-around;
+  justify-content: flex-start;
+  gap: 5rem;
+  margin: 2rem;
+}
+
+.country-detail .card img {
+  align-self: flex-start;
+  width: 30%;
+}
+
+.country-detail .card .country-card-text {
+  align-self: center;
+}
+
+.country-detail-back-link {
+  /* background-color: white; */
+  border: 0.1rem outset var(--light-gray);
+  /* color: var(--dark-gray); */
+  padding: 0.2rem 1rem;
+  margin: 2rem;
+}
+
+.reset-button {
+  border: 0.1rem outset var(--light-gray);
+  padding: 0.2rem 1rem;
+}
+
+@media (max-width: 699px) {
+  .country-detail {
+    display: inline-block;
+  }
+}
+
+.home-forms {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.home-forms form input,
+select {
+  background-color: inherit;
+  color: inherit;
+}
+.home-forms .sort-form select {
+  width: 100%;
+  padding: 1rem;
+}
+
+.saved-countries-card {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 1rem;
+}
