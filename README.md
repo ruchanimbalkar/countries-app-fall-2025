@@ -25,9 +25,12 @@ This is a project I worked on as a part of my training at Annie Cannons when I w
 
 - You can view all the countries in the world
 - You can sort the countries by region.
-- You can view a particular country
-- You can view a particular country
-- You can delete saved countries
+- You can view a particular country.
+- You can view a particular country.
+- You can change the mode to dark mode or light mode.
+- You can save a country.
+- You can unsave a country.
+- You can delete saved countries.
 
 ### Home Page See all countries.
 
