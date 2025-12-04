@@ -142,14 +142,14 @@ CREATE TABLE country_counts(
 
 **What I learned:** **How to develop a full stack project**
 
-**What I'm proud of:** **Completeing the project and truing the stretch goals**
+**What I'm proud of:** **Completeing the project and trying the stretch goals**
 
 **What challenged me:The stretch goals and day/night mode challenged me.**
 
 **Future ideas for how I'd continue building this project:**
 
 1. Add user login form so users can save their own countries
-2. Add bordering countries to country detail page
+2. Add border countries to country detail page
 3. Refactor code for toggle
 
 ## 🙌 Credits & Shoutouts
