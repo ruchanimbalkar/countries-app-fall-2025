@@ -1,6 +1,6 @@
 # 📘 API Documentation
 
-Base URL: `https://countries-app-fall-2025-version-4.onrender.com`
+Base URL: `https://countries-app-fall-2025-ey0u.onrender.com`
 
 ## Overview
 
@@ -24,7 +24,7 @@ Base URL: `https://countries-app-fall-2025-version-4.onrender.com`
 
 **Example Request URL:**
 
-`GET https://countries-app-fall-2025-version-4.onrender.com/get-newest-user`
+`GET https://countries-app-fall-2025-ey0u.onrender.com/get-newest-user`
 
 **Example Response:**
 
@@ -48,7 +48,7 @@ Base URL: `https://countries-app-fall-2025-version-4.onrender.com`
 
 **Example Request URL:**
 
-`GET https://countries-app-fall-2025-version-4.onrender.com/get-all-users`
+`GET https://countries-app-fall-2025-ey0u.onrender.com/get-all-users`
 
 **Example Response:**
 
@@ -107,7 +107,7 @@ Base URL: `https://countries-app-fall-2025-version-4.onrender.com`
 
 **Example Request URL:**
 
-`POST https://countries-app-fall-2025-version-4.onrender.com/add-one-user`
+`POST https://countries-app-fall-2025-ey0u.onrender.com/add-one-user`
 
 **Example Request Body:**
 
@@ -138,7 +138,7 @@ Status Code  : 200 | Success, user was added
 
 **Example Request URL:**
 
-`POST https://countries-app-fall-2025-version-4.onrender.com/update-one-country-count`
+`POST https://countries-app-fall-2025-ey0u.onrender.com/update-one-country-count`
 
 **Example Request Body:**
 
@@ -168,7 +168,7 @@ Status Code  : 200 | Success, user was added
 
 **Example Request URL:**
 
-`GET https://countries-app-fall-2025-version-4.onrender.com/get-all-saved-countries`
+`GET https://countries-app-fall-2025-ey0u.onrender.com/get-all-saved-countries`
 
 **Example Response:**
 
@@ -203,7 +203,7 @@ Status Code  : 200 | Success, user was added
 
 **Example Request URL:**
 
-`POST https://countries-app-fall-2025-version-4.onrender.com/save-one-country`
+`POST https://countries-app-fall-2025-ey0u.onrender.com/save-one-country`
 
 **Example Request Body:**
 
@@ -227,7 +227,7 @@ Status Code : 200 | Success! The country is saved.
 
 **Example Request URL:**
 
-`POST https://countries-app-fall-2025-version-4.onrender.com/unsave-one-country`
+`POSThttps://countries-app-fall-2025-ey0u.onrender.com/unsave-one-country`
 
 **Example Request Body:**
 
