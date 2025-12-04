@@ -65,7 +65,7 @@ If you click the Saved Counntries link in the header, it takes you to the Saved 
 The saved countries page shows countries that have been saved in the database, the last added user and a form for new user to register.
 There is also a delete button to delete all the saved countries.
 
-![Saved Countries Page](./client/public/savedCountriesPage.png)
+![Saved Countries Page](./version-5/client/public/savedCountriesPage.png)
 
 ### You can delete saved countries
 
