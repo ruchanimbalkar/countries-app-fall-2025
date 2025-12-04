@@ -8,12 +8,16 @@ Check out the app: https://countries-version-5-september-2025.netlify.app/
 
 ## 📌 Project Description & Purpose
 
-This project is countris App Version 5.
+### Description
 
-This is a project I did as a part of my training at Annie Cannons when I was a backend trainee. This is a full stack project.
-
+This project is countries App Version 5.
 This project uses the free REST countries API to render data about all the countries in the world.
 On the home page, user can see cards for each country showing the flad, country name, population, region and capital.
+
+### Purpose
+
+This project demonstrates my skills in Front End and Back End using HTML, CSS, JavaScript, REACT, postgreSQL, Node.js and Express.js respectively.
+This is a project I worked on as a part of my training at Annie Cannons when I was a backend trainee. This is a full stack app.
 
 ## ✨ Features
 
