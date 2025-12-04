@@ -155,4 +155,4 @@ CREATE TABLE country_counts(
 ## 🙌 Credits & Shoutouts
 
 Thanks to **\_\_Professor Arianna\_\_** for making this a fun and easy learning process !
-And thanks to **\_\_Bakari\_\_** and **\_\_Makiba\_\_** for guiding and supporting during my learning!
+And thanks to TAs (Teaching Assistants) **\_\_Bakari\_\_** and **\_\_Makiba\_\_** for guiding and supporting during my learning!
