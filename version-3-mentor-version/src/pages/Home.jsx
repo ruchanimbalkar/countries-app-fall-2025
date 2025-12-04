@@ -115,8 +115,10 @@ export default function Home({ countriesData, day }) {
             data.sort((a, b) => a.region.localeCompare(b.region));
           }
           break;
+        default:
+          setUrl(defaultURL);
       }
-
+      console.log(data, "data tester");
       //Set country data using the setter/updater function setcountriesInfo and passing on data
       setCountriesInfo(data);
     } catch (error) {
